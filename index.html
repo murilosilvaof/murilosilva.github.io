@@ -8,14 +8,16 @@
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; }
     header { background: #002f5f; color: white; padding: 2rem; text-align: center; }
     .foto-principal { width: 200px; border-radius: 100px; border: 4px solid white; }
-    section { max-width: 900px; margin: auto; padding: 2rem; background: white; margin-top: 2rem; border-radius: 10px; }
-    h1, h2 { color: #002f5f; }
+    section { max-width: 1000px; margin: auto; padding: 2rem; background: white; margin-top: 2rem; border-radius: 10px; }
+    h1, h2, h3 { color: #002f5f; }
     .galeria img { width: 100%; max-width: 300px; border-radius: 8px; margin: 1rem; }
     .galeria { display: flex; flex-wrap: wrap; justify-content: center; }
-    .projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .projeto { border: 1px solid #ddd; padding: 1rem; border-radius: 8px; background: #fafafa; }
-    footer { text-align: center; margin: 2rem 0; font-size: 0.9rem; color: #666; }
+    .projetos { display: flex; flex-direction: column; gap: 2rem; }
+    .projeto { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; border: 1px solid #ddd; padding: 1rem; border-radius: 8px; background: #fafafa; }
+    .projeto img { width: 100%; max-width: 400px; border-radius: 8px; }
+    .projeto-conteudo { flex: 1; min-width: 260px; }
     ul { padding-left: 20px; }
+    footer { text-align: center; margin: 2rem 0; font-size: 0.9rem; color: #666; }
   </style>
 </head>
 <body>
@@ -33,34 +35,65 @@
   <section>
     <h2>Projetos</h2>
     <div class="projetos">
+
       <div class="projeto">
-        <h3>Marcato - Sistema de Reservas</h3>
-        <p>Desenvolvido para a Escola de Música da UFRN. Possui calendário interativo, formulário inteligente, regras de uso e integração com Google Calendar.</p>
+        <img src="foto-ismcursos.png" alt="ISM Cursos">
+        <div class="projeto-conteudo">
+          <h3>ISM Cursos - Plataforma de Ensino</h3>
+          <p>Desenvolvimento de um site institucional para cursos online com foco em organização de disciplinas isoladas.</p>
+          <p><strong>Principais recursos:</strong></p>
+          <ul>
+            <li>Área do aluno com certificados, notas e painel de avaliações</li>
+            <li>Integração com formas de pagamento e relatórios de vendas</li>
+            <li>Envio automático de e-mails ao finalizar cursos</li>
+          </ul>
+          <p><strong>Linguagens e ferramentas:</strong> WordPress, PHP, Elementor, HTML, CSS</p>
+        </div>
       </div>
+
       <div class="projeto">
-        <h3>ISM Cursos - Plataforma de Ensino</h3>
-        <p>Site institucional com área do aluno, certificados automáticos, painel de notas, avaliações, relatórios e sistema de pagamento.</p>
+        <img src="foto-marcato.png" alt="Marcato Sistema de Reservas">
+        <div class="projeto-conteudo">
+          <h3>Marcato - Sistema de Reservas</h3>
+          <p>Sistema para agendamento de salas da Escola de Música da UFRN com prioridade por perfil e integração ao Google Calendar.</p>
+          <p><strong>Principais recursos:</strong></p>
+          <ul>
+            <li>Calendário interativo com confirmação automática por e-mail</li>
+            <li>Controle de horários, tipo de evento e regra de prioridade</li>
+            <li>Design responsivo e acessível</li>
+          </ul>
+          <p><strong>Linguagens e ferramentas:</strong> HTML, CSS, JavaScript, PHP, Google Calendar API</p>
+        </div>
       </div>
+
       <div class="projeto">
-        <h3>Simulação de Agentes Racionais para Limpeza Inteligente</h3>
-        <p>Desenvolvi um sistema web para gestão de serviços de limpeza. Permite que clientes solicitem e acompanhem serviços de forma prática. Funcionalidades:</p>
-        <ul>
-          <li>Cadastro de clientes e serviços, com agendamentos personalizados</li>
-          <li>Painel administrativo para acompanhar status</li>
-          <li>Notificações dinâmicas para confirmações e atualizações</li>
-          <li>Interface responsiva</li>
-        </ul>
+        <img src="foto-simulacao.png" alt="Simulação de Agentes">
+        <div class="projeto-conteudo">
+          <h3>Simulação de Agentes Racionais para Limpeza Inteligente</h3>
+          <p>Projeto de sistema web para gerenciamento de serviços de limpeza com foco em experiência do usuário.</p>
+          <ul>
+            <li>Cadastro de clientes, agendamento e acompanhamento</li>
+            <li>Painel de controle e notificações automatizadas</li>
+            <li>Interface responsiva</li>
+          </ul>
+          <p><strong>Linguagens e ferramentas:</strong> HTML, CSS, JavaScript, Python (back-end), SQLite</p>
+        </div>
       </div>
+
       <div class="projeto">
-        <h3>Site da TAP Air Portugal - Tecnologias Web (2024/2025)</h3>
-        <p>Site inspirado no original da TAP, criado com HTML, CSS (SASS) e JavaScript sem frameworks. Funcionalidades:</p>
-        <ul>
-          <li>Design responsivo com Flexbox e Grid</li>
-          <li>Menu interativo com submenu e modo sanduíche</li>
-          <li>Simulação de status de voo com seleção de aeroportos</li>
-          <li>Experiência de usuário moderna e fluida</li>
-        </ul>
+        <img src="foto-tap.png" alt="Site TAP Air Portugal">
+        <div class="projeto-conteudo">
+          <h3>Site da TAP Air Portugal - Tecnologias Web</h3>
+          <p>Réplica de interface do site da TAP desenvolvida como exercício de front-end puro.</p>
+          <ul>
+            <li>Design responsivo com CSS Grid e Flexbox</li>
+            <li>Menu dinâmico com navegação mobile</li>
+            <li>Simulação de busca de voos com JavaScript</li>
+          </ul>
+          <p><strong>Linguagens e ferramentas:</strong> HTML, CSS (SASS), JavaScript</p>
+        </div>
       </div>
+
     </div>
   </section>
 
