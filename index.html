@@ -9,13 +9,13 @@
     header { background: #002f5f; color: white; padding: 2rem; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
     .foto-principal { width: 200px; height: 200px; border-radius: 100px; border: 4px solid white; object-fit: cover; }
     .intro { max-width: 600px; }
-    section { max-width: 1000px; margin: auto; padding: 2rem; background: white; margin-top: 2rem; border-radius: 10px; }
+    section { max-width: 900px; margin: auto; padding: 2rem; background: white; margin-top: 2rem; border-radius: 10px; }
     h1, h2, h3 { color: #002f5f; }
-    .dupla-coluna { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .bloco { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; margin-bottom: 2rem; }
-    .bloco img { width: 300px; border-radius: 8px; object-fit: cover; }
-    .bloco-conteudo { flex: 1; min-width: 280px; }
-    ul { padding-left: 20px; }
+    .compacto ul { margin: 0; padding-left: 20px; }
+    .projeto-page { page-break-before: always; }
+    .projeto-destaque { display: flex; flex-direction: column; gap: 1rem; text-align: justify; }
+    .projeto-destaque img { width: 100%; max-width: 100%; height: auto; border-radius: 8px; }
+    .projeto-destaque a { color: #004488; text-decoration: none; }
     footer { text-align: center; margin: 2rem 0; font-size: 0.9rem; color: #666; }
   </style>
 </head>
@@ -24,135 +24,99 @@
     <img src="foto-principal.jpg" alt="Murilo Francisco da Silva" class="foto-principal">
     <div class="intro">
       <h1>Murilo Francisco da Silva</h1>
-      <p>Estudante de Engenharia da Computação | Desenvolvedor Web | Intercambista AULP</p>
+      <p>Estudante de C&T com ênfase em Engenharia da Computação | Desenvolvedor Web | Programador Full Stack</p>
     </div>
   </header>
 
-  <section>
-    <h2>Sobre Mim</h2>
-    <div class="bloco">
-      <img src="foto-profissional.jpg" alt="Murilo Francisco da Silva">
-      <div class="bloco-conteudo">
-        <p>Sou estudante da UFRN com ênfase em Engenharia da Computação e licenciado em Engenharia Informática pelo Instituto Superior de Engenharia de Coimbra (ISEC - Portugal), onde fui bolsista AULP em intercâmbio acadêmico. Tenho experiência com suporte técnico, desenvolvimento web responsivo, otimização para SEO e integração com APIs. Também ministrei oficinas de robótica para crianças e divulgo oportunidades educacionais nas redes sociais.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <section class="compacto">
     <h2>Experiência Profissional</h2>
-    <div class="bloco">
-      <img src="foto-suporte1.jpg" alt="Trabalho em Suporte Técnico">
-      <div class="bloco-conteudo">
-        <ul>
-          <li><strong>Desenvolvedor Web (EMUFRN - 2025)</strong><br>
-            Desenvolvimento do novo site da Escola de Música da UFRN com layout responsivo (HTML, CSS, JS), integração com WordPress, otimização para SEO, testes de compatibilidade e suporte a acessibilidade.</li>
-          <li><strong>Bolsa de Apoio Técnico - BCZM/UFRN (2022 - 2024)</strong><br>
-            Montagem e manutenção de computadores, instalação de sistemas, cabeamento e atendimento ao público.</li>
-          <li><strong>Secretaria Administrativa - BCZM/UFRN (2021 - 2022)</strong><br>
-            Atendimento ao público, almoxarifado e apoio em planilhas e inventários.</li>
-        </ul>
-      </div>
-    </div>
+    <ul>
+      <li><strong>Desenvolvedor Web (EMUFRN - 2025):</strong> desenvolvimento do site da Escola de Música com HTML, CSS, JS e integração WordPress.
+Criação de um novo sistema de reservas para a EMUFRN</li>
+      <li><strong>Suporte Técnico - TI (BCZM/UFRN - 2022-2024):</strong> suporte técnico, montagem de computadores,manutenção de equipamentos e atendimento ao público.</li>
+      <li><strong>Secretaria Administrativa da BCZM/UFRN (2021-2022):</strong> apoio administrativo e organização de almoxarifado.</li>
+    </ul>
   </section>
 
-  <section>
+  <section class="compacto">
     <h2>Formação Acadêmica</h2>
-    <div class="bloco">
-      <img src="foto-isec.jpg" alt="Foto no ISEC Portugal">
-      <div class="bloco-conteudo">
-        <ul>
-          <li><strong>Engenharia da Computação (UFRN)</strong> - 6º período - Em andamento</li>
-          <li><strong>Licenciatura em Engenharia Informática (ISEC - Portugal)</strong> - Concluído em intercâmbio</li>
-          <li><strong>Curso de Inglês</strong> - Instituto Ágora/UFRN - Em andamento</li>
-        </ul>
-      </div>
-    </div>
+    <ul>
+      <li><strong>UFRN:</strong> C&T/Engenharia da Computação (em andamento)</li>
+      <li><strong>Intituto Politecnico de Coimbra-ISEC Portugal:</strong> Licenciatura em Engenharia Informática (concluído)</li>
+      <li><strong>Curso de Inglês:</strong> Instituto Ágora (cursando)</li>
+    </ul>
   </section>
 
-  <section>
-    <h2>Projetos</h2>
-
-    <div class="bloco">
-      <img src="foto-ismcursos.png" alt="ISM Cursos">
-      <div class="bloco-conteudo">
-        <h3>ISM Cursos - Plataforma de Ensino</h3>
-        <p>Criação de uma plataforma de ensino online com foco na gestão de disciplinas isoladas e automatização de certificados. Desenvolvi uma área do aluno com painel de notas, avaliações, acesso a materiais e certificados automáticos. Também integrei meios de pagamento e relatórios para o administrador.</p>
-        <p><strong>Ferramentas utilizadas:</strong> WordPress, Elementor, PHP, HTML, CSS</p>
-      </div>
-    </div>
-
-    <div class="bloco">
-      <img src="foto-marcato.png" alt="Marcato Sistema de Reservas">
-      <div class="bloco-conteudo">
-        <h3>Marcato - Sistema de Reservas</h3>
-        <p>Sistema web desenvolvido para a Escola de Música da UFRN, permitindo agendamento de salas com regras de prioridade. O sistema possui integração com Google Calendar, confirmação automática por e-mail, controle por perfil de usuário e tela de administração intuitiva.</p>
-        <p><strong>Ferramentas utilizadas:</strong> HTML, CSS, JavaScript, PHP, Google Calendar API</p>
-      </div>
-    </div>
-
-    <div class="bloco">
-      <img src="foto-simulacao.png" alt="Simulação de Agentes Racionais">
-      <div class="bloco-conteudo">
-        <h3>Simulação de Agentes Racionais para Limpeza Inteligente</h3>
-        <p>Projeto baseado em lógica de agentes para simular a execução de tarefas de limpeza de forma autônoma. O sistema permite cadastro de serviços, painel de status e notificação automatizada para clientes. Aplicação com interface web responsiva e painel administrativo.</p>
-        <p><strong>Ferramentas utilizadas:</strong> HTML, CSS, JavaScript, Python, SQLite</p>
-      </div>
-    </div>
-
-    <div class="bloco">
-      <img src="foto-tap.png" alt="Site TAP Air Portugal">
-      <div class="bloco-conteudo">
-        <h3>Site da TAP Air Portugal</h3>
-        <p>Réplica fiel da interface do site oficial da TAP Air Portugal como parte da disciplina de Tecnologias Web. O site inclui barra de navegação responsiva, simulação de voos, menus suspensos e experiência fluida em dispositivos móveis.</p>
-        <p><strong>Ferramentas utilizadas:</strong> HTML, CSS (SASS), JavaScript</p>
-      </div>
-    </div>
-
-  </section>
-
-  <section>
+  <section class="compacto">
     <h2>Cursos e Certificações</h2>
     <ul>
-      <li>Introdução à Computação Quântica - International Institute of Physics</li>
+      <li>Introdução à Computação Quântica</li>
       <li>Curso de JavaScript</li>
       <li>Curso de SQL Server</li>
-      <li>Informática básica e Excel</li>
+      <li>Informática e Excel</li>
     </ul>
   </section>
 
-  <section>
+  <section class="compacto">
     <h2>Participações em Destaque</h2>
     <ul>
-      <li><strong>Aveiro Tech City Hackathon</strong> - Finalista representando o Brasil em competição internacional em Portugal</li>
-      <li><strong>Bolsista AULP</strong> - Selecionado para intercâmbio acadêmico internacional</li>
+      <li><strong>Aveiro Tech City Hackathon:</strong> finalista representando o Brasil em Portugal</li>
+      <li><strong>Bolsista AULP:</strong> intercâmbio acadêmico internacional no Instituto Superior de Engenharia de Coimbra</li>
     </ul>
   </section>
 
-  <section>
-    <h2>Habilidades e Competências</h2>
-    <div class="dupla-coluna">
-      <ul>
-        <li>Suporte Técnico e montagem de hardware</li>
-        <li>Windows e Linux</li>
-        <li>Atendimento ao usuário</li>
-        <li>Pacote Office, Excel intermediário</li>
-      </ul>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>WordPress, Elementor, SEO</li>
-        <li>Bancos de Dados: MySQL, T-SQL</li>
-        <li>Fundamentos em Java, Python</li>
-      </ul>
+  <section class="compacto">
+    <h2>Habilidades Técnicas</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript, PHP, WordPress</li>
+      <li>MySQL, T-SQL, fundamentos de Java e Python</li>
+      <li>Suporte técnico, montagem de hardware, Windows e Linux</li>
+    </ul>
+  </section>
+
+  <section class="projeto-page">
+    <div class="projeto-destaque">
+      <h2>Projeto: ISM Cursos - Plataforma de Ensino</h2>
+      <img src="foto-ismcursos.png" alt="ISM Cursos">
+      <p>Criação de uma plataforma de ensino online com foco na gestão de disciplinas isoladas. Desenvolvi uma área do aluno com painel de notas, avaliações, acesso a materiais e certificados automáticos. Também integrei meios de pagamento e relatórios para o administrador.</p>
+      <p><strong>Ferramentas:</strong> WordPress, Elementor, PHP, HTML, CSS</p>
+      <p><strong>Link:</strong> <a href="https://ismcursos.com.br" target="_blank">https://ismcursos.com.br</a></p>
     </div>
   </section>
 
-  <section>
-    <h2>Objetivo</h2>
-    <p>Ter a oportunidade de aplicar e desenvolver minhas habilidades em tecnologia e programação, contribuindo para projetos inovadores e o crescimento da empresa.</p>
+  <section class="projeto-page">
+    <div class="projeto-destaque">
+      <h2>Projeto: Marcato - Sistema de Reservas</h2>
+      <img src="foto-marcato.png" alt="Sistema Marcato">
+      <p>Sistema para agendamento de salas com controle de horários, regras de uso e prioridade para perfis como professores e alunos concluintes. Integração com Google Calendar, formulário inteligente, confirmação por e-mail, e interface limpa. Utilizado oficialmente pela Escola de Música da UFRN.</p>
+      <p><strong>Ferramentas:</strong> HTML, CSS, JavaScript, PHP, Google Calendar API</p>
+      <p><strong>Link do sistema:</strong> <a href="https://marcato.emufrn.ufrn.br" target="_blank">https://marcato.emufrn.ufrn.br</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/murilosilvaof/marcato-reservas" target="_blank">github.com/murilosilvaof/marcato-reservas</a></p>
+    </div>
+  </section>
+
+  <section class="projeto-page">
+    <div class="projeto-destaque">
+      <h2>Projeto: Simulação de Agentes Racionais para Limpeza Inteligente</h2>
+      <img src="foto-simulacao.png" alt="Simulação Inteligente">
+      <p>Projeto voltado à simulação de agentes autônomos para tarefas de limpeza. Permite cadastro de clientes e serviços, painel de controle, notificações e agendamento. A proposta simula comportamentos racionais otimizando os atendimentos.</p>
+      <p><strong>Ferramentas:</strong> HTML, CSS, JS, Python, SQLite</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/murilosilvaof/simulacao-agentes-limpeza" target="_blank">github.com/murilosilvaof/simulacao-agentes-limpeza</a></p>
+    </div>
+  </section>
+
+  <section class="projeto-page">
+    <div class="projeto-destaque">
+      <h2>Projeto: Site da TAP Air Portugal</h2>
+      <img src="foto-tap.png" alt="Site TAP Air">
+      <p>Réplica de alta fidelidade do site da TAP, desenvolvida como exercício prático da disciplina de Tecnologias Web. Inclui barra de busca, menus dinâmicos, simulação de busca de passagens, e responsividade total.</p>
+      <p><strong>Ferramentas:</strong> HTML, CSS (SASS),BootStrap JavaScript</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/murilosilvaof/tap-clone-site" target="_blank">github.com/murilosilvaof/tap-clone-site</a></p>
+    </div>
   </section>
 
   <footer>
-    <p>Contato: murilodevweb@gmail.com | Natal - RN | &copy; 2025 Murilo Francisco da Silva</p>
+    <p>Contato: murilo.silva.136@ufrn.edu.br | Natal - RN | &copy; 2025 Murilo Francisco da Silva</p>
   </footer>
 </body>
 </html>
