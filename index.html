@@ -17,6 +17,7 @@
     .projeto img { width: 100%; max-width: 400px; border-radius: 8px; }
     .projeto-conteudo { flex: 1; min-width: 260px; }
     ul { padding-left: 20px; }
+    .dupla-coluna { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
     footer { text-align: center; margin: 2rem 0; font-size: 0.9rem; color: #666; }
   </style>
 </head>
@@ -29,7 +30,69 @@
 
   <section>
     <h2>Sobre Mim</h2>
-    <p>Sou estudante da Universidade Federal do Rio Grande do Norte (UFRN) com ênfase em Engenharia da Computação. Durante meu percurso acadêmico, participei de um intercâmbio internacional em Portugal, no Instituto Politécnico de Coimbra, onde conclui a licenciatura em Engenharia Informática. Apaixonado por tecnologia, web e impacto social, atuei como bolsista de suporte técnico na UFRN, instrutor de robótica para crianças e divulgador do programa AULP nas redes sociais.</p>
+    <p>Sou estudante da UFRN com ênfase em Engenharia da Computação e licenciado em Engenharia Informática pelo Instituto Superior de Engenharia de Coimbra (ISEC - Portugal), onde fui bolsista AULP em intercâmbio acadêmico. Tenho experiência com suporte técnico, desenvolvimento web responsivo, otimização para SEO e integração com APIs. Também ministrei oficinas de robótica para crianças e divulgo oportunidades educacionais nas redes sociais.</p>
+  </section>
+
+  <section>
+    <h2>Experiência Profissional</h2>
+    <ul>
+      <li><strong>Desenvolvedor Web (EMUFRN - 2025)</strong><br>
+        Desenvolvimento do novo site da Escola de Música da UFRN com layout responsivo (HTML, CSS, JS), integração com WordPress, otimização para SEO, testes de compatibilidade e suporte a acessibilidade.</li>
+      <li><strong>Bolsa de Apoio Técnico - BCZM/UFRN (2022 - 2024)</strong><br>
+        Montagem e manutenção de computadores, instalação de sistemas, cabeamento e atendimento ao público.</li>
+      <li><strong>Secretaria Administrativa - BCZM/UFRN (2021 - 2022)</strong><br>
+        Atendimento ao público, almoxarifado e apoio em planilhas e inventários.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Formação Acadêmica</h2>
+    <ul>
+      <li><strong>Engenharia da Computação (UFRN)</strong> - 6º período - Em andamento</li>
+      <li><strong>Licenciatura em Engenharia Informática (ISEC - Portugal)</strong> - Concluído em intercâmbio</li>
+      <li><strong>Curso de Inglês</strong> - Instituto Ágora/UFRN - Em andamento</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cursos e Certificações</h2>
+    <ul>
+      <li>Introdução à Computação Quântica - International Institute of Physics</li>
+      <li>Curso de JavaScript</li>
+      <li>Curso de SQL Server</li>
+      <li>Informática básica e Excel</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Participações em Destaque</h2>
+    <ul>
+      <li><strong>Aveiro Tech City Hackathon</strong> - Finalista representando o Brasil em competição internacional de tecnologia em Portugal</li>
+      <li><strong>Bolsista AULP</strong> - Estudante selecionado para intercâmbio acadêmico internacional</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Habilidades e Competências</h2>
+    <div class="dupla-coluna">
+      <ul>
+        <li>Suporte Técnico, montagem e manutenção de hardware</li>
+        <li>Windows e Linux</li>
+        <li>Atendimento ao usuário</li>
+        <li>Pacote Office e planilhas</li>
+      </ul>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>WordPress, Elementor, SEO</li>
+        <li>Banco de Dados: MySQL, T-SQL</li>
+        <li>Conhecimentos básicos em Java, Python</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Objetivo</h2>
+    <p>Ter a oportunidade de desenvolver minhas competências profissionais atuando em projetos de tecnologia, contribuindo para a inovação e crescimento da empresa.</p>
   </section>
 
   <section>
@@ -40,14 +103,8 @@
         <img src="foto-ismcursos.png" alt="ISM Cursos">
         <div class="projeto-conteudo">
           <h3>ISM Cursos - Plataforma de Ensino</h3>
-          <p>Desenvolvimento de um site institucional para cursos online com foco em organização de disciplinas isoladas.</p>
-          <p><strong>Principais recursos:</strong></p>
-          <ul>
-            <li>Área do aluno com certificados, notas e painel de avaliações</li>
-            <li>Integração com formas de pagamento e relatórios de vendas</li>
-            <li>Envio automático de e-mails ao finalizar cursos</li>
-          </ul>
-          <p><strong>Linguagens e ferramentas:</strong> WordPress, PHP, Elementor, HTML, CSS</p>
+          <p>Site institucional com área do aluno, certificados automáticos, painel de notas, avaliações, relatórios e sistema de pagamento.</p>
+          <p><strong>Ferramentas:</strong> WordPress, Elementor, PHP, HTML, CSS</p>
         </div>
       </div>
 
@@ -55,42 +112,26 @@
         <img src="foto-marcato.png" alt="Marcato Sistema de Reservas">
         <div class="projeto-conteudo">
           <h3>Marcato - Sistema de Reservas</h3>
-          <p>Sistema para agendamento de salas da Escola de Música da UFRN com prioridade por perfil e integração ao Google Calendar.</p>
-          <p><strong>Principais recursos:</strong></p>
-          <ul>
-            <li>Calendário interativo com confirmação automática por e-mail</li>
-            <li>Controle de horários, tipo de evento e regra de prioridade</li>
-            <li>Design responsivo e acessível</li>
-          </ul>
-          <p><strong>Linguagens e ferramentas:</strong> HTML, CSS, JavaScript, PHP, Google Calendar API</p>
+          <p>Sistema para agendamento de salas com regras de uso, calendário e integração com Google Calendar.</p>
+          <p><strong>Ferramentas:</strong> HTML, CSS, JS, PHP, Google Calendar API</p>
         </div>
       </div>
 
       <div class="projeto">
         <img src="foto-simulacao.png" alt="Simulação de Agentes">
         <div class="projeto-conteudo">
-          <h3>Simulação de Agentes Racionais para Limpeza Inteligente</h3>
-          <p>Projeto de sistema web para gerenciamento de serviços de limpeza com foco em experiência do usuário.</p>
-          <ul>
-            <li>Cadastro de clientes, agendamento e acompanhamento</li>
-            <li>Painel de controle e notificações automatizadas</li>
-            <li>Interface responsiva</li>
-          </ul>
-          <p><strong>Linguagens e ferramentas:</strong> HTML, CSS, JavaScript, Python (back-end), SQLite</p>
+          <h3>Simulação de Agentes para Limpeza</h3>
+          <p>Sistema web com agendamento de serviços, notificacões e painel responsivo para gestão.</p>
+          <p><strong>Ferramentas:</strong> HTML, CSS, JS, Python, SQLite</p>
         </div>
       </div>
 
       <div class="projeto">
         <img src="foto-tap.png" alt="Site TAP Air Portugal">
         <div class="projeto-conteudo">
-          <h3>Site da TAP Air Portugal - Tecnologias Web</h3>
-          <p>Réplica de interface do site da TAP desenvolvida como exercício de front-end puro.</p>
-          <ul>
-            <li>Design responsivo com CSS Grid e Flexbox</li>
-            <li>Menu dinâmico com navegação mobile</li>
-            <li>Simulação de busca de voos com JavaScript</li>
-          </ul>
-          <p><strong>Linguagens e ferramentas:</strong> HTML, CSS (SASS), JavaScript</p>
+          <h3>Site da TAP Air Portugal</h3>
+          <p>Réplica responsiva da interface da TAP feita em HTML puro, como desafio da disciplina de Tecnologias Web.</p>
+          <p><strong>Ferramentas:</strong> HTML, CSS (SASS), JavaScript</p>
         </div>
       </div>
 
