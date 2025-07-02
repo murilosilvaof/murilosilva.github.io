@@ -14,13 +14,14 @@ Sou estudante da UFRN com ênfase em Engenharia da Computação e licenciatura e
 - **Experiências internacionais e participações em hackathons**
 - **Contato e redes sociais**
 
-## 🛠️ Tecnologias utilizadas no portfólio
+## 🛠️ Tecnologias demonstradas neste portfólio
 
-- HTML5
-- CSS3
-- JavaScript
-- GitHub Pages (hospedagem)
-- Design responsivo com Flexbox e Grid
+- **Linguagens de Programação:** Python, JavaScript, PHP, Java, C, C++.
+- **Frameworks & Bibliotecas (Frontend):** React.js, WordPress, Bootstrap.
+- **Frameworks & Bibliotecas (Backend):** Flask, Flask-SQLAlchemy.
+- **Banco de Dados:** SQLite, MySQL, T-SQL, ORM (SQLAlchemy).
+- **Ferramentas & DevOps:** Git, npm, npx; Deploy Cloud (Render.com).
+- **Outras:** HTML5, CSS3, NetLogo, Google Calendar API.
 
 ## 🔗 Acesse meu portfólio online
 
@@ -29,7 +30,8 @@ Sou estudante da UFRN com ênfase em Engenharia da Computação e licenciatura e
 ## 🚀 Principais Projetos
 
 | Projeto | Descrição | Link |
-|--------|-----------|------|
+|---|---|---|
+| **Sistema de Gestão de Vendas (Desafio LogAp)** | Aplicação Full-Stack (Python/Flask + React) para gestão de vendas, incluindo CRUD de clientes/produtos/pedidos e relatórios. Contém API de lógica complexa. | [Ver Aplicação](https://logap-desafio-dev-junior-murilo-silva-1ekp.onrender.com/) / [GitHub](https://github.com/murilosilvaof/logap-desafio-dev-junior) |
 | **ISM Cursos** | Plataforma de cursos online com área do aluno e automações | [Ver site](https://ismcursos.com.br) |
 | **Marcato (EMUFRN)** | Sistema de reservas oficial da Escola de Música da UFRN | [Ver sistema](https://musica.ufrn.br) / [GitHub](https://github.com/murilosilvaof/sistema-reservas-emufrn) |
 | **Simulação de Agentes** | Agentes racionais com comportamento emergente (NetLogo, C++) | [GitHub](https://github.com/murilosilvaof/simulacao-agentes-limpeza) |
