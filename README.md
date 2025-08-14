@@ -25,7 +25,7 @@ Sou estudante da UFRN com ênfase em Engenharia da Computação e licenciatura e
 
 ## 🔗 Acesse meu portfólio online
 
-👉 [Clique aqui para visualizar o portfólio]([https://murilosilvaof.github.io](https://murilosilvaof.github.io/murilosilva.github.io/))
+👉 [Clique aqui para visualizar o portfólio]([https://murilosilvaof.github.io](https://murilosilvaof.github.io/murilosilva.github.io/)
 
 ## 🚀 Principais Projetos
 
