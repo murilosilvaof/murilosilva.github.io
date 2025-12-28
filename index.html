@@ -3,138 +3,590 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murilo Francisco da Silva - Portfólio</title>
+    <title>Murilo Silva | Full Stack & TI</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; }
-        header { background: #002f5f; color: white; padding: 2rem; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-        .foto-principal { width: 160px; height: 160px; border-radius: 100px; border: 4px solid white; object-fit: cover; }
-        .intro { max-width: 600px; }
-        section { max-width: 900px; margin: auto; padding: 2rem; background: white; margin-top: 2rem; border-radius: 10px; }
-        h1, h2, h3 { color: #002f5f; }
-        .compacto ul { margin: 0; padding-left: 20px; }
-        .projeto-page { page-break-before: always; }
-        .projeto-destaque { display: flex; flex-direction: column; gap: 1rem; text-align: justify; }
-        .projeto-destaque img { width: 100%; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); } /* Adicionado sombra para imagens */
-        .projeto-destaque a { color: #004488; text-decoration: none; transition: color 0.3s ease; }
-        .projeto-destaque a:hover { color: #002f5f; text-decoration: underline; } /* Efeito hover para links */
-        .agradecimento { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; }
-        .agradecimento img { width: 180px; border-radius: 8px; object-fit: cover; }
-        .agradecimento-texto { flex: 1; min-width: 250px; }
-        .intro-foto { width: 100%; max-width: 900px; display: block; margin: 1rem auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); } /* Adicionado sombra */
-        footer { text-align: center; margin: 2rem 0; font-size: 0.9rem; color: #666; }
+        :root {
+            --bg-color: #0a192f;
+            --card-bg: #112240;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --accent: #64ffda;
+            --hover-accent: #48d1b3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Scrollbar Personalizada --- */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: var(--text-secondary); border-radius: 5px; }
+
+        /* --- Container --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* --- Header / Hero Section --- */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* ALTERAÇÃO: Mudado de flex-start para center para centralizar horizontalmente */
+            align-items: center; 
+            /* ALTERAÇÃO: Adicionado text-align center para o texto ficar centralizado */
+            text-align: center;
+            padding-top: 4rem;
+        }
+
+        .profile-img {
+            /* ALTERAÇÃO: Tamanho aumentado de 150px para 220px */
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 4px solid var(--accent); /* Borda um pouco mais grossa para combinar com o tamanho */
+            object-fit: cover;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.3); /* Sombra aumentada ligeiramente */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .greeting { color: var(--accent); font-size: 1.3rem; margin-bottom: 0.5rem; }
+        
+        h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 700;
+            line-height: 1.1;
+            color: #e6f1ff;
+        }
+
+        h2.subtitle {
+            font-size: clamp(24px, 5vw, 40px); /* Ajustado ligeiramente para ficar melhor centralizado */
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .intro-text {
+            max-width: 700px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            /* ALTERAÇÃO: Mudado de justify para center para ficar melhor centralizado */
+            text-align: center;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-cta:hover { background: rgba(100, 255, 218, 0.1); transform: translateY(-3px); }
+
+        /* --- Seções Gerais --- */
+        section { padding: 5rem 0; }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: clamp(26px, 5vw, 32px);
+            margin-bottom: 3rem;
+            color: #e6f1ff;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 1px;
+            background: #233554;
+            margin-left: 20px;
+        }
+
+        /* --- Experiência --- */
+        .timeline {
+            border-left: 2px solid #233554;
+            padding-left: 2rem;
+            margin-left: 1rem;
+            text-align: left; /* Garante que a timeline continue alinhada à esquerda */
+        }
+
+        .job-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .job-item::before {
+            content: "";
+            position: absolute;
+            left: -2.6rem;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .job-title { font-size: 1.3rem; color: #e6f1ff; }
+        .company { color: var(--accent); font-weight: 400; }
+        .period { font-size: 0.9rem; font-family: monospace; color: var(--text-secondary); margin-bottom: 1rem; display: block; }
+        
+        /* --- Formação --- */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            text-align: left; /* Garante alinhamento à esquerda nos cards */
+        }
+        .edu-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* --- Skills --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: var(--card-bg);
+            padding: 0.8rem;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* --- Projetos --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            text-align: left; /* Garante alinhamento à esquerda nos cards */
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        .project-img-container {
+            width: 100%;
+            height: 200px;
+            background: #233554;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cursor pointer para indicar clique */
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            opacity: 0.8;
+            cursor: pointer; 
+        }
+        
+        .project-card:hover .project-img { transform: scale(1.1); opacity: 1; }
+
+        .status-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffcc00;
+            color: #0a192f;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .project-content { padding: 1.5rem; }
+        
+        .project-title {
+            color: #e6f1ff;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-desc { font-size: 0.95rem; margin-bottom: 1.5rem; }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-links a {
+            color: #e6f1ff;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover { color: var(--accent); }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover { color: var(--accent); }
+
+        /* --- Lightbox / Modal --- */
+        .lightbox {
+            display: none; /* Oculto por padrão */
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95); /* Fundo mais escuro */
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+        
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            animation: zoomIn 0.3s ease;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 1001;
+        }
+
+        .lightbox-close:hover { color: var(--accent); }
+
+        /* --- Animações --- */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .hidden { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+        .show { opacity: 1; transform: translateY(0); }
+
     </style>
 </head>
 <body>
-    <header>
-        <img src="foto-principal.jpg" alt="Murilo Francisco da Silva" class="foto-principal">
-        <div class="intro">
-            <h1>Murilo Francisco da Silva</h1>
-            <p>Estudante de Ciências & Tecnologia com ênfase em Engenharia da Computação | Desenvolvedor Web | Programador Full Stack | Suporte Técnico </p>
-        </div>
-    </header>
 
-    <section class="compacto">
-        <h2>Murilo Silva</h2>
-        <img src="Captura de ecrã 2025-05-22 232050.png" alt="Foto de introdução" class="intro-foto">
-    </section>
+    <div class="container">
+        <header>
+            <img src="fotoperfil.png" alt="Murilo Silva" class="profile-img">
+            <p class="greeting">Olá, meu nome é</p>
+            <h1>Murilo Silva.</h1>
+            <h2 class="subtitle">Desenvolvedor Web Full Stack | Analista de TI</h2>
+            <p class="intro-text">
+                Experiência prática em ambientes reais de produção, com foco em escalabilidade, segurança e experiência do usuário. 
+                Atuo no desenvolvimento de sistemas web, automação de processos e infraestrutura de TI, transformando necessidades institucionais em soluções digitais robustas.
+            </p>
+            <a href="#projetos" class="btn-cta">Confira meus projetos</a>
+        </header>
 
-    <section class="compacto">
-        <h2>Experiências Profissionais</h2>
-        <ul>
-            <li><strong>Bolsista/Desenvolvedor Web (EMUFRN - 2025):</strong> Desenvolvimento e manutenção do novo site da Escola de Música da UFRN e Criação de um novo sistema para reservas de espaço (MARCATO).</li>
-            <li><strong>Bolsista/Suporte Técnico - TI (BCZM/UFRN - 2022-2024):</strong> Montagem, instalação, manutenção de computadores.</li>
-            <li><strong>Bolsista/Secretaria Administrativa (2021-2022):</strong> Atendimento ao público, almoxarifado, planilhas e inventários.</li>
-        </ul>
-    </section>
-
-    <section class="compacto">
-        <h2>Habilidades Técnicas</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript, PHP, WordPress, Bootstrap, NetLogo</li>
-            <li>MySQL, T-SQL, Java, Python, CMake, C++</li>
-            <li>Suporte técnico, montagem de hardware, Windows, Linux</li>
-        </ul>
-    </section>
-
-    <section class="projeto-page">
-        <div class="projeto-destaque">
-            <h2>Projeto: Sistema de Gestão de Vendas </h2>
-            <img src="logap-project-screenshot.png" alt="Sistema de Gestão de Vendas LogAp">
-            <p>Concepção e implementação de uma aplicação web full-stack para gerenciamento de vendas, desenvolvida como solução para um desafio técnico abrangente.</p>
-            <ul>
-                <li>**Backend (API RESTful):** Desenvolvido em Python (Flask, Flask-SQLAlchemy) com SQLite, para gerenciar clientes, produtos, pedidos (CRUD completo) e gerar relatórios analíticos (vendas, pendentes, clientes ativos).</li>
-                <li>**Frontend (Interface de Usuário):** Construído em React.js, para uma experiência interativa e dinâmica na manipulação de dados de vendas.</li>
-                <li>**Lógica Específica:** Inclui a implementação de uma API com lógica complexa para análise de string (Tarefa 1 do desafio, buscando vogal não repetida após sequência consoante-vogal).</li>
-                <li>**Deploy & Operação:** Aplicação completa implantada na nuvem utilizando Render.com.</li>
-            </ul>
-            <p>Este projeto demonstra habilidades em desenvolvimento **full-stack**, modelagem de dados, criação e consumo de APIs RESTful, e deploy em ambiente de nuvem.</p>
-            <p><strong>Tecnologias:</strong> Python (Flask), React.js, SQLite, JavaScript, HTML/CSS, Git, Render.com.</p>
-            <p><strong>Link da Aplicação:</strong> <a href="https://logap-desafio-dev-junior-murilo-silva-1ekp.onrender.com/" target="_blank">https://logap-desafio-dev-junior-murilo-silva-1ekp.onrender.com/</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/murilosilvaof/logap-desafio-dev-junior" target="_blank">https://github.com/murilosilvaof/logap-desafio-dev-junior</a></p>
-        </div>
-    </section>
-
-    <section class="projeto-page">
-        <div class="projeto-destaque">
-            <h2>Projeto: ISM Cursos - Plataforma de Ensino</h2>
-            <img src="ism.png" alt="ISM Cursos">
-            <p>Criação de plataforma de ensino com foco em disciplinas isoladas. Área do aluno com notas, materiais, certificados. Integração com pagamentos e relatórios.</p>
-            <p><strong>Ferramentas:</strong> WordPress, Elementor, PHP, HTML, CSS, JavaScript.</p>
-            <p><strong>Link:</strong> <a href="https://ismcursos.com" target="_blank">https://ismcursos.com.br</a></p>
-        </div>
-    </section>
-
-    <section class="projeto-page">
-        <div class="projeto-destaque">
-            <h2>Projeto: Marcato - Sistema de Reservas</h2>
-            <img src="eb2f30f8-27ea-4dcd-a987-31c21fc27c1a.png" alt="Sistema Marcato">
-            <p>Agendamento de salas com regras, horários, perfis. Integração com Google Calendar, confirmação por e-mail, e formulário inteligente. Utilizado na EMUFRN.</p>
-            <p><strong>Ferramentas:</strong> HTML, CSS, JavaScript, PHP, Google Calendar API</p>
-            <p><strong>Link do Sistema Marcato:</strong> <a href="https://ismcursos.com/marcato/index.html" target="_blank">marcato.emufrn.ufrn.br</a></p>
-            <p><strong>Link do site da Escola de Musica:</strong> <a href="https://musica.ufrn.br" target="_blank">musica.ufrn.br</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/murilosilvaof/sistema-reservas-emufrn" target="_blank">github.com/murilosilvaof/sistema-reservas-emufrn</a></p>
-        </div>
-    </section>
-
-    <section class="projeto-page">
-        <div class="projeto-destaque">
-            <h2>Projeto: Site da TAP Air Portugal</h2>
-            <img src="image.png" alt="Site TAP">
-            <p>Réplica da interface da TAP Air Portugal. Menu dinâmico, busca de voos, design responsivo com HTML, CSS, Bootstrap e JavaScript.</p>
-            <p><strong>Ferramentas:</strong> HTML, CSS (SASS), Bootstrap, JavaScript</p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/murilosilvaof/tap-clone-site" target="_blank">github.com/murilosilvaof/tap-clone-site</a></p>
-        </div>
-    </section>
-  
-    <section class="projeto-page">
-        <div class="projeto-destaque">
-            <h2>Projeto: Simulação de Agentes Racionais</h2>
-            <img src="Captura de ecrã 2025-05-22 223304.png" alt="Simulação IA">
-            <p>Simulação com agentes autônomos que limpam ambientes com energia limitada e obstáculos. Realizado durante intercâmbio em disciplina de IA.</p>
-            <p><strong>Ferramentas:</strong> C, C++, NetLogo</p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/murilosilvaof/simulacao-agentes-limpeza" target="_blank">github.com/murilosilvaof/simulacao-agentes-limpeza</a></p>
-        </div>
-    </section>
-    <section class="compacto">
-        <h2>Agradecimento</h2>
-        <div class="agradecimento">
-            <img src="foto-suporte1.jpg" alt="Foto de agradecimento">
-            <div class="agradecimento-texto">
-                <p>Agradeço a todos que dedicaram um tempo para conhecer meus projetos e minha trajetória. Cada experiência aqui reflete minha paixão por tecnologia, aprendizado contínuo e inovação.</p>
-                <p>Se quiser trocar ideias, colaborar ou conversar sobre desenvolvimento e tecnologia, estou sempre aberto a novas conexões!</p>
-                <ul>
-                    <li>📱 Instagram: @murilosilvaof</li>
-                    <li>🎥 GitHub: https://github.com/murilosilvaof </li>
-                    <li>📞 WhatsAPP: 84 991415330 </li>
-                    <li>💼 LinkedIn: https://www.linkedin.com/in/murilosilvaof/</li>
-                </ul>
-                <p>Obrigado por visitar meu portfólio!</p>
+        <section id="sobre" class="hidden">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-tag"><i class="fab fa-php"></i> PHP</div>
+                <div class="skill-tag"><i class="fab fa-js"></i> JavaScript (ES6+)</div>
+                <div class="skill-tag"><i class="fab fa-python"></i> Python / Flask</div>
+                <div class="skill-tag"><i class="fab fa-react"></i> React.js</div>
+                <div class="skill-tag"><i class="fas fa-database"></i> SQL / MySQL</div>
+                <div class="skill-tag"><i class="fas fa-server"></i> SQL Server</div>
+                <div class="skill-tag"><i class="fab fa-wordpress"></i> WordPress</div>
+                <div class="skill-tag"><i class="fab fa-docker"></i> Docker</div>
+                <div class="skill-tag"><i class="fas fa-code-branch"></i> Git</div>
+                <div class="skill-tag"><i class="fas fa-terminal"></i> Linux</div>
             </div>
-        </div>
-    </section>
+            
+            <p style="margin-top: 2rem; color: var(--text-secondary); text-align: center;">
+                <i class="fas fa-trophy" style="color: var(--accent); margin-right: 8px;"></i> 
+                <strong>Destaque:</strong> Finalista do Aveiro Tech City Hackathon (Portugal).
+            </p>
+        </section>
 
-    <footer>
-        <p>Contato: murilodevweb@gmail.com | Natal - RN | &copy; 2025 Murilo Silva</p>
-    </footer>
+        <section id="formacao" class="hidden">
+            <h2 class="section-title">Formação Acadêmica</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3 style="color: #e6f1ff;">Engenharia Informática (Intercâmbio)</h3>
+                    <p style="color: var(--accent);">ISEC - Portugal</p>
+                    <p style="font-size: 0.9rem;">Vivência internacional e foco em desenvolvimento avançado.</p>
+                </div>
+                <div class="edu-card">
+                    <h3 style="color: #e6f1ff;">Ciências e Tecnologia</h3>
+                    <p style="color: var(--accent);">UFRN - Brasil</p>
+                    <p style="font-size: 0.9rem;">Ênfase em Engenharia da Computação (Cursando 7º período).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia" class="hidden">
+            <h2 class="section-title">Experiência Profissional</h2>
+            <div class="timeline">
+                <div class="job-item">
+                    <h3 class="job-title">Desenvolvedor Web & Analista de TI <span class="company">@ MDR Advocacia</span></h3>
+                    <span class="period">2025  </span>
+                    <p>Desenvolvimento e manutenção de sistemas internos e do site institucional. Responsável pela automação de fluxos administrativos, melhorias de segurança e gestão completa da infraestrutura de TI e Suporte Técnico.</p>
+                </div>
+
+                <div class="job-item">
+                    <h3 class="job-title">Bolsista Desenvolvedor Web <span class="company">@ Escola de Música UFRN</span></h3>
+                    <span class="period">2025</span>
+                    <p>Criação Full Stack do sistema Marcato para reservas de salas (integração OAuth 2.0 Google Calendar e PHPMailer) e manutenção do portal institucional com foco em SEO e acessibilidade.</p>
+                </div>
+
+                <div class="job-item">
+                    <h3 class="job-title">Suporte Técnico TI <span class="company">@ BCZM/UFRN</span></h3>
+                    <span class="period">2022 - 2024</span>
+                    <p>Montagem, instalação e manutenção de hardware e software. Resolução ágil de incidentes e suporte direto aos usuários da biblioteca central.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="hidden">
+            <h2 class="section-title">Projetos Recentes</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <img src="mdr-site.png" alt="Site MDR Advocacia" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/002f5f/ffffff?text=MDR+Advocacia'">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            MDR Advocacia
+                            <a href="https://mdradvocacia.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <p class="project-desc">Portal institucional moderno, com foco em conversão e autoridade digital para o escritório de advocacia.</p>
+                        <div class="tech-stack">
+                            <span>JavaScript</span>
+                            <span>Docker</span>
+                            <span>PHP</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="status-badge">Em Desenvolvimento</span>
+                    <div class="project-img-container">
+                        <img src="nic.png" alt="NÚCLEO INTEGRADO DE CONCILIAÇÕES" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/112240/64ffda?text=Sistema+Concilia'">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                             NIC - NÚCLEO INTEGRADO DE CONCILIAÇÕES
+                        </div>
+                        <p class="project-desc">SaaS interno para gestão jurídica. Automação de processos, controle de prazos e segurança de dados sensíveis.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <img src="eb2f30f8-27ea-4dcd-a987-31c21fc27c1a.png" alt="Sistema Marcato" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=Marcato'">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            Marcato - Sistema de Reservas
+                            <div class="project-links">
+                                <a href="https://github.com/murilosilvaof/sistema-reservas-emufrn" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://ismcursos.com/marcato/index.html" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-desc">Sistema de agendamento inteligente. Integração via API com Google Calendar e notificações automáticas.</p>
+                        <div class="tech-stack">
+                            <span>PHP</span>
+                            <span>OAuth 2.0</span>
+                            <span>Google API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <img src="ism.png" alt="ISM Cursos" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=ISM+Cursos'">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            ISM Cursos (LMS)
+                            <a href="https://ismcursos.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <p class="project-desc">Plataforma de ensino completa com área do aluno, certificação automática e gateway de pagamento.</p>
+                        <div class="tech-stack">
+                            <span>WordPress</span>
+                            <span>Elementor</span>
+                            <span>LMS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <img src="image.png" alt="TAP Clone" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=TAP+Air'">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            Clone Interface TAP
+                            <a href="https://github.com/murilosilvaof/tap-clone-site" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p class="project-desc">Estudo de caso de frontend replicando a interface de alta fidelidade da companhia aérea TAP.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>SASS</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="hidden">
+            <h2 class="section-title" style="justify-content: center; margin-bottom: 1rem;">Vamos conversar?</h2>
+            <p style="margin-bottom: 2rem;">Disponível para colaborações e projetos desafiadores.</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/murilosilvaof" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/murilosilvaof/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/5584991415330" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <p><a href="mailto:murilosilvafrancisco49@gmail.com" style="color: var(--accent); text-decoration: none; font-size: 1.1rem;">murilosilvafrancisco49@gmail.com</a></p>
+            <br>
+            <p>&copy; 2025 Murilo Francisco da Silva.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Projeto Zoom">
+    </div>
+
+    <script>
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+
+        // Logic do Lightbox (Zoom na Imagem)
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const projectImages = document.querySelectorAll('.project-img');
+
+        projectImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+        };
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+             if (e.target !== lightboxImg) {
+                 closeLightbox();
+             }
+        });
+    </script>
 </body>
 </html>
