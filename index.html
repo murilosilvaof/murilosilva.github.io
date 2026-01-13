@@ -16,6 +16,7 @@
             --text-secondary: #8892b0;
             --accent: #64ffda;
             --hover-accent: #48d1b3;
+            --gold: #ffd700;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -46,22 +47,19 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            /* ALTERAÇÃO: Mudado de flex-start para center para centralizar horizontalmente */
             align-items: center; 
-            /* ALTERAÇÃO: Adicionado text-align center para o texto ficar centralizado */
             text-align: center;
             padding-top: 4rem;
         }
 
         .profile-img {
-            /* ALTERAÇÃO: Tamanho aumentado de 150px para 220px */
             width: 220px;
             height: 220px;
             border-radius: 50%;
-            border: 4px solid var(--accent); /* Borda um pouco mais grossa para combinar com o tamanho */
+            border: 4px solid var(--accent);
             object-fit: cover;
             margin-bottom: 2rem;
-            box-shadow: 0 0 30px rgba(100, 255, 218, 0.3); /* Sombra aumentada ligeiramente */
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
             animation: float 6s ease-in-out infinite;
         }
 
@@ -75,7 +73,7 @@
         }
 
         h2.subtitle {
-            font-size: clamp(24px, 5vw, 40px); /* Ajustado ligeiramente para ficar melhor centralizado */
+            font-size: clamp(24px, 5vw, 40px);
             font-weight: 600;
             color: var(--text-secondary);
             margin-bottom: 2rem;
@@ -86,7 +84,6 @@
             font-size: 1.1rem;
             color: var(--text-secondary);
             margin-bottom: 3rem;
-            /* ALTERAÇÃO: Mudado de justify para center para ficar melhor centralizado */
             text-align: center;
         }
 
@@ -128,7 +125,7 @@
             border-left: 2px solid #233554;
             padding-left: 2rem;
             margin-left: 1rem;
-            text-align: left; /* Garante que a timeline continue alinhada à esquerda */
+            text-align: left;
         }
 
         .job-item {
@@ -156,7 +153,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            text-align: left; /* Garante alinhamento à esquerda nos cards */
+            text-align: left;
         }
         .edu-card {
             background: var(--card-bg);
@@ -187,12 +184,12 @@
             transform: translateY(-5px);
         }
 
-        /* --- Projetos --- */
+        /* --- Projetos & Destaques --- */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            text-align: left; /* Garante alinhamento à esquerda nos cards */
+            text-align: left;
         }
 
         .project-card {
@@ -201,6 +198,18 @@
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
+        }
+
+        /* Destaque visual para cards especiais */
+        .highlight-card {
+            border: 1px solid rgba(100, 255, 218, 0.3); 
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Borda dourada para prêmios */
+        .gold-border {
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
         }
 
         .project-card:hover {
@@ -216,7 +225,6 @@
             position: relative;
         }
 
-        /* Cursor pointer para indicar clique */
         .project-img {
             width: 100%;
             height: 100%;
@@ -240,6 +248,11 @@
             font-weight: bold;
             z-index: 2;
         }
+
+        /* Cores das Badges */
+        .award-badge { background: var(--gold); color: #0a192f; }
+        .intl-badge { background: #00bfff; color: #0a192f; }
+        .study-badge { background: #8a2be2; color: #ffffff; }
 
         .project-content { padding: 1.5rem; }
         
@@ -294,14 +307,14 @@
 
         /* --- Lightbox / Modal --- */
         .lightbox {
-            display: none; /* Oculto por padrão */
+            display: none;
             position: fixed;
             z-index: 1000;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.95); /* Fundo mais escuro */
+            background-color: rgba(0, 0, 0, 0.95);
             justify-content: center;
             align-items: center;
             opacity: 0;
@@ -357,7 +370,7 @@
 
     <div class="container">
         <header>
-            <img src="fotoperfil.png" alt="Murilo Silva" class="profile-img">
+            <img src="assets/fotoperfil.png" alt="Murilo Silva" class="profile-img">
             <p class="greeting">Olá, meu nome é</p>
             <h1>Murilo Silva.</h1>
             <h2 class="subtitle">Desenvolvedor Web Full Stack | Analista de TI</h2>
@@ -365,7 +378,7 @@
                 Experiência prática em ambientes reais de produção, com foco em escalabilidade, segurança e experiência do usuário. 
                 Atuo no desenvolvimento de sistemas web, automação de processos e infraestrutura de TI, transformando necessidades institucionais em soluções digitais robustas.
             </p>
-            <a href="#projetos" class="btn-cta">Confira meus projetos</a>
+            <a href="#destaques" class="btn-cta">Ver Destaques</a>
         </header>
 
         <section id="sobre" class="hidden">
@@ -382,11 +395,6 @@
                 <div class="skill-tag"><i class="fas fa-code-branch"></i> Git</div>
                 <div class="skill-tag"><i class="fas fa-terminal"></i> Linux</div>
             </div>
-            
-            <p style="margin-top: 2rem; color: var(--text-secondary); text-align: center;">
-                <i class="fas fa-trophy" style="color: var(--accent); margin-right: 8px;"></i> 
-                <strong>Destaque:</strong> Finalista do Aveiro Tech City Hackathon (Portugal).
-            </p>
         </section>
 
         <section id="formacao" class="hidden">
@@ -410,8 +418,8 @@
             <div class="timeline">
                 <div class="job-item">
                     <h3 class="job-title">Desenvolvedor Web & Analista de TI <span class="company">@ MDR Advocacia</span></h3>
-                    <span class="period">2025  </span>
-                    <p>Desenvolvimento e manutenção de sistemas internos e do site institucional. Responsável pela automação de fluxos administrativos, melhorias de segurança e gestão completa da infraestrutura de TI e Suporte Técnico.</p>
+                    <span class="period">2025</span>
+                    <p>Desenvolvimento e manutenção de sistemas internos e do site institucional. Responsável pela automação de fluxos administrativos, melhorias de segurança e gestão completa da infraestrutura de TI.</p>
                 </div>
 
                 <div class="job-item">
@@ -428,13 +436,105 @@
             </div>
         </section>
 
-        <section id="projetos" class="hidden">
-            <h2 class="section-title">Projetos Recentes</h2>
+        <section id="destaques" class="hidden">
+            <h2 class="section-title" style="color: var(--gold);">Conquistas & Destaques</h2>
             <div class="projects-grid">
                 
+                <div class="project-card highlight-card gold-border">
+                    <span class="status-badge award-badge">🏆 Top 10 Supernova</span>
+                    <div class="project-img-container">
+                        <img src="assets/premio.jpeg" alt="Equipe AprendAI no Palco" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/0a192f/ffd700?text=Equipe+Premiada'">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            Prêmio Supernova - AprendAI
+                            <div class="project-links">
+                                <a href="https://www.instagram.com/p/DQ1dQEtkQ5t/?img_index=1" target="_blank" title="Ver Post no Insta"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-desc">
+                            Premiado entre as 10 melhores equipes no GoRN/Sebrae. Reconhecimento pela inovação em criar uma IA educacional que funciona 100% offline.
+                        </p>
+                        <div class="tech-stack">
+                            <span>Sebrae/RN</span>
+                            <span>Startup</span>
+                            <span>Premiação</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card highlight-card">
+                    <span class="status-badge intl-badge">🌍 Internacional</span>
+                    <div class="project-img-container">
+                        <img src="assets/aveiro.png" alt="Aveiro Tech City Hackathon" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/00bfff/ffffff?text=Aveiro+Hackathon'">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            Aveiro Tech City Hackathon
+                            <a href="https://www.instagram.com/reel/DAg-sNIN-WP/" target="_blank" title="Ver Reel"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <p class="project-desc">
+                            Selecionado para competir em Portugal. Com a equipe <strong>Aveiro Raízes Potiguares</strong>, levamos nossa cultura e inovação para o cenário global, resolvendo desafios de IA e Machine Learning.
+                        </p>
+                        <div class="tech-stack">
+                            <span>Hackathon</span>
+                            <span>Portugal</span>
+                            <span>IA & ML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card highlight-card">
+                    <span class="status-badge study-badge">🎓 Intercâmbio</span>
+                    <div class="project-img-container">
+                        <img src="assets/intercambio.jpg" alt="Intercâmbio em Portugal" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/8a2be2/ffffff?text=Interc%C3%A2mbio+Portugal'">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            Engenharia em Portugal
+                            <a href="https://www.instagram.com/p/C_tFkihNs6C/?img_index=2" target="_blank" title="Ver Post"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <p class="project-desc">
+                            Semestre acadêmico no ISEC (Coimbra). Uma imersão cultural e técnica, expandindo horizontes na Engenharia Informática e construindo networking internacional na Europa.
+                        </p>
+                        <div class="tech-stack">
+                            <span>Coimbra</span>
+                            <span>ISEC</span>
+                            <span>Networking</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projetos" class="hidden">
+            <h2 class="section-title">Portfólio de Projetos</h2>
+            <div class="projects-grid">
+                
+                 <div class="project-card">
+                    <div class="project-img-container">
+                        <img src="assets/aprendai.png" alt="AprendAI - App" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/0a192f/ffd700?text=App+AprendAI'">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            AprendAI - App
+                            <a href="https://aprendai.com.br" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <p class="project-desc">
+                           Tutor pessoal de IA que funciona 100% OFFLINE, quebrando barreiras de conectividade na educação. Desenvolvido com tecnologia PWA Mobile First.
+                        </p>
+                        <div class="tech-stack">
+                            <span>IA Offline</span>
+                            <span>PWA</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <div class="project-img-container">
-                        <img src="mdr-site.png" alt="Site MDR Advocacia" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/002f5f/ffffff?text=MDR+Advocacia'">
+                        <img src="assets/mdr-site.png" alt="Site MDR Advocacia" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/002f5f/ffffff?text=MDR+Advocacia'">
                     </div>
                     <div class="project-content">
                         <div class="project-title">
@@ -452,13 +552,13 @@
                 </div>
 
                 <div class="project-card">
-                    <span class="status-badge">Em Desenvolvimento</span>
                     <div class="project-img-container">
-                        <img src="nic.png" alt="NÚCLEO INTEGRADO DE CONCILIAÇÕES" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/112240/64ffda?text=Sistema+Concilia'">
+                        <img src="assets/nic.png" alt="NÚCLEO INTEGRADO DE CONCILIAÇÕES" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/112240/64ffda?text=Sistema+Concilia'">
                     </div>
                     <div class="project-content">
                         <div class="project-title">
-                             NIC - NÚCLEO INTEGRADO DE CONCILIAÇÕES
+                            NIC - Núcleo Integrado de Conciliações
+                            <a href="https://nic.mdradvocacia.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                         <p class="project-desc">SaaS interno para gestão jurídica. Automação de processos, controle de prazos e segurança de dados sensíveis.</p>
                         <div class="tech-stack">
@@ -471,11 +571,11 @@
 
                 <div class="project-card">
                     <div class="project-img-container">
-                        <img src="eb2f30f8-27ea-4dcd-a987-31c21fc27c1a.png" alt="Sistema Marcato" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=Marcato'">
+                        <img src="assets/eb2f30f8-27ea-4dcd-a987-31c21fc27c1a.png" alt="Sistema Marcato" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=Marcato'">
                     </div>
                     <div class="project-content">
                         <div class="project-title">
-                            Marcato - Sistema de Reservas
+                            Marcato - Reservas
                             <div class="project-links">
                                 <a href="https://github.com/murilosilvaof/sistema-reservas-emufrn" target="_blank"><i class="fab fa-github"></i></a>
                                 <a href="https://ismcursos.com/marcato/index.html" target="_blank"><i class="fas fa-external-link-alt"></i></a>
@@ -492,7 +592,7 @@
 
                 <div class="project-card">
                     <div class="project-img-container">
-                        <img src="ism.png" alt="ISM Cursos" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=ISM+Cursos'">
+                        <img src="assets/ism.png" alt="ISM Cursos" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=ISM+Cursos'">
                     </div>
                     <div class="project-content">
                         <div class="project-title">
@@ -510,7 +610,7 @@
 
                 <div class="project-card">
                     <div class="project-img-container">
-                        <img src="image.png" alt="TAP Clone" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=TAP+Air'">
+                        <img src="assets/image.png" alt="TAP Clone" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=TAP+Air'">
                     </div>
                     <div class="project-content">
                         <div class="project-title">
