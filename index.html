@@ -1,692 +1,380 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murilo Silva | Full Stack & TI</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <meta name="description" content="Portfolio de Murilo Silva, desenvolvedor Full Stack e analista de TI.">
+    <meta name="theme-color" content="#08111b">
+    <title>Murilo Silva | Full Stack e TI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        :root {
-            --bg-color: #0a192f;
-            --card-bg: #112240;
-            --text-primary: #ccd6f6;
-            --text-secondary: #8892b0;
-            --accent: #64ffda;
-            --hover-accent: #48d1b3;
-            --gold: #ffd700;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- Scrollbar Personalizada --- */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--bg-color); }
-        ::-webkit-scrollbar-thumb { background: var(--text-secondary); border-radius: 5px; }
-
-        /* --- Container --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* --- Header / Hero Section --- */
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center; 
-            text-align: center;
-            padding-top: 4rem;
-        }
-
-        .profile-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 4px solid var(--accent);
-            object-fit: cover;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .greeting { color: var(--accent); font-size: 1.3rem; margin-bottom: 0.5rem; }
-        
-        h1 {
-            font-size: clamp(40px, 8vw, 80px);
-            font-weight: 700;
-            line-height: 1.1;
-            color: #e6f1ff;
-        }
-
-        h2.subtitle {
-            font-size: clamp(24px, 5vw, 40px);
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .intro-text {
-            max-width: 700px;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .btn-cta {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            border-radius: 4px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .btn-cta:hover { background: rgba(100, 255, 218, 0.1); transform: translateY(-3px); }
-
-        /* --- Seções Gerais --- */
-        section { padding: 5rem 0; }
-        
-        .section-title {
-            display: flex;
-            align-items: center;
-            font-size: clamp(26px, 5vw, 32px);
-            margin-bottom: 3rem;
-            color: #e6f1ff;
-        }
-
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 300px;
-            height: 1px;
-            background: #233554;
-            margin-left: 20px;
-        }
-
-        /* --- Experiência --- */
-        .timeline {
-            border-left: 2px solid #233554;
-            padding-left: 2rem;
-            margin-left: 1rem;
-            text-align: left;
-        }
-
-        .job-item {
-            position: relative;
-            margin-bottom: 3rem;
-        }
-
-        .job-item::before {
-            content: "";
-            position: absolute;
-            left: -2.6rem;
-            top: 5px;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .job-title { font-size: 1.3rem; color: #e6f1ff; }
-        .company { color: var(--accent); font-weight: 400; }
-        .period { font-size: 0.9rem; font-family: monospace; color: var(--text-secondary); margin-bottom: 1rem; display: block; }
-        
-        /* --- Formação --- */
-        .edu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            text-align: left;
-        }
-        .edu-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
-        }
-
-        /* --- Skills --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-tag {
-            background: var(--card-bg);
-            padding: 0.8rem;
-            text-align: center;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .skill-tag:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        /* --- Projetos & Destaques --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            text-align: left;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        /* Destaque visual para cards especiais */
-        .highlight-card {
-            border: 1px solid rgba(100, 255, 218, 0.3); 
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Borda dourada para prêmios */
-        .gold-border {
-            border-color: var(--gold);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-        }
-
-        .project-img-container {
-            width: 100%;
-            height: 200px;
-            background: #233554;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            opacity: 0.8;
-            cursor: pointer; 
-        }
-        
-        .project-card:hover .project-img { transform: scale(1.1); opacity: 1; }
-
-        .status-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ffcc00;
-            color: #0a192f;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            z-index: 2;
-        }
-
-        /* Cores das Badges */
-        .award-badge { background: var(--gold); color: #0a192f; }
-        .intl-badge { background: #00bfff; color: #0a192f; }
-        .study-badge { background: #8a2be2; color: #ffffff; }
-
-        .project-content { padding: 1.5rem; }
-        
-        .project-title {
-            color: #e6f1ff;
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .project-desc { font-size: 0.95rem; margin-bottom: 1.5rem; }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-links a {
-            color: #e6f1ff;
-            margin-right: 15px;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        .project-links a:hover { color: var(--accent); }
-
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            margin-bottom: 1rem;
-        }
-        .social-links a {
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        .social-links a:hover { color: var(--accent); }
-
-        /* --- Lightbox / Modal --- */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 20px;
-        }
-        
-        .lightbox.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .lightbox img {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 4px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.8);
-            animation: zoomIn 0.3s ease;
-            object-fit: contain;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            transition: 0.3s;
-            z-index: 1001;
-        }
-
-        .lightbox-close:hover { color: var(--accent); }
-
-        /* --- Animações --- */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .hidden { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
-        .show { opacity: 1; transform: translateY(0); }
-
+:root{--bg:#08111b;--bg2:#0d1726;--card:rgba(13,23,38,.84);--card2:rgba(17,29,46,.95);--text:#f5f7fb;--muted:#9ba9bd;--line:rgba(255,255,255,.09);--accent:#ff8a3d;--accent2:#46c5b0;--shadow:0 28px 60px rgba(0,0,0,.34);--shell:min(1120px,calc(100% - 32px))}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:"Manrope",sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(70,197,176,.18),transparent 28%),radial-gradient(circle at 85% 10%,rgba(255,138,61,.16),transparent 28%),linear-gradient(180deg,var(--bg),#0a1421);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}section{scroll-margin-top:96px}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));z-index:30}
+.shell{width:var(--shell);margin:0 auto}.topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(8,14,24,.78);border-bottom:1px solid rgba(255,255,255,.05)}.topbar-inner{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-family:"Space Grotesk",sans-serif;font-weight:700}.brand-mark{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,138,61,.22),rgba(70,197,176,.18));border:1px solid var(--line)}.brand strong{color:var(--accent)}
+.nav{display:flex;gap:8px;overflow:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav a{padding:10px 14px;border-radius:999px;color:var(--muted);white-space:nowrap;transition:.25s}.nav a.active,.nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 20px;border-radius:999px;font-weight:700;transition:.25s}.btn:hover{transform:translateY(-2px)}.btn.primary{background:linear-gradient(135deg,var(--accent),#ff6d3a);color:#111926;box-shadow:0 14px 24px rgba(255,138,61,.22)}.btn.secondary{background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.hero{min-height:calc(100vh - 74px);display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;padding:56px 0 40px}.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--accent2);font-size:.92rem;margin-bottom:18px}.badge:before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 8px rgba(70,197,176,.12)}
+h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-serif;line-height:1.02;letter-spacing:-.04em}h1{font-size:clamp(2.8rem,7vw,5.8rem);max-width:11ch;margin-bottom:16px}.lead{max-width:62ch;color:var(--muted);font-size:1.06rem;margin-bottom:24px}
+.actions,.pills,.tags,.stack,.modal-actions{display:flex;flex-wrap:wrap;gap:10px}.actions{margin-bottom:22px}.pills span,.tags span,.stack span{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted);font-size:.92rem}
+.card,.project,.spotlight,.contact,.timeline,.sidebox,.profile,.stat{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(12px)}
+.profile{border-radius:28px;overflow:hidden;position:relative;min-height:500px}.profile img{width:100%;height:100%;object-fit:cover}.overlay{position:absolute;inset:auto 16px 16px;padding:18px;border-radius:22px;background:linear-gradient(180deg,rgba(8,12,20,.24),rgba(8,12,20,.88));border:1px solid var(--line)}.overlay small{display:inline-flex;align-items:center;gap:8px;color:var(--accent2);margin-bottom:8px}.overlay small:before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}.overlay h2{font-size:1.4rem}.overlay p{color:rgba(245,247,251,.76);font-size:.95rem}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}.stat{padding:18px;border-radius:20px;background:var(--card2)}.stat strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:1.8rem;line-height:1;margin-bottom:6px}.stat span{color:var(--muted);font-size:.92rem}
+.section{padding:28px 0 84px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px}.section-head h2{font-size:clamp(2rem,4vw,3.2rem);margin-top:8px}.section-head p{max-width:60ch;color:var(--muted)}
+.grid4,.projects,.spots{display:grid;gap:16px}.grid4{grid-template-columns:repeat(4,1fr)}.service{padding:22px;border-radius:24px}.service i{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,138,61,.22),rgba(70,197,176,.16));color:var(--accent);margin-bottom:16px}.service h3{margin-bottom:8px;font-size:1.05rem}.service p,.project p,.spot-body p,.sidebox p,.sidebox li,.entry p,.contact p,.modal-body p,.modal-body li{color:var(--muted)}
+.traj{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.timeline,.sidebox{padding:26px;border-radius:28px}.entry{display:grid;grid-template-columns:72px 1fr;gap:14px}.entry+.entry{margin-top:18px}.year{color:var(--accent2);font-weight:700;padding-top:2px}.entry strong{color:var(--accent)}.entry-body{position:relative;padding-left:18px}.entry-body:before{content:"";position:absolute;left:0;top:8px;bottom:-20px;width:1px;background:rgba(255,255,255,.11)}.entry:last-child .entry-body:before{bottom:8px}.entry-body:after{content:"";position:absolute;left:-5px;top:8px;width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent))}
+.sidecol{display:grid;gap:16px}.sidebox ul,.modal-body ul{list-style:none;display:grid;gap:10px}.sidebox li,.modal-body li{display:flex;gap:10px}.sidebox li:before,.modal-body li:before{content:"";width:8px;height:8px;border-radius:50%;margin-top:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));flex:0 0 auto}
+.spots{grid-template-columns:repeat(3,1fr)}.spotlight{border-radius:28px;overflow:hidden}.spotlight img{width:100%;aspect-ratio:16/10;object-fit:cover}.spot-body{padding:22px}.spot-kicker{display:inline-flex;gap:8px;color:var(--accent2);font-size:.9rem;margin-bottom:8px}.spot-kicker strong{color:var(--text)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.chip{padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);transition:.25s}.chip.active,.chip:hover{background:rgba(255,138,61,.14);border-color:rgba(255,138,61,.35);color:var(--text)}
+.projects{grid-template-columns:repeat(3,1fr)}.project{display:flex;flex-direction:column;border-radius:28px;overflow:hidden;transition:.25s}.project:hover{transform:translateY(-4px);border-color:rgba(255,138,61,.24)}.project.hide{display:none}.project-top{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 0}.order{font-family:"Space Grotesk",sans-serif;color:var(--accent2)}.status{padding:7px 12px;border-radius:999px;background:rgba(255,138,61,.12);color:#ffc59f;font-size:.82rem}
+.thumb{margin:16px 18px 0;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,rgba(70,197,176,.16),rgba(255,138,61,.16))}.thumb img{width:100%;aspect-ratio:16/10;object-fit:cover}.project-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:12px;flex:1}.meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.88rem}.project h3{font-size:1.18rem}.project-actions{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.icons{display:flex;gap:8px}.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+.contact{padding:30px;border-radius:32px;display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.contact p{margin:14px 0 22px}.contact-links{display:grid;gap:12px}.contact-link{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid var(--line)}.contact-link small{display:block;color:var(--muted);margin-bottom:2px}
+.footer{width:var(--shell);margin:0 auto;padding:12px 0 34px;display:flex;justify-content:space-between;gap:16px;color:rgba(155,169,189,.8);font-size:.92rem}.footer nav{display:flex;gap:14px}.reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.show{opacity:1;transform:none}
+.modal{position:fixed;inset:0;padding:18px;display:grid;place-items:center;background:rgba(4,8,14,.78);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:.25s;z-index:40}.modal.open{opacity:1;pointer-events:auto}.modal-box{width:min(920px,100%);display:grid;grid-template-columns:1fr 1fr;background:#091421;border:1px solid var(--line);border-radius:28px;overflow:hidden;position:relative}.modal-media{background:linear-gradient(135deg,rgba(70,197,176,.16),rgba(255,138,61,.16))}.modal-media img{width:100%;height:100%;object-fit:cover}.close{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);z-index:1}
+.modal-body{padding:28px;display:flex;flex-direction:column;gap:14px}.modal-pills{display:flex;flex-wrap:wrap;gap:8px}.modal-pills span{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.05);color:var(--muted);font-size:.88rem}.modal-body h3{font-size:clamp(1.9rem,3vw,2.6rem)}.modal-card{padding:16px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line)}.modal-card strong{display:block;color:var(--text);margin-bottom:6px}
+@media (max-width:1020px){.hero,.traj,.contact,.modal-box{grid-template-columns:1fr}.grid4,.projects{grid-template-columns:repeat(2,1fr)}.spots{grid-template-columns:1fr 1fr}.profile{min-height:420px}.modal-media{max-height:320px}}
+@media (max-width:720px){:root{--shell:min(100% - 20px,1120px)}.topbar-inner{flex-wrap:wrap;padding:12px 0}.topbar-inner>.btn{display:none}.nav{width:100%;max-width:100%}.hero{min-height:auto;padding:40px 0 26px}.grid4,.projects,.spots,.hero-stats{grid-template-columns:1fr}.section-head,.footer{flex-direction:column;align-items:flex-start}.project-actions,.actions,.modal-actions{align-items:stretch}.project-actions{flex-direction:column}.icons{justify-content:flex-start}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
     </style>
 </head>
 <body>
+    <div class="progress" id="progress"></div>
 
-    <div class="container">
-        <header>
-            <img src="assets/fotoperfil.png" alt="Murilo Silva" class="profile-img">
-            <p class="greeting">Olá, meu nome é</p>
-            <h1>Murilo Silva.</h1>
-            <h2 class="subtitle">Desenvolvedor Web Full Stack | Analista de TI</h2>
-            <p class="intro-text">
-                Experiência prática em ambientes reais de produção, com foco em escalabilidade, segurança e experiência do usuário. 
-                Atuo no desenvolvimento de sistemas web, automação de processos e infraestrutura de TI, transformando necessidades institucionais em soluções digitais robustas.
-            </p>
-            <a href="#destaques" class="btn-cta">Ver Destaques</a>
-        </header>
+    <header class="topbar">
+        <div class="shell topbar-inner">
+            <a class="brand" href="#home"><span class="brand-mark">MS</span><span>Murilo <strong>Silva</strong></span></a>
+            <nav class="nav" aria-label="Navegacao principal">
+                <a href="#home" class="active">Inicio</a>
+                <a href="#impacto">Impacto</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#trajetoria">Trajetoria</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <a class="btn secondary" href="#contato">Vamos conversar</a>
+        </div>
+    </header>
 
-        <section id="sobre" class="hidden">
-            <h2 class="section-title">Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-tag"><i class="fab fa-php"></i> PHP</div>
-                <div class="skill-tag"><i class="fab fa-js"></i> JavaScript (ES6+)</div>
-                <div class="skill-tag"><i class="fab fa-python"></i> Python / Flask</div>
-                <div class="skill-tag"><i class="fab fa-react"></i> React.js</div>
-                <div class="skill-tag"><i class="fas fa-database"></i> SQL / MySQL</div>
-                <div class="skill-tag"><i class="fas fa-server"></i> SQL Server</div>
-                <div class="skill-tag"><i class="fab fa-wordpress"></i> WordPress</div>
-                <div class="skill-tag"><i class="fab fa-docker"></i> Docker</div>
-                <div class="skill-tag"><i class="fas fa-code-branch"></i> Git</div>
-                <div class="skill-tag"><i class="fas fa-terminal"></i> Linux</div>
-            </div>
-        </section>
-
-        <section id="formacao" class="hidden">
-            <h2 class="section-title">Formação Acadêmica</h2>
-            <div class="edu-grid">
-                <div class="edu-card">
-                    <h3 style="color: #e6f1ff;">Engenharia Informática (Intercâmbio)</h3>
-                    <p style="color: var(--accent);">ISEC - Portugal</p>
-                    <p style="font-size: 0.9rem;">Vivência internacional e foco em desenvolvimento avançado.</p>
+    <main class="shell">
+        <section class="hero" id="home">
+            <div class="reveal show">
+                <span class="badge">Portfolio interativo | Full Stack + TI</span>
+                <h1>Construo solucoes web com cara de produto e peso de trabalho real.</h1>
+                <p class="lead">Sou Murilo Silva, desenvolvedor Full Stack e analista de TI. Atuo entre frontend, backend, automacao e infraestrutura para transformar demandas reais em experiencias digitais mais fortes, profissionais e funcionais.</p>
+                <div class="actions">
+                    <a class="btn primary" href="#projetos"><i class="fa-solid fa-grid-2"></i>Ver projetos</a>
+                    <a class="btn secondary" href="https://wa.me/5584991415330" target="_blank" rel="noreferrer"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
                 </div>
-                <div class="edu-card">
-                    <h3 style="color: #e6f1ff;">Ciências e Tecnologia</h3>
-                    <p style="color: var(--accent);">UFRN - Brasil</p>
-                    <p style="font-size: 0.9rem;">Ênfase em Engenharia da Computação (Cursando 7º período).</p>
+                <div class="pills">
+                    <span>Sistemas web</span>
+                    <span>Full Stack</span>
+                    <span>Automacao</span>
+                    <span>Infraestrutura TI</span>
+                    <span>Produtos e sites profissionais</span>
                 </div>
             </div>
-        </section>
-
-        <section id="experiencia" class="hidden">
-            <h2 class="section-title">Experiência Profissional</h2>
-            <div class="timeline">
-                <div class="job-item">
-                    <h3 class="job-title">Desenvolvedor Web & Analista de TI <span class="company">@ MDR Advocacia</span></h3>
-                    <span class="period">2025</span>
-                    <p>Desenvolvimento e manutenção de sistemas internos e do site institucional. Responsável pela automação de fluxos administrativos, melhorias de segurança e gestão completa da infraestrutura de TI.</p>
-                </div>
-
-                <div class="job-item">
-                    <h3 class="job-title">Bolsista Desenvolvedor Web <span class="company">@ Escola de Música UFRN</span></h3>
-                    <span class="period">2025</span>
-                    <p>Criação Full Stack do sistema Marcato para reservas de salas (integração OAuth 2.0 Google Calendar e PHPMailer) e manutenção do portal institucional com foco em SEO e acessibilidade.</p>
-                </div>
-
-                <div class="job-item">
-                    <h3 class="job-title">Suporte Técnico TI <span class="company">@ BCZM/UFRN</span></h3>
-                    <span class="period">2022 - 2024</span>
-                    <p>Montagem, instalação e manutenção de hardware e software. Resolução ágil de incidentes e suporte direto aos usuários da biblioteca central.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="destaques" class="hidden">
-            <h2 class="section-title" style="color: var(--gold);">Conquistas & Destaques</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card highlight-card gold-border">
-                    <span class="status-badge award-badge">🏆 Top 10 Supernova</span>
-                    <div class="project-img-container">
-                        <img src="assets/premio.jpeg" alt="Equipe AprendAI no Palco" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/0a192f/ffd700?text=Equipe+Premiada'">
+            <div class="reveal show">
+                <article class="profile">
+                    <img src="assets/foto-profissional.jpg" alt="Foto profissional de Murilo Silva" loading="eager">
+                    <div class="overlay">
+                        <small>Disponivel para projetos e oportunidades</small>
+                        <h2>Murilo Silva</h2>
+                        <p>Desenvolvedor Full Stack | Analista de TI | UFRN + experiencia internacional em Portugal</p>
                     </div>
-                    <div class="project-content">
-                        <div class="project-title">
-                            Prêmio Supernova - AprendAI
-                            <div class="project-links">
-                                <a href="https://www.instagram.com/p/DQ1dQEtkQ5t/?img_index=1" target="_blank" title="Ver Post no Insta"><i class="fab fa-instagram"></i></a>
+                </article>
+                <div class="hero-stats">
+                    <article class="stat"><strong>6+</strong><span>projetos em destaque</span></article>
+                    <article class="stat"><strong>3</strong><span>frentes de experiencia real</span></article>
+                    <article class="stat"><strong>Top 10</strong><span>reconhecimento com AprendAI</span></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="impacto">
+            <div class="section-head reveal">
+                <div>
+                    <span class="badge">Impacto profissional</span>
+                    <h2>Um perfil que conecta desenvolvimento, operacao e entrega.</h2>
+                </div>
+                <p>Meu diferencial esta em unir visual, codigo e contexto real de uso. Nao e so interface bonita: e solucao que funciona, comunica bem e aguenta a rotina.</p>
+            </div>
+            <div class="grid4">
+                <article class="service card reveal"><i class="fa-solid fa-rocket"></i><h3>Projetos publicados</h3><p>Cases de site institucional, LMS, SaaS interno, produto digital e estudo de interface.</p></article>
+                <article class="service card reveal"><i class="fa-solid fa-globe"></i><h3>Visao internacional</h3><p>Trajetoria conectando Brasil e Portugal, ampliando repertorio tecnico, cultural e de comunicacao.</p></article>
+                <article class="service card reveal"><i class="fa-solid fa-code-branch"></i><h3>Entrega ponta a ponta</h3><p>Capacidade de sair do zero, estruturar a solucao e acompanhar a evolucao com responsabilidade.</p></article>
+                <article class="service card reveal"><i class="fa-solid fa-shield-halved"></i><h3>Base de TI</h3><p>Experiencia com suporte, infraestrutura e ambiente real, o que fortalece qualidade e continuidade.</p></article>
+            </div>
+        </section>
+
+        <section class="section" id="expertise">
+            <div class="section-head reveal">
+                <div>
+                    <span class="badge">Expertise</span>
+                    <h2>O que eu entrego como dev.</h2>
+                </div>
+                <p>Meu trabalho mistura experiencia visual, organizacao tecnica e foco em resultado. Gosto de construir solucoes que parecam profissionais por fora e sejam confiaveis por dentro.</p>
+            </div>
+            <div class="grid4">
+                <article class="service card reveal"><i class="fa-solid fa-laptop-code"></i><h3>Frontend com identidade</h3><p>Interfaces responsivas, hierarquia visual forte e experiencia mais convincente.</p></article>
+                <article class="service card reveal"><i class="fa-solid fa-database"></i><h3>Back-end e integracoes</h3><p>Regras de negocio, banco de dados, APIs e automacoes para reduzir trabalho manual.</p></article>
+                <article class="service card reveal"><i class="fa-solid fa-layer-group"></i><h3>Plataformas e produtos</h3><p>LMS, sistemas internos, PWA e sites institucionais orientados a uso real.</p></article>
+                <article class="service card reveal"><i class="fa-solid fa-network-wired"></i><h3>Infra e suporte</h3><p>Base pratica em hardware, software, seguranca e operacao para sustentar o que foi entregue.</p></article>
+            </div>
+            <div class="tags reveal">
+                <span>PHP</span><span>JavaScript</span><span>React</span><span>Python</span><span>Flask</span><span>Node.js</span><span>WordPress</span><span>MySQL</span><span>SQL Server</span><span>Docker</span><span>Git</span><span>Linux</span><span>PWA</span><span>APIs</span><span>SEO</span><span>Acessibilidade</span>
+            </div>
+        </section>
+        <section class="section" id="trajetoria">
+            <div class="section-head reveal">
+                <div>
+                    <span class="badge">Trajetoria</span>
+                    <h2>Experiencia profissional e repertorio real de mercado.</h2>
+                </div>
+                <p>Minha base foi formada no desenvolvimento e tambem no suporte e na operacao de TI. Isso ajuda a construir solucoes mais maduras e proximas da realidade de quem usa.</p>
+            </div>
+            <div class="traj">
+                <article class="timeline reveal">
+                    <div class="entry">
+                        <div class="year">2025</div>
+                        <div class="entry-body">
+                            <h3>Desenvolvedor Web e Analista de TI <strong>@ MDR Advocacia</strong></h3>
+                            <p>Desenvolvimento e manutencao de sistemas internos, site institucional, automacoes administrativas, seguranca e infraestrutura.</p>
+                        </div>
+                    </div>
+                    <div class="entry">
+                        <div class="year">2025</div>
+                        <div class="entry-body">
+                            <h3>Bolsista Desenvolvedor Web <strong>@ Escola de Musica UFRN</strong></h3>
+                            <p>Criacao full stack do Marcato, integracao com Google Calendar, comunicacoes automaticas e melhorias no portal institucional.</p>
+                        </div>
+                    </div>
+                    <div class="entry">
+                        <div class="year">2022-2024</div>
+                        <div class="entry-body">
+                            <h3>Suporte Tecnico de TI <strong>@ BCZM / UFRN</strong></h3>
+                            <p>Montagem, manutencao, instalacao e atendimento a usuarios em ambiente real de operacao.</p>
+                        </div>
+                    </div>
+                </article>
+                <div class="sidecol">
+                    <article class="sidebox reveal">
+                        <h3>Formacao</h3>
+                        <p>Ciencias e Tecnologia na UFRN, com enfase em Engenharia da Computacao, e intercambio em Engenharia Informatica no ISEC, em Portugal.</p>
+                    </article>
+                    <article class="sidebox reveal">
+                        <h3>Diferenciais</h3>
+                        <ul>
+                            <li>Capacidade de estruturar projetos do zero com foco em experiencia e funcionalidade.</li>
+                            <li>Visao que une desenvolvimento, negocio, suporte e continuidade operacional.</li>
+                            <li>Boa leitura visual para apresentar projetos de forma mais profissional.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="destaques">
+            <div class="section-head reveal">
+                <div>
+                    <span class="badge">Destaques</span>
+                    <h2>Conquistas que reforcam repertorio, iniciativa e evolucao.</h2>
+                </div>
+                <p>Meu percurso inclui reconhecimento em inovacao, experiencia internacional e participacao em ambientes competitivos.</p>
+            </div>
+            <div class="spots">
+                <article class="spotlight reveal">
+                    <img src="assets/premio.jpeg" alt="Equipe AprendAI premiada" loading="lazy">
+                    <div class="spot-body">
+                        <span class="spot-kicker">Reconhecimento <strong>Top 10 Supernova</strong></span>
+                        <h3>AprendAI premiado</h3>
+                        <p>Projeto reconhecido por propor uma solucao educacional com IA funcionando offline.</p>
+                    </div>
+                </article>
+                <article class="spotlight reveal">
+                    <img src="assets/aveiro.png" alt="Registro do Aveiro Tech City" loading="lazy">
+                    <div class="spot-body">
+                        <span class="spot-kicker">Experiencia internacional <strong>Hackathon em Portugal</strong></span>
+                        <h3>Aveiro Tech City</h3>
+                        <p>Participacao em ambiente competitivo com foco em IA e machine learning.</p>
+                    </div>
+                </article>
+                <article class="spotlight reveal">
+                    <img src="assets/intercambio.jpg" alt="Intercambio em Portugal" loading="lazy">
+                    <div class="spot-body">
+                        <span class="spot-kicker">Formacao internacional <strong>ISEC Coimbra</strong></span>
+                        <h3>Intercambio em Engenharia</h3>
+                        <p>Imersao tecnica e cultural que ampliou repertorio, networking e visao de desenvolvimento.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="section" id="projetos">
+            <div class="section-head reveal">
+                <div>
+                    <span class="badge">Portfolio de projetos</span>
+                    <h2>Projetos organizados por nivel de desenvolvimento.</h2>
+                </div>
+                <p>Reordenei a vitrine exatamente como voce pediu: MDR, ISM Cursos, NIC, AprendAI, Marcato e Clone TAP.</p>
+            </div>
+            <div class="filters reveal">
+                <button class="chip active" data-filter="all">Todos</button>
+                <button class="chip" data-filter="producao">Em producao</button>
+                <button class="chip" data-filter="produto">Produtos</button>
+                <button class="chip" data-filter="sistema">Sistemas</button>
+                <button class="chip" data-filter="frontend">Frontend</button>
+            </div>
+            <div class="projects">
+                <article class="project reveal" data-cats="all producao institucional" data-project="mdr">
+                    <div class="project-top"><span class="order">01</span><span class="status">Mais maduro</span></div>
+                    <div class="thumb"><img src="assets/mdr-site.png" alt="Tela do site MDR Advocacia" loading="lazy"></div>
+                    <div class="project-body">
+                        <div class="meta"><span>Site institucional</span><span>2025</span></div>
+                        <h3>MDR Advocacia</h3>
+                        <p>Portal com foco em autoridade digital, clareza da proposta e apresentacao mais profissional.</p>
+                        <div class="tags"><span>PHP</span><span>JavaScript</span><span>Docker</span><span>CSS3</span></div>
+                        <div class="project-actions">
+                            <button class="btn secondary open-modal" data-project="mdr">Ver detalhes</button>
+                            <div class="icons"><a class="icon" href="https://mdradvocacia.com" target="_blank" rel="noreferrer" aria-label="Abrir site MDR"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project reveal" data-cats="all producao produto plataforma" data-project="ism">
+                    <div class="project-top"><span class="order">02</span><span class="status">Plataforma robusta</span></div>
+                    <div class="thumb"><img src="assets/ism.png" alt="Tela do ISM Cursos" loading="lazy"></div>
+                    <div class="project-body">
+                        <div class="meta"><span>LMS</span><span>2025</span></div>
+                        <h3>ISM Cursos</h3>
+                        <p>Plataforma de ensino com area do aluno, automacoes e estrutura de monetizacao.</p>
+                        <div class="tags"><span>WordPress</span><span>Elementor</span><span>LMS</span><span>Pagamentos</span></div>
+                        <div class="project-actions">
+                            <button class="btn secondary open-modal" data-project="ism">Ver detalhes</button>
+                            <div class="icons"><a class="icon" href="https://ismcursos.com" target="_blank" rel="noreferrer" aria-label="Abrir ISM Cursos"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project reveal" data-cats="all producao sistema" data-project="nic">
+                    <div class="project-top"><span class="order">03</span><span class="status">SaaS interno</span></div>
+                    <div class="thumb"><img src="assets/nic.png" alt="Tela do sistema NIC" loading="lazy"></div>
+                    <div class="project-body">
+                        <div class="meta"><span>Sistema juridico</span><span>2025</span></div>
+                        <h3>NIC</h3>
+                        <p>Sistema interno para operacao juridica com automacao de processos e controle de prazos.</p>
+                        <div class="tags"><span>React</span><span>Node.js</span><span>Docker</span><span>Fluxos internos</span></div>
+                        <div class="project-actions">
+                            <button class="btn secondary open-modal" data-project="nic">Ver detalhes</button>
+                            <div class="icons"><a class="icon" href="https://nic.mdradvocacia.com" target="_blank" rel="noreferrer" aria-label="Abrir sistema NIC"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project reveal" data-cats="all produto" data-project="aprendai">
+                    <div class="project-top"><span class="order">04</span><span class="status">Produto premiado</span></div>
+                    <div class="thumb"><img src="assets/aprendai.png" alt="Tela do AprendAI" loading="lazy"></div>
+                    <div class="project-body">
+                        <div class="meta"><span>PWA</span><span>Produto</span></div>
+                        <h3>AprendAI</h3>
+                        <p>Tutor de IA pensado para funcionar offline e reduzir barreiras de conectividade na educacao.</p>
+                        <div class="tags"><span>React</span><span>PWA</span><span>IA offline</span><span>Mobile first</span></div>
+                        <div class="project-actions">
+                            <button class="btn secondary open-modal" data-project="aprendai">Ver detalhes</button>
+                            <div class="icons"><a class="icon" href="https://aprendai.com.br" target="_blank" rel="noreferrer" aria-label="Abrir AprendAI"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project reveal" data-cats="all sistema" data-project="marcato">
+                    <div class="project-top"><span class="order">05</span><span class="status">Sistema academico</span></div>
+                    <div class="thumb"><img src="assets/eb2f30f8-27ea-4dcd-a987-31c21fc27c1a.png" alt="Tela do Marcato" loading="lazy"></div>
+                    <div class="project-body">
+                        <div class="meta"><span>Reservas</span><span>2025</span></div>
+                        <h3>Marcato</h3>
+                        <p>Sistema de reservas com Google Calendar, comunicacoes automaticas e fluxo academico.</p>
+                        <div class="tags"><span>PHP</span><span>OAuth 2.0</span><span>Google API</span><span>PHPMailer</span></div>
+                        <div class="project-actions">
+                            <button class="btn secondary open-modal" data-project="marcato">Ver detalhes</button>
+                            <div class="icons">
+                                <a class="icon" href="https://ismcursos.com/marcato/index.html" target="_blank" rel="noreferrer" aria-label="Abrir Marcato"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a class="icon" href="https://github.com/murilosilvaof/sistema-reservas-emufrn" target="_blank" rel="noreferrer" aria-label="GitHub Marcato"><i class="fa-brands fa-github"></i></a>
                             </div>
                         </div>
-                        <p class="project-desc">
-                            Premiado entre as 10 melhores equipes no GoRN/Sebrae. Reconhecimento pela inovação em criar uma IA educacional que funciona 100% offline.
-                        </p>
-                        <div class="tech-stack">
-                            <span>Sebrae/RN</span>
-                            <span>Startup</span>
-                            <span>Premiação</span>
-                        </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card highlight-card">
-                    <span class="status-badge intl-badge">🌍 Internacional</span>
-                    <div class="project-img-container">
-                        <img src="assets/aveiro.png" alt="Aveiro Tech City Hackathon" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/00bfff/ffffff?text=Aveiro+Hackathon'">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title">
-                            Aveiro Tech City Hackathon
-                            <a href="https://www.instagram.com/reel/DAg-sNIN-WP/" target="_blank" title="Ver Reel"><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <p class="project-desc">
-                            Selecionado para competir em Portugal. Com a equipe <strong>Aveiro Raízes Potiguares</strong>, levamos nossa cultura e inovação para o cenário global, resolvendo desafios de IA e Machine Learning.
-                        </p>
-                        <div class="tech-stack">
-                            <span>Hackathon</span>
-                            <span>Portugal</span>
-                            <span>IA & ML</span>
+                <article class="project reveal" data-cats="all frontend" data-project="tap">
+                    <div class="project-top"><span class="order">06</span><span class="status">Estudo visual</span></div>
+                    <div class="thumb"><img src="assets/image.png" alt="Tela do clone TAP" loading="lazy"></div>
+                    <div class="project-body">
+                        <div class="meta"><span>Frontend</span><span>Estudo</span></div>
+                        <h3>Clone TAP</h3>
+                        <p>Projeto de reproduzir visualmente a interface da TAP com foco em acabamento e leitura de layout.</p>
+                        <div class="tags"><span>HTML5</span><span>SASS</span><span>Bootstrap</span><span>UI</span></div>
+                        <div class="project-actions">
+                            <button class="btn secondary open-modal" data-project="tap">Ver detalhes</button>
+                            <div class="icons"><a class="icon" href="https://github.com/murilosilvaof/tap-clone-site" target="_blank" rel="noreferrer" aria-label="GitHub Clone TAP"><i class="fa-brands fa-github"></i></a></div>
                         </div>
                     </div>
-                </div>
-
-                <div class="project-card highlight-card">
-                    <span class="status-badge study-badge">🎓 Intercâmbio</span>
-                    <div class="project-img-container">
-                        <img src="assets/intercambio.jpg" alt="Intercâmbio em Portugal" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/8a2be2/ffffff?text=Interc%C3%A2mbio+Portugal'">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title">
-                            Engenharia em Portugal
-                            <a href="https://www.instagram.com/p/C_tFkihNs6C/?img_index=2" target="_blank" title="Ver Post"><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <p class="project-desc">
-                            Semestre acadêmico no ISEC (Coimbra). Uma imersão cultural e técnica, expandindo horizontes na Engenharia Informática e construindo networking internacional na Europa.
-                        </p>
-                        <div class="tech-stack">
-                            <span>Coimbra</span>
-                            <span>ISEC</span>
-                            <span>Networking</span>
-                        </div>
-                    </div>
-                </div>
-
+                </article>
             </div>
         </section>
 
-        <section id="projetos" class="hidden">
-            <h2 class="section-title">Portfólio de Projetos</h2>
-            <div class="projects-grid">
-                
-                 <div class="project-card">
-                    <div class="project-img-container">
-                        <img src="assets/aprendai.png" alt="AprendAI - App" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/0a192f/ffd700?text=App+AprendAI'">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title">
-                            AprendAI - App
-                            <a href="https://aprendai.com.br" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <p class="project-desc">
-                           Tutor pessoal de IA que funciona 100% OFFLINE, quebrando barreiras de conectividade na educação. Desenvolvido com tecnologia PWA Mobile First.
-                        </p>
-                        <div class="tech-stack">
-                            <span>IA Offline</span>
-                            <span>PWA</span>
-                            <span>React</span>
-                        </div>
+        <section class="section" id="contato">
+            <div class="contact reveal">
+                <div>
+                    <span class="badge">Contato</span>
+                    <h2>Se voce precisa de um dev para tirar uma ideia do papel com mais profissionalismo, vamos conversar.</h2>
+                    <p>Posso contribuir com sites institucionais, plataformas, sistemas internos, automacoes e melhorias de interface. Minha proposta e entregar com cuidado visual, organizacao tecnica e responsabilidade.</p>
+                    <div class="actions">
+                        <a class="btn primary" href="mailto:murilosilvafrancisco49@gmail.com"><i class="fa-solid fa-envelope"></i>E-mail</a>
+                        <a class="btn secondary" href="https://www.linkedin.com/in/murilosilvaof/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-img-container">
-                        <img src="assets/mdr-site.png" alt="Site MDR Advocacia" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/002f5f/ffffff?text=MDR+Advocacia'">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title">
-                            MDR Advocacia
-                            <a href="https://mdradvocacia.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <p class="project-desc">Portal institucional moderno, com foco em conversão e autoridade digital para o escritório de advocacia.</p>
-                        <div class="tech-stack">
-                            <span>JavaScript</span>
-                            <span>Docker</span>
-                            <span>PHP</span>
-                            <span>CSS3</span>
-                        </div>
-                    </div>
+                <div class="contact-links">
+                    <a class="contact-link" href="mailto:murilosilvafrancisco49@gmail.com"><span><small>E-mail</small><strong>murilosilvafrancisco49@gmail.com</strong></span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a class="contact-link" href="https://github.com/murilosilvaof" target="_blank" rel="noreferrer"><span><small>GitHub</small><strong>github.com/murilosilvaof</strong></span><i class="fa-brands fa-github"></i></a>
+                    <a class="contact-link" href="https://www.linkedin.com/in/murilosilvaof/" target="_blank" rel="noreferrer"><span><small>LinkedIn</small><strong>linkedin.com/in/murilosilvaof</strong></span><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="contact-link" href="https://wa.me/5584991415330" target="_blank" rel="noreferrer"><span><small>WhatsApp</small><strong>+55 84 99141-5330</strong></span><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-img-container">
-                        <img src="assets/nic.png" alt="NÚCLEO INTEGRADO DE CONCILIAÇÕES" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/112240/64ffda?text=Sistema+Concilia'">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title">
-                            NIC - Núcleo Integrado de Conciliações
-                            <a href="https://nic.mdradvocacia.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <p class="project-desc">SaaS interno para gestão jurídica. Automação de processos, controle de prazos e segurança de dados sensíveis.</p>
-                        <div class="tech-stack">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>Docker</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img-container">
-                        <img src="assets/eb2f30f8-27ea-4dcd-a987-31c21fc27c1a.png" alt="Sistema Marcato" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=Marcato'">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title">
-                            Marcato - Reservas
-                            <div class="project-links">
-                                <a href="https://github.com/murilosilvaof/sistema-reservas-emufrn" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="https://ismcursos.com/marcato/index.html" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <p class="project-desc">Sistema de agendamento inteligente. Integração via API com Google Calendar e notificações automáticas.</p>
-                        <div class="tech-stack">
-                            <span>PHP</span>
-                            <span>OAuth 2.0</span>
-                            <span>Google API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img-container">
-                        <img src="assets/ism.png" alt="ISM Cursos" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=ISM+Cursos'">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title">
-                            ISM Cursos (LMS)
-                            <a href="https://ismcursos.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <p class="project-desc">Plataforma de ensino completa com área do aluno, certificação automática e gateway de pagamento.</p>
-                        <div class="tech-stack">
-                            <span>WordPress</span>
-                            <span>Elementor</span>
-                            <span>LMS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img-container">
-                        <img src="assets/image.png" alt="TAP Clone" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/233554/ffffff?text=TAP+Air'">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title">
-                            Clone Interface TAP
-                            <a href="https://github.com/murilosilvaof/tap-clone-site" target="_blank"><i class="fab fa-github"></i></a>
-                        </div>
-                        <p class="project-desc">Estudo de caso de frontend replicando a interface de alta fidelidade da companhia aérea TAP.</p>
-                        <div class="tech-stack">
-                            <span>HTML5</span>
-                            <span>SASS</span>
-                            <span>Bootstrap</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
+    </main>
 
-        <footer class="hidden">
-            <h2 class="section-title" style="justify-content: center; margin-bottom: 1rem;">Vamos conversar?</h2>
-            <p style="margin-bottom: 2rem;">Disponível para colaborações e projetos desafiadores.</p>
-            
-            <div class="social-links">
-                <a href="https://github.com/murilosilvaof" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/murilosilvaof/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/5584991415330" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Murilo Silva. Portfolio para mostrar trabalho, repertorio e evolucao como dev.</p>
+        <nav><a href="#home">Inicio</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a></nav>
+    </footer>
+
+    <div class="modal" id="modal" aria-hidden="true">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="close" type="button" aria-label="Fechar" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-media"><img id="modal-image" src="" alt=""></div>
+            <div class="modal-body">
+                <div class="modal-pills"><span id="modal-rank"></span><span id="modal-status"></span><span id="modal-type"></span></div>
+                <h3 id="modal-title"></h3>
+                <p id="modal-summary"></p>
+                <div class="modal-card"><strong>Meu papel</strong><p id="modal-role"></p></div>
+                <div class="modal-card"><strong>Stack</strong><div class="stack" id="modal-stack"></div></div>
+                <ul id="modal-list"></ul>
+                <div class="modal-actions" id="modal-actions"></div>
             </div>
-            
-            <p><a href="mailto:murilosilvafrancisco49@gmail.com" style="color: var(--accent); text-decoration: none; font-size: 1.1rem;">murilosilvafrancisco49@gmail.com</a></p>
-            <br>
-            <p>&copy; 2025 Murilo Francisco da Silva.</p>
-        </footer>
-    </div>
-
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Projeto Zoom">
+        </div>
     </div>
 
     <script>
-        // Scroll Reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        const hiddenElements = document.querySelectorAll('.hidden');
-        hiddenElements.forEach((el) => observer.observe(el));
-
-        // Logic do Lightbox (Zoom na Imagem)
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.lightbox-close');
-        const projectImages = document.querySelectorAll('.project-img');
-
-        projectImages.forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('active');
-            });
-        });
-
-        const closeLightbox = () => {
-            lightbox.classList.remove('active');
-        };
-
-        closeBtn.addEventListener('click', closeLightbox);
-
-        lightbox.addEventListener('click', (e) => {
-             if (e.target !== lightboxImg) {
-                 closeLightbox();
-             }
-        });
+const data={mdr:{rank:"Projeto 01",status:"Mais maduro",type:"Institucional",title:"MDR Advocacia",summary:"Projeto institucional com foco em autoridade, clareza da mensagem e apresentacao profissional do escritorio.",role:"Desenvolvimento web, melhorias visuais, manutencao e apoio de infraestrutura TI.",stack:["PHP","JavaScript","Docker","CSS3"],list:["Presenca digital mais forte e confiavel.","Estrutura mais clara para comunicar valor.","Base madura para continuar evoluindo."],image:"assets/mdr-site.png",alt:"Tela do site MDR",links:[["https://mdradvocacia.com","Abrir projeto","primary","fa-solid fa-arrow-up-right-from-square"]]},ism:{rank:"Projeto 02",status:"Plataforma robusta",type:"LMS",title:"ISM Cursos",summary:"Plataforma de ensino organizada para conteudo, jornada do aluno e monetizacao.",role:"Estruturacao de experiencia, personalizacao do ambiente e organizacao da jornada digital.",stack:["WordPress","Elementor","LMS","Pagamentos"],list:["Projeto com cara de produto, nao so pagina.","Fluxo pensado para estudo e conversao.","Boa vitrine de plataforma educacional."],image:"assets/ism.png",alt:"Tela do ISM",links:[["https://ismcursos.com","Abrir plataforma","primary","fa-solid fa-arrow-up-right-from-square"]]},nic:{rank:"Projeto 03",status:"SaaS interno",type:"Sistema juridico",title:"NIC",summary:"Sistema interno para operacao juridica com foco em organizacao, rotina e centralizacao de informacao.",role:"Participacao no desenvolvimento web e apoio ao ambiente operacional do escritorio.",stack:["React","Node.js","Docker","Fluxos internos"],list:["Ajuda no controle de prazos e processos.","Mostra experiencia com sistema de uso real.","Reforca repertorio em contexto corporativo."],image:"assets/nic.png",alt:"Tela do NIC",links:[["https://nic.mdradvocacia.com","Abrir sistema","primary","fa-solid fa-arrow-up-right-from-square"]]},aprendai:{rank:"Projeto 04",status:"Produto premiado",type:"PWA",title:"AprendAI",summary:"Tutor de IA pensado para funcionar offline, reduzindo barreiras de conectividade na educacao.",role:"Construcao da experiencia digital e validacao da proposta em ambiente de inovacao.",stack:["React","PWA","IA offline","Mobile first"],list:["Produto com proposta clara de impacto.","Reconhecimento em programa de inovacao.","Boa leitura de produto e nao apenas de execucao."],image:"assets/aprendai.png",alt:"Tela do AprendAI",links:[["https://aprendai.com.br","Abrir produto","primary","fa-solid fa-arrow-up-right-from-square"]]},marcato:{rank:"Projeto 05",status:"Sistema academico",type:"Reservas",title:"Marcato",summary:"Sistema de reservas com integracao ao Google Calendar e comunicacoes automaticas.",role:"Desenvolvimento full stack com integracoes e fluxo de reservas para uso institucional.",stack:["PHP","OAuth 2.0","Google API","PHPMailer"],list:["Integra agenda e reduz atrito operacional.","Comunica automaticamente o usuario.","Bom case de regras reais de negocio."],image:"assets/eb2f30f8-27ea-4dcd-a987-31c21fc27c1a.png",alt:"Tela do Marcato",links:[["https://ismcursos.com/marcato/index.html","Abrir sistema","primary","fa-solid fa-arrow-up-right-from-square"],["https://github.com/murilosilvaof/sistema-reservas-emufrn","Ver GitHub","secondary","fa-brands fa-github"]]},tap:{rank:"Projeto 06",status:"Estudo visual",type:"Frontend",title:"Clone TAP",summary:"Estudo de interface focado em fidelidade visual, acabamento e leitura de layout.",role:"Implementacao front-end com foco em reproducao visual e refinamento de UI.",stack:["HTML5","SASS","Bootstrap","UI"],list:["Treino forte de acabamento visual.","Complementa o portfolio com estudo de interface.","Reforca atencao a detalhes de frontend."],image:"assets/image.png",alt:"Tela do clone TAP",links:[["https://github.com/murilosilvaof/tap-clone-site","Ver GitHub","primary","fa-brands fa-github"]]}};
+const reveal=document.querySelectorAll(".reveal");const io=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting){i.target.classList.add("show");io.unobserve(i.target)}}),{threshold:.14});reveal.forEach(el=>{if(!el.classList.contains("show"))io.observe(el)});
+const progress=document.getElementById("progress");const setProgress=()=>{const h=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=`${h>0?window.scrollY/h*100:0}%`};setProgress();window.addEventListener("scroll",setProgress,{passive:true});
+const navLinks=document.querySelectorAll(".nav a");const secObserver=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting)navLinks.forEach(l=>l.classList.toggle("active",l.getAttribute("href")==="#"+i.target.id))}),{threshold:.45});document.querySelectorAll("main section[id]").forEach(s=>secObserver.observe(s));
+const chips=document.querySelectorAll(".chip"),cards=document.querySelectorAll(".project");chips.forEach(chip=>chip.addEventListener("click",()=>{chips.forEach(c=>c.classList.remove("active"));chip.classList.add("active");const filter=chip.dataset.filter;cards.forEach(card=>{const ok=filter==="all"||card.dataset.cats.split(" ").includes(filter);card.classList.toggle("hide",!ok)})}));
+const modal=document.getElementById("modal"),modalImage=document.getElementById("modal-image"),modalRank=document.getElementById("modal-rank"),modalStatus=document.getElementById("modal-status"),modalType=document.getElementById("modal-type"),modalTitle=document.getElementById("modal-title"),modalSummary=document.getElementById("modal-summary"),modalRole=document.getElementById("modal-role"),modalStack=document.getElementById("modal-stack"),modalList=document.getElementById("modal-list"),modalActions=document.getElementById("modal-actions");
+document.querySelectorAll(".open-modal").forEach(btn=>btn.addEventListener("click",()=>{const p=data[btn.dataset.project];if(!p)return;modalImage.src=p.image;modalImage.alt=p.alt;modalRank.textContent=p.rank;modalStatus.textContent=p.status;modalType.textContent=p.type;modalTitle.textContent=p.title;modalSummary.textContent=p.summary;modalRole.textContent=p.role;modalStack.innerHTML=p.stack.map(i=>`<span>${i}</span>`).join("");modalList.innerHTML=p.list.map(i=>`<li>${i}</li>`).join("");modalActions.innerHTML=p.links.map(([href,label,style,icon])=>`<a class="btn ${style}" href="${href}" target="_blank" rel="noreferrer"><i class="${icon}"></i>${label}</a>`).join("");modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}));
+const closeModal=()=>{modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow=""};document.getElementById("close-modal").addEventListener("click",closeModal);modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});window.addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("open"))closeModal()});document.getElementById("year").textContent=new Date().getFullYear();
     </script>
 </body>
 </html>
