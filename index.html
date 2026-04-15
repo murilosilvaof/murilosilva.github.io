@@ -29,7 +29,7 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
 .grid4,.projects,.spots{display:grid;gap:16px}.grid4{grid-template-columns:repeat(4,1fr)}.service{padding:22px;border-radius:24px}.service i{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,138,61,.22),rgba(70,197,176,.16));color:var(--accent);margin-bottom:16px}.service h3{margin-bottom:8px;font-size:1.05rem}.service p,.project p,.spot-body p,.sidebox p,.sidebox li,.entry p,.contact p,.modal-body p,.modal-body li{color:var(--muted)}
 .traj{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.timeline,.sidebox{padding:26px;border-radius:28px}.entry{display:grid;grid-template-columns:72px 1fr;gap:14px}.entry+.entry{margin-top:18px}.year{color:var(--accent2);font-weight:700;padding-top:2px}.entry strong{color:var(--accent)}.entry-body{position:relative;padding-left:18px}.entry-body:before{content:"";position:absolute;left:0;top:8px;bottom:-20px;width:1px;background:rgba(255,255,255,.11)}.entry:last-child .entry-body:before{bottom:8px}.entry-body:after{content:"";position:absolute;left:-5px;top:8px;width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent))}
 .sidecol{display:grid;gap:16px}.sidebox ul,.modal-body ul{list-style:none;display:grid;gap:10px}.sidebox li,.modal-body li{display:flex;gap:10px}.sidebox li:before,.modal-body li:before{content:"";width:8px;height:8px;border-radius:50%;margin-top:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));flex:0 0 auto}
-.spots{grid-template-columns:repeat(3,1fr)}.spotlight{border-radius:28px;overflow:hidden}.spotlight img{width:100%;aspect-ratio:16/10;object-fit:cover}.spot-body{padding:22px}.spot-kicker{display:inline-flex;gap:8px;color:var(--accent2);font-size:.9rem;margin-bottom:8px}.spot-kicker strong{color:var(--text)}
+.spots{grid-template-columns:repeat(3,1fr)}.spotlight{display:block;border-radius:28px;overflow:hidden}.spotlight img{width:100%;aspect-ratio:16/10;object-fit:cover}.spot-body{padding:22px}.spot-kicker{display:inline-flex;gap:8px;color:var(--accent2);font-size:.9rem;margin-bottom:8px}.spot-kicker strong{color:var(--text)}
 .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.chip{padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);transition:.25s}.chip.active,.chip:hover{background:rgba(255,138,61,.14);border-color:rgba(255,138,61,.35);color:var(--text)}
 .projects{grid-template-columns:repeat(3,1fr)}.project{display:flex;flex-direction:column;border-radius:28px;overflow:hidden;transition:.25s}.project:hover{transform:translateY(-4px);border-color:rgba(255,138,61,.24)}.project.hide{display:none}.project-top{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 0}.order{font-family:"Space Grotesk",sans-serif;color:var(--accent2)}.status{padding:7px 12px;border-radius:999px;background:rgba(255,138,61,.12);color:#ffc59f;font-size:.82rem}
 .thumb{margin:16px 18px 0;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,rgba(70,197,176,.16),rgba(255,138,61,.16))}.thumb img{width:100%;aspect-ratio:16/10;object-fit:cover}.project-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:12px;flex:1}.meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.88rem}.project h3{font-size:1.18rem}.project-actions{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.icons{display:flex;gap:8px}.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
@@ -84,7 +84,7 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
                     <div class="overlay">
                         <small>Disponivel para projetos e oportunidades</small>
                         <h2>Murilo Silva</h2>
-                        <p>Desenvolvedor Full Stack | Analista de TI | UFRN + experiencia internacional em Portugal</p>
+                        <p>Desenvolvedor Full Stack | Analista de TI </p>
                     </div>
                 </article>
                 <div class="hero-stats">
@@ -187,39 +187,39 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
                 <p>Meu percurso inclui reconhecimento em inovacao, experiencia internacional e participacao em ambientes competitivos.</p>
             </div>
             <div class="spots">
-                <article class="spotlight reveal">
+                <a class="spotlight reveal" href="https://www.instagram.com/p/DQ1dQEtkQ5t/?img_index=1" target="_blank" rel="noreferrer" aria-label="Abrir postagem do Instagram sobre o premio do AprendAI">
                     <img src="assets/premio.jpeg" alt="Equipe AprendAI premiada" loading="lazy">
                     <div class="spot-body">
                         <span class="spot-kicker">Reconhecimento <strong>Top 10 Supernova</strong></span>
                         <h3>AprendAI premiado</h3>
                         <p>Projeto reconhecido por propor uma solucao educacional com IA funcionando offline.</p>
                     </div>
-                </article>
-                <article class="spotlight reveal">
+                </a>
+                <a class="spotlight reveal" href="https://www.instagram.com/reel/DAg-sNIN-WP/" target="_blank" rel="noreferrer" aria-label="Abrir postagem do Instagram sobre o Aveiro Tech City">
                     <img src="assets/aveiro.png" alt="Registro do Aveiro Tech City" loading="lazy">
                     <div class="spot-body">
                         <span class="spot-kicker">Experiencia internacional <strong>Hackathon em Portugal</strong></span>
                         <h3>Aveiro Tech City</h3>
                         <p>Participacao em ambiente competitivo com foco em IA e machine learning.</p>
                     </div>
-                </article>
-                <article class="spotlight reveal">
+                </a>
+                <a class="spotlight reveal" href="https://www.instagram.com/p/C_tFkihNs6C/?img_index=2" target="_blank" rel="noreferrer" aria-label="Abrir postagem do Instagram sobre o intercambio em Portugal">
                     <img src="assets/intercambio.jpg" alt="Intercambio em Portugal" loading="lazy">
                     <div class="spot-body">
                         <span class="spot-kicker">Formacao internacional <strong>ISEC Coimbra</strong></span>
                         <h3>Intercambio em Engenharia</h3>
                         <p>Imersao tecnica e cultural que ampliou repertorio, networking e visao de desenvolvimento.</p>
                     </div>
-                </article>
+                </a>
             </div>
         </section>
         <section class="section" id="projetos">
             <div class="section-head reveal">
                 <div>
                     <span class="badge">Portfolio de projetos</span>
-                    <h2>Projetos organizados por nivel de desenvolvimento.</h2>
+                    <h2>Projetos Desenvolvidos</h2>
                 </div>
-                <p>Reordenei a vitrine exatamente como voce pediu: MDR, ISM Cursos, NIC, AprendAI, Marcato e Clone TAP.</p>
+                
             </div>
             <div class="filters reveal">
                 <button class="chip active" data-filter="all">Todos</button>
@@ -245,7 +245,7 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
                 </article>
 
                 <article class="project reveal" data-cats="all producao produto plataforma" data-project="ism">
-                    <div class="project-top"><span class="order">02</span><span class="status">Plataforma robusta</span></div>
+                    <div class="project-top"><span class="order">02</span><span class="status">Plataforma Educacional</span></div>
                     <div class="thumb"><img src="assets/ism.png" alt="Tela do ISM Cursos" loading="lazy"></div>
                     <div class="project-body">
                         <div class="meta"><span>LMS</span><span>2025</span></div>
@@ -339,6 +339,7 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
                     <a class="contact-link" href="mailto:murilosilvafrancisco49@gmail.com"><span><small>E-mail</small><strong>murilosilvafrancisco49@gmail.com</strong></span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     <a class="contact-link" href="https://github.com/murilosilvaof" target="_blank" rel="noreferrer"><span><small>GitHub</small><strong>github.com/murilosilvaof</strong></span><i class="fa-brands fa-github"></i></a>
                     <a class="contact-link" href="https://www.linkedin.com/in/murilosilvaof/" target="_blank" rel="noreferrer"><span><small>LinkedIn</small><strong>linkedin.com/in/murilosilvaof</strong></span><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="contact-link" href="https://instagram.com/murilosilvaof" target="_blank" rel="noreferrer"><span><small>Instagram</small><strong>@murilosilvaof</strong></span><i class="fa-brands fa-instagram"></i></a>
                     <a class="contact-link" href="https://wa.me/5584991415330" target="_blank" rel="noreferrer"><span><small>WhatsApp</small><strong>+55 84 99141-5330</strong></span><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
