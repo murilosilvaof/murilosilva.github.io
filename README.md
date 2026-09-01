@@ -33,7 +33,7 @@ Sou estudante da UFRN com ênfase em Engenharia da Computação e licenciatura e
 |---|---|---|
 | **Sistema de Gestão de Vendas (Desafio LogAp)** | Aplicação Full-Stack (Python/Flask + React) para gestão de vendas, incluindo CRUD de clientes/produtos/pedidos e relatórios. Contém API de lógica complexa. | [Ver Aplicação](https://logap-desafio-dev-junior-murilo-silva-1ekp.onrender.com/) / [GitHub](https://github.com/murilosilvaof/logap-desafio-dev-junior) |
 | **ISM Cursos** | Plataforma de cursos online com área do aluno e automações | [Ver site](https://ismcursos.com.br) |
-| **Orbit** | Central de serviços e operações da MDR Advocacia, com chamados, kanban, aprovações, base de conhecimento, integração Microsoft/GLPI e regras de bonificação. Atuei como responsável pelo desenvolvimento e entrega. | [Ver sistema](https://orbit.dunatecnologia.com/) |
+| **Orbit** | Central de serviços e operações da MDR Advocacia, com chamados, kanban, aprovações, base de conhecimento, integração Microsoft/GLPI, Microsoft Graph, PostgreSQL e Docker. Atuei como responsável pelo desenvolvimento e entrega. | [Ver sistema](https://orbit.dunatecnologia.com/) |
 | **Marcato (EMUFRN)** | Sistema de reservas oficial da Escola de Música da UFRN | [Ver sistema](https://musica.ufrn.br) / [GitHub](https://github.com/murilosilvaof/sistema-reservas-emufrn) |
 | **Simulação de Agentes** | Agentes racionais com comportamento emergente (NetLogo, C++) | [GitHub](https://github.com/murilosilvaof/simulacao-agentes-limpeza) |
 | **Clone TAP Air Portugal** | Exercício front-end fiel ao site real da TAP | [GitHub](https://github.com/murilosilvaof/tap-clone-site) |
