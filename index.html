@@ -21,7 +21,7 @@ a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{fon
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 20px;border-radius:999px;font-weight:700;transition:.25s}.btn:hover{transform:translateY(-2px)}.btn.primary{background:linear-gradient(135deg,var(--accent),#ff6d3a);color:#111926;box-shadow:0 14px 24px rgba(255,138,61,.22)}.btn.secondary{background:rgba(255,255,255,.04);border:1px solid var(--line)}
 .hero{min-height:calc(100vh - 74px);display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;padding:56px 0 40px}.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--accent2);font-size:.92rem;margin-bottom:18px}.badge:before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 8px rgba(70,197,176,.12)}
 h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-serif;line-height:1.02;letter-spacing:-.04em}h1{font-size:clamp(2.8rem,7vw,5.8rem);max-width:11ch;margin-bottom:16px}.lead{max-width:62ch;color:var(--muted);font-size:1.06rem;margin-bottom:24px}
-.actions,.pills,.tags,.stack,.modal-actions{display:flex;flex-wrap:wrap;gap:10px}.actions{margin-bottom:22px}.pills span,.tags span,.stack span{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted);font-size:.92rem}
+.actions,.pills,.tags,.stack,.modal-actions{display:flex;flex-wrap:wrap;gap:10px}.actions{margin-bottom:22px}.modal-actions{margin:2px 0 4px}.modal-actions .btn{min-height:46px}.pills span,.tags span,.stack span{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted);font-size:.92rem}
 .card,.project,.spotlight,.contact,.timeline,.sidebox,.profile,.stat{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(12px)}
 .profile{border-radius:28px;overflow:hidden;position:relative;min-height:500px}.profile img{width:100%;height:100%;object-fit:cover}.overlay{position:absolute;inset:auto 16px 16px;padding:18px;border-radius:22px;background:linear-gradient(180deg,rgba(8,12,20,.24),rgba(8,12,20,.88));border:1px solid var(--line)}.overlay small{display:inline-flex;align-items:center;gap:8px;color:var(--accent2);margin-bottom:8px}.overlay small:before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}.overlay h2{font-size:1.4rem}.overlay p{color:rgba(245,247,251,.76);font-size:.95rem}
 .hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px;margin-top:12px}.stat{padding:18px;border-radius:20px;background:var(--card2)}.stat strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:1.8rem;line-height:1;margin-bottom:6px}.stat span{color:var(--muted);font-size:.92rem}
@@ -405,10 +405,10 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
                 <div class="modal-pills"><span id="modal-rank"></span><span id="modal-status"></span><span id="modal-type"></span></div>
                 <h3 id="modal-title"></h3>
                 <p id="modal-summary"></p>
+                <div class="modal-actions" id="modal-actions"></div>
                 <div class="modal-card"><strong>Meu papel</strong><p id="modal-role"></p></div>
                 <div class="modal-card"><strong>Stack</strong><div class="stack" id="modal-stack"></div></div>
                 <ul id="modal-list"></ul>
-                <div class="modal-actions" id="modal-actions"></div>
             </div>
         </div>
     </div>
