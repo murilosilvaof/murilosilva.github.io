@@ -40,6 +40,9 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
 @media (max-height:900px) and (min-width:1181px){.modal{padding:12px}.modal-box{width:min(1160px,calc(100vw - 24px));height:calc(100vh - 24px);grid-template-columns:minmax(0,1.28fr) minmax(300px,.72fr)}.modal-media{padding:12px;gap:8px}.modal-frame{aspect-ratio:2.12/1}.modal-caption{padding:10px 12px}.modal-caption p{font-size:.82rem;line-height:1.35}.modal-gallery-panel{padding:9px}.modal-gallery{grid-template-columns:repeat(auto-fit,minmax(82px,1fr));gap:8px}.modal-gallery-item{width:100%;padding:8px}.modal-gallery-item img,.modal-gallery-item video{border-radius:8px}.modal-gallery-item span{font-size:.7rem}.modal-body{padding:16px;gap:8px}.modal-body h3{font-size:2rem}.modal-card{padding:11px}.modal-body p,.modal-body li{font-size:.84rem;line-height:1.35}.modal-body ul{gap:7px}.modal-pills span,.stack span{padding:7px 10px;font-size:.8rem}}
 @media (max-width:1180px){.hero,.traj,.contact,.modal-box{grid-template-columns:1fr}.spots{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}.profile{min-height:420px}.modal{padding:12px;align-items:start}.modal-box{width:min(100%,980px);max-height:none}.modal-media{overflow:visible}.modal-body{overflow:visible}.close{position:fixed;top:18px;right:18px}}
 @media (max-width:720px){:root{--shell:min(100% - 20px,1120px)}.topbar-inner{flex-wrap:wrap;padding:12px 0}.topbar-inner>.btn{display:none}.nav{width:100%;max-width:100%}.hero{min-height:auto;padding:40px 0 26px}.section-head,.footer{flex-direction:column;align-items:flex-start}.project-actions,.actions,.modal-actions{align-items:stretch}.project-actions{flex-direction:column}.icons{justify-content:flex-start}.contact,.timeline,.sidebox{padding:20px;border-radius:24px}.entry{grid-template-columns:1fr}.entry-body{padding-left:16px}.modal{padding:8px}.modal-box{width:100%;border-radius:22px}.modal-media{padding:12px}.modal-frame{border-radius:18px}.modal-gallery-item{flex-basis:148px;width:148px}.modal-nav{left:10px;right:10px}.modal-nav>button{width:44px;height:44px}.modal-dots{margin-top:-2px}.modal-body{padding:20px}.close{top:12px;right:12px}}
+.modal-gallery{grid-template-columns:repeat(auto-fill,minmax(108px,128px));justify-content:start}
+@media (max-width:1500px),(max-height:860px){.modal-gallery{grid-template-columns:repeat(auto-fill,minmax(88px,108px))}}
+@media (max-height:900px) and (min-width:1181px){.modal-gallery{grid-template-columns:repeat(auto-fill,minmax(82px,100px))}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
     </style>
 </head>
@@ -65,7 +68,7 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
         <section class="hero" id="home">
             <div class="reveal show">
                 <span class="badge">Portfolio interativo | Full Stack + TI</span>
-                <h1>Construo soluções web para tirar sua ideia do papel e transformar seu negócio em realidade.</h1>
+                <h1>Construo soluções digitais para tirar sua ideia do papel e transformar seu negócio em realidade.</h1>
                 <p class="lead">Sou Murilo Silva, desenvolvedor Full Stack e analista de TI. Atuo entre frontend, backend, automacao e infraestrutura para transformar demandas reais em experiencias digitais mais fortes, profissionais e funcionais.</p>
                 <div class="actions">
                     <a class="btn primary" href="#projetos"><i class="fa-solid fa-grid-2"></i>Ver projetos</a>
@@ -261,7 +264,7 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
 
                 <article class="project reveal" data-cats="all producao sistema" data-project="nic">
                     <div class="project-top"><span class="order">03</span><span class="status">SaaS interno</span></div>
-                    <div class="thumb"><img src="assets/nic/principal.png" alt="Tela do sistema NIC" loading="lazy"></div>
+                    <div class="thumb"><img src="assets/nic/login.png" alt="Tela de login do sistema NIC" loading="lazy"></div>
                     <div class="project-body">
                         <div class="meta"><span>Sistema juridico</span><span>2025/2026</span></div>
                         <h3>NIC</h3>
@@ -462,10 +465,10 @@ const data = {
         type: "Sistema juridico",
         title: "NIC",
         summary: "Sistema interno para operacao juridica com foco em organizacao, rotina e centralizacao de informacao.",
-        role: "Desenvolvimento web, integracao com API de comunicacao, deploy, manutencao em servidor e apoio ao ambiente operacional do escritorio.",
+        role: "Desenvolvimento web, integracao com Chatwoot e API de comunicacao, deploy, manutencao em servidor e apoio ao ambiente operacional do escritorio.",
         stack: ["React", "Node.js", "Docker", "Fluxos internos"],
         list: ["Ajuda no controle de prazos e processos.", "Mostra experiencia com sistema de uso real.", "Reforca repertorio em contexto corporativo."],
-        image: "assets/nic/principal.png",
+        image: "assets/nic/login.png",
         alt: "Tela do NIC",
         gallery: [
             {
@@ -490,7 +493,7 @@ const data = {
                 image: "assets/nic/templates.png",
                 alt: "Templates do NIC",
                 title: "Templates e padroes",
-                text: "Area para organizar modelos de mensagem e padronizar comunicacoes recorrentes dentro do fluxo de trabalho."
+                text: "Area para organizar modelos de mensagem usados na integracao com o Chatwoot, padronizando respostas e agilizando conversas nos canais oficiais."
             },
             {
                 image: "assets/nic/conversanic.png",
@@ -501,8 +504,8 @@ const data = {
             {
                 image: "assets/nic/conversawhats.png",
                 alt: "Conversa via WhatsApp no NIC",
-                title: "Comunicacao externa",
-                text: "Apoio a integracoes de conversa para aproximar a operacao juridica dos canais usados no dia a dia."
+                title: "WhatsApp oficial via Chatwoot",
+                text: "Integracao do NIC com o Chatwoot para que colaboradores da empresa possam usar os numeros oficiais da MDR nas conversas com seus clientes."
             }
         ],
         links: [["https://nic.mdradvocacia.com", "Abrir sistema", "primary", "fa-solid fa-arrow-up-right-from-square"]]
@@ -612,9 +615,9 @@ const data = {
             },
             {
                 image: "assets/safestop/alerta.png",
-                alt: "Tela de alerta do SafeStop",
-                title: "Criacao de alerta",
-                text: "Fluxo para registrar situacoes de risco com informacoes objetivas, ajudando a comunidade a agir mais rapido."
+                alt: "Prototipo fisico do SafeStop com botoeira e alarme",
+                title: "Prototipo fisico",
+                text: "Registro do projeto em demonstracao, com notebook, botoeira e alarme para validar o acionamento de emergencia em ambiente real."
             },
             {
                 image: "assets/safestop/chatcentral.png",
