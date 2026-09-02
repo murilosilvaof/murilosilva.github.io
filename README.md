@@ -36,7 +36,6 @@ Sou estudante da UFRN com ênfase em Engenharia da Computação e licenciatura e
 | **Orbit** | Central de serviços e operações da MDR Advocacia, com chamados, kanban, aprovações, base de conhecimento, integração Microsoft/GLPI, Microsoft Graph, PostgreSQL e Docker. Atuei como responsável pelo desenvolvimento e entrega. | [Ver sistema](https://orbit.dunatecnologia.com/) |
 | **Marcato (EMUFRN)** | Sistema de reservas oficial da Escola de Música da UFRN | [Ver sistema](https://musica.ufrn.br) / [GitHub](https://github.com/murilosilvaof/sistema-reservas-emufrn) |
 | **Simulação de Agentes** | Agentes racionais com comportamento emergente (NetLogo, C++) | [GitHub](https://github.com/murilosilvaof/simulacao-agentes-limpeza) |
-| **Clone TAP Air Portugal** | Exercício front-end fiel ao site real da TAP | [GitHub](https://github.com/murilosilvaof/tap-clone-site) |
 
 ## 📫 Contato
 
