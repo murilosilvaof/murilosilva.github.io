@@ -1,49 +1,41 @@
-# 🌐 Portfólio Pessoal - Murilo Francisco da Silva
+# Portfolio Profissional - Murilo Francisco da Silva
 
-Bem-vindo ao meu portfólio online! Aqui você encontrará meus principais projetos desenvolvidos ao longo da graduação em Engenharia da Computação, experiências profissionais, habilidades técnicas e trajetórias de destaque, incluindo minha participação em intercâmbio acadêmico em Portugal.
+Repositorio do meu portfolio pessoal, publicado com GitHub Pages, reunindo projetos, experiencias e principais competencias em desenvolvimento full stack, automacao e suporte a ambientes de TI.
 
-## 👨‍💻 Sobre Mim
+## Visao Geral
 
-Sou estudante da UFRN com ênfase em Engenharia da Computação e licenciatura em Engenharia Informática concluída durante meu intercâmbio no Instituto Politécnico de Coimbra - ISEC (Portugal). Apaixonado por desenvolvimento web, tecnologia e soluções criativas, busco sempre novos desafios e oportunidades de aprendizado.
+Sou Murilo Francisco da Silva, estudante da UFRN com enfase em Engenharia da Computacao e experiencia pratica em desenvolvimento web, sistemas internos, integracoes e infraestrutura de TI. Este portfolio funciona como vitrine dos projetos que melhor representam minha evolucao tecnica e minha capacidade de transformar demandas reais em solucoes digitais funcionais.
 
-## 📂 O que você encontra neste portfólio
+## Acesse Online
 
-- **Resumo profissional e acadêmico**
-- **Projetos desenvolvidos com tecnologias diversas**
-- **Links para repositórios no GitHub**
-- **Experiências internacionais e participações em hackathons**
-- **Contato e redes sociais**
+[murilosilvaof.github.io/murilosilva.github.io](https://murilosilvaof.github.io/murilosilva.github.io/)
 
-## 🛠️ Tecnologias demonstradas neste portfólio
+## Destaques
 
-- **Linguagens de Programação:** Python, JavaScript, PHP, Java, C, C++.
-- **Frameworks & Bibliotecas (Frontend):** React.js, WordPress, Bootstrap.
-- **Frameworks & Bibliotecas (Backend):** Flask, Flask-SQLAlchemy.
-- **Banco de Dados:** SQLite, MySQL, T-SQL, ORM (SQLAlchemy).
-- **Ferramentas & DevOps:** Git, npm, npx; Deploy Cloud (Render.com).
-- **Outras:** HTML5, CSS3, NetLogo, Google Calendar API.
+| Projeto | Tipo | Principais tecnologias | Link |
+| --- | --- | --- | --- |
+| Orbit | SaaS interno para operacoes de TI | React, TypeScript, FastAPI, PostgreSQL, Docker, Microsoft Graph, GLPI | [Abrir sistema](https://orbit.dunatecnologia.com/) |
+| Marcato | Sistema de reservas institucional | PHP, OAuth 2.0, Google Calendar API, PHPMailer | [GitHub](https://github.com/murilosilvaof/sistema-reservas-emufrn) |
+| SafeStop | MVP mobile de seguranca urbana | React Native, Expo, JavaScript | [Abrir MVP](https://safe-stop-one.vercel.app/) |
+| LogAp Challenge | Gestao de vendas full stack | React, Flask, Python, JavaScript | [GitHub](https://github.com/murilosilvaof/logap-desafio-dev-junior) |
+| MyBarbershop | Site comercial com agendamento | HTML, Tailwind CSS, JavaScript, WhatsApp | [Abrir site](https://mybarbershop-six.vercel.app/) |
+| Simulacao de Agentes | Projeto academico de agentes racionais | NetLogo, C++, CMake | [GitHub](https://github.com/murilosilvaof/simulacao-agentes-limpeza) |
 
-## 🔗 Acesse meu portfólio online
+## Competencias
 
-👉 [Clique aqui para visualizar o portfólio]([https://murilosilvaof.github.io](https://murilosilvaof.github.io/murilosilva.github.io/)
+- Desenvolvimento frontend com HTML, CSS, JavaScript, React e TypeScript.
+- Desenvolvimento backend com Python, FastAPI, Flask, PHP e integracoes via API.
+- Banco de dados com PostgreSQL, SQLite, MySQL, T-SQL e SQLAlchemy.
+- Deploy, versionamento e organizacao de projetos com Git, GitHub, Docker, Vercel, Render e GitHub Pages.
+- Automacoes e integracoes com Microsoft Graph, GLPI, Google Calendar API e WhatsApp.
 
-## 🚀 Principais Projetos
+## Contato
 
-| Projeto | Descrição | Link |
-|---|---|---|
-| **Sistema de Gestão de Vendas (Desafio LogAp)** | Aplicação Full-Stack (Python/Flask + React) para gestão de vendas, incluindo CRUD de clientes/produtos/pedidos e relatórios. Contém API de lógica complexa. | [Ver Aplicação](https://logap-desafio-dev-junior-murilo-silva-1ekp.onrender.com/) / [GitHub](https://github.com/murilosilvaof/logap-desafio-dev-junior) |
-| **ISM Cursos** | Plataforma de cursos online com área do aluno e automações | [Ver site](https://ismcursos.com.br) |
-| **Orbit** | Central de serviços e operações da MDR Advocacia, com chamados, kanban, aprovações, base de conhecimento, integração Microsoft/GLPI, Microsoft Graph, PostgreSQL e Docker. Atuei como responsável pelo desenvolvimento e entrega. | [Ver sistema](https://orbit.dunatecnologia.com/) |
-| **Marcato (EMUFRN)** | Sistema de reservas oficial da Escola de Música da UFRN | [Ver sistema](https://musica.ufrn.br) / [GitHub](https://github.com/murilosilvaof/sistema-reservas-emufrn) |
-| **Simulação de Agentes** | Agentes racionais com comportamento emergente (NetLogo, C++) | [GitHub](https://github.com/murilosilvaof/simulacao-agentes-limpeza) |
-
-## 📫 Contato
-
-- Email: **murilodevweb@gmail.com**
-- Instagram: [@murilosilvaof](https://instagram.com/murilosilvaof)
-- LinkedIn: [linkedin.com/in/murilosilvaof](https://linkedin.com/in/murilosilvaof)
+- Email: [murilosilvafrancisco49@gmail.com](mailto:murilosilvafrancisco49@gmail.com)
+- LinkedIn: [linkedin.com/in/murilosilvaof](https://www.linkedin.com/in/murilosilvaof/)
 - GitHub: [github.com/murilosilvaof](https://github.com/murilosilvaof)
+- Instagram: [@murilosilvaof](https://instagram.com/murilosilvaof)
 
 ---
 
-> Obrigado por visitar meu repositório! Se quiser trocar ideias, colaborar ou apenas conversar sobre tecnologia, estou sempre aberto a novas conexões.
+Este portfolio esta em evolucao continua e sera atualizado conforme novos projetos forem publicados.
