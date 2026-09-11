@@ -92,7 +92,7 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
                     </div>
                 </article>
                 <div class="hero-stats">
-                    <article class="stat"><strong>7+</strong><span>projetos em destaque</span></article>
+                    <article class="stat"><strong>8+</strong><span>projetos em destaque</span></article>
                     <article class="stat"><strong>3</strong><span>frentes de experiencia real</span></article>
                     <article class="stat"><strong>Top 10</strong><span>reconhecimento com AprendAI</span></article>
                 </div>
@@ -292,8 +292,26 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
                     </div>
                 </article>
 
+                <article class="project reveal" data-cats="all producao produto frontend institucional" data-project="mybarbershop">
+                    <div class="project-top"><span class="order">05</span><span class="status">Site com agendamento</span></div>
+                    <div class="thumb"><img src="assets/mybarbershop/dashboard.png" alt="Tela principal do Barber & Co." loading="lazy"></div>
+                    <div class="project-body">
+                        <div class="meta"><span>Landing page</span><span>2026</span></div>
+                        <h3>Barber & Co.</h3>
+                        <p>Site premium de barbearia com foco em conversao, servicos, equipe, pagamento e agendamento online.</p>
+                        <div class="tags"><span>HTML</span><span>Tailwind CSS</span><span>JavaScript</span><span>Vercel</span></div>
+                        <div class="project-actions">
+                            <button class="btn secondary open-modal" data-project="mybarbershop">Ver detalhes</button>
+                            <div class="icons">
+                                <a class="icon" href="https://mybarbershop-six.vercel.app" target="_blank" rel="noreferrer" aria-label="Abrir Barber & Co."><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a class="icon" href="https://github.com/murilosilvaof/MyBarbershop" target="_blank" rel="noreferrer" aria-label="GitHub Barber & Co."><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
                 <article class="project reveal" data-cats="all sistema" data-project="marcato">
-                    <div class="project-top"><span class="order">05</span><span class="status">Sistema academico</span></div>
+                    <div class="project-top"><span class="order">06</span><span class="status">Sistema academico</span></div>
                     <div class="thumb"><img src="assets/marcato/principal.png" alt="Tela do Marcato" loading="lazy"></div>
                     <div class="project-body">
                         <div class="meta"><span>Reservas</span><span>2025</span></div>
@@ -311,7 +329,7 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
                 </article>
 
                 <article class="project reveal" data-cats="all produto sistema" data-project="safestop">
-                    <div class="project-top"><span class="order">06</span><span class="status">MVP multiplataforma</span></div>
+                    <div class="project-top"><span class="order">07</span><span class="status">MVP multiplataforma</span></div>
                     <div class="thumb"><img src="assets/safestop/principal.png" alt="Tela do app SafeStop" loading="lazy"></div>
                     <div class="project-body">
                         <div class="meta"><span>React Native</span><span>2026</span></div>
@@ -326,7 +344,7 @@ h1,.section-head h2,.contact h2,.modal-body h3{font-family:"Space Grotesk",sans-
                 </article>
 
                 <article class="project reveal" data-cats="all produto" data-project="aprendai">
-                    <div class="project-top"><span class="order">07</span><span class="status">Produto premiado</span></div>
+                    <div class="project-top"><span class="order">08</span><span class="status">Produto premiado</span></div>
                     <div class="thumb"><img src="assets/aprendai/aprendai.png" alt="Tela do AprendAI" loading="lazy"></div>
                     <div class="project-body">
                         <div class="meta"><span>PWA</span><span>Produto</span></div>
@@ -561,8 +579,53 @@ const data = {
         ],
         links: [["https://orbit.dunatecnologia.com/", "Abrir Orbit", "primary", "fa-solid fa-arrow-up-right-from-square"]]
     },
-    marcato: {
+    mybarbershop: {
         rank: "Projeto 05",
+        status: "Publicado",
+        type: "Site com agendamento",
+        title: "Barber & Co.",
+        summary: "Site profissional para barbearia com visual premium, foco em conversao e fluxo completo de agendamento online.",
+        role: "Desenvolvimento de uma single page responsiva, criacao do fluxo de reserva, simulacao de pagamento Pix/cartao, integracao com WhatsApp para aceite do barbeiro, publicacao no GitHub e deploy em producao na Vercel.",
+        stack: ["HTML", "Tailwind CSS", "JavaScript", "Vercel", "GitHub"],
+        list: ["Mostra capacidade de criar uma experiencia comercial completa, nao apenas uma pagina visual.", "Fluxo de agendamento em etapas com servico, barbeiro, data, cliente e pagamento.", "Publicacao real em Vercel com repositorio GitHub conectado para portfolio."],
+        image: "assets/mybarbershop/dashboard.png",
+        alt: "Tela principal do Barber & Co.",
+        gallery: [
+            {
+                image: "assets/mybarbershop/dashboard.png",
+                alt: "Tela principal do Barber & Co.",
+                title: "Experiencia principal",
+                text: "Abertura do site com identidade premium, tema escuro, chamada para acao e estrutura visual voltada para conversao de clientes."
+            },
+            {
+                image: "assets/mybarbershop/services.png",
+                alt: "Secao de servicos do Barber & Co.",
+                title: "Servicos e precos",
+                text: "Cards de servicos com fotos, duracao e preco, facilitando a comparacao antes do cliente iniciar o agendamento."
+            },
+            {
+                image: "assets/mybarbershop/equipe.png",
+                alt: "Secao de equipe do Barber & Co.",
+                title: "Equipe profissional",
+                text: "Area dedicada aos barbeiros disponiveis, reforcando confianca e permitindo que o cliente escolha o profissional desejado."
+            },
+            {
+                image: "assets/mybarbershop/agendamento.png",
+                alt: "Fluxo de agendamento do Barber & Co.",
+                title: "Agendamento em etapas",
+                text: "Fluxo guiado para selecionar servico, barbeiro, data, horario, nome do cliente e forma de pagamento."
+            },
+            {
+                image: "assets/mybarbershop/confirmaagendamentowhats.png",
+                alt: "Confirmacao por WhatsApp do Barber & Co.",
+                title: "WhatsApp e aceite",
+                text: "Confirmacao preparada para envio ao WhatsApp do barbeiro, com link de aceite para bloquear o horario como ocupado."
+            }
+        ],
+        links: [["https://mybarbershop-six.vercel.app", "Abrir site", "primary", "fa-solid fa-arrow-up-right-from-square"], ["https://github.com/murilosilvaof/MyBarbershop", "Ver GitHub", "secondary", "fa-brands fa-github"]]
+    },
+    marcato: {
+        rank: "Projeto 06",
         status: "Sistema academico",
         type: "Reservas",
         title: "Marcato",
@@ -589,7 +652,7 @@ const data = {
         links: [["https://sistema-reservas-emufrn.vercel.app/", "Abrir sistema", "primary", "fa-solid fa-arrow-up-right-from-square"], ["https://github.com/murilosilvaof/sistema-reservas-emufrn", "Ver GitHub", "secondary", "fa-brands fa-github"]]
     },
     safestop: {
-        rank: "Projeto 06",
+        rank: "Projeto 07",
         status: "MVP multiplataforma",
         type: "Seguranca urbana",
         title: "SafeStop",
@@ -641,7 +704,7 @@ const data = {
         links: [["https://lnkd.in/p/dMUqf8SB", "Ver publicacao", "primary", "fa-brands fa-linkedin"], ["https://safe-stop-one.vercel.app/", "Abrir MVP", "secondary", "fa-solid fa-arrow-up-right-from-square"]]
     },
     aprendai: {
-        rank: "Projeto 07",
+        rank: "Projeto 08",
         status: "Produto premiado",
         type: "PWA",
         title: "AprendAI",
