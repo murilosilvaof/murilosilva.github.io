@@ -14,6 +14,7 @@ Sou Murilo Francisco da Silva, estudante da UFRN com ênfase em Engenharia da Co
 
 | Projeto | Tipo | Principais tecnologias | Link |
 | --- | --- | --- | --- |
+| Dra. Michelle Dantas | Landing page de advocacia | HTML, CSS, JavaScript, WhatsApp | [Visitar site](https://www.michelledantas.adv.br/) |
 | Orbit | SaaS interno para operações de TI | React, TypeScript, FastAPI, PostgreSQL, Docker, Microsoft Graph, GLPI | [Abrir sistema](https://orbit.dunatecnologia.com/) |
 | Marcato | Sistema de reservas institucional | PHP, OAuth 2.0, Google Calendar API, PHPMailer | [GitHub](https://github.com/murilosilvaof/sistema-reservas-emufrn) |
 | SafeStop | MVP mobile de segurança urbana | React Native, Expo, JavaScript | [Abrir MVP](https://safe-stop-one.vercel.app/) |
@@ -21,7 +22,7 @@ Sou Murilo Francisco da Silva, estudante da UFRN com ênfase em Engenharia da Co
 | MyBarbershop | Site comercial com agendamento | HTML, Tailwind CSS, JavaScript, WhatsApp | [Abrir site](https://mybarbershop-six.vercel.app/) |
 | Simulação de Agentes | Projeto acadêmico de agentes racionais | NetLogo, C++, CMake | [GitHub](https://github.com/murilosilvaof/simulacao-agentes-limpeza) |
 
-## Competencias
+## Competências
 
 - Desenvolvimento frontend com HTML, CSS, JavaScript, React e TypeScript.
 - Desenvolvimento backend com Python, FastAPI, Flask, PHP e integrações via API.
