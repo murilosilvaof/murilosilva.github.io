@@ -84,17 +84,33 @@ export const projectDetails = {
         links: [{ href: "https://pt.linkedin.com/posts/murilosilvaof_safestop-iot-reactnative-activity-7474846257816154113-oCYU", label: "Ver publicação no LinkedIn" }]
     },
     convite: {
-        role: "Desenvolvi o convite responsivo e a abertura em estilo de baile, com monograma, animação floral e controle da trilha sonora.",
+        role: "Desenvolvi duas direções visuais para a mesma festa. Jardim Encantado tem um envelope floral e uma alameda iluminada. Baile em vinho e dourado tem monograma e uma composição clássica de XV anos.",
         points: [
+            "Abertura animada com flores e pétalas, trilha sonora personalizada e layout pensado para celular.",
             "Localização com acesso ao GPS, contagem regressiva e confirmação de presença pelo WhatsApp.",
             "Sugestões de presentes e QR Code personalizado para reunir fotos e vídeos da festa em uma pasta compartilhada."
         ],
-        gallery: [
-            { image: "convite/capa.webp", video: "convite/abertura.webm", portrait: true, title: "Abertura animada", description: "Veja a transição da capa para o convite, com flores, borboletas e pétalas em movimento. A prévia em vídeo é silenciosa." },
-            { image: "convite/entrada.webp", portrait: true, title: "Convite aberto", description: "O monograma e a composição em vinho e dourado dão entrada aos detalhes da festa e à rota via GPS." },
-            { image: "convite/contagem.webp", title: "Contagem regressiva", description: "O relógio acompanha a chegada da festa em dias, horas, minutos e segundos. A imagem usa uma contagem de exemplo." },
-            { image: "convite/presentes.webp", portrait: true, title: "Sugestões de presentes", description: "Sugestões organizadas por categoria para os convidados." },
-            { image: "convite/galeria.webp", portrait: true, title: "Fotos e vídeos por QR Code", description: "O QR Code original levava à pasta colaborativa da festa. A imagem mostra um QR Code de demonstração." }
+        models: [
+            {
+                label: "Jardim Encantado",
+                gallery: [
+                    { image: "convite/jardim/capa.webp", portrait: true, title: "Capa do Jardim Encantado", description: "Um envelope com rosas, selo de 15 anos e uma alameda iluminada dá início ao convite." },
+                    { image: "convite/jardim/entrada.webp", portrait: true, title: "Convite aberto", description: "Luzes e pétalas emolduram o nome da aniversariante, os detalhes da festa e o acesso à confirmação de presença." },
+                    { image: "convite/jardim/contagem.webp", portrait: true, title: "Contagem e confirmação", description: "Relógio regressivo e botões para confirmar presença pelo WhatsApp ou falar com a organização. A contagem exibida é ilustrativa." },
+                    { image: "convite/jardim/galeria.webp", portrait: true, title: "Memórias da noite", description: "O QR Code original direcionava os convidados à pasta de fotos e vídeos da festa. Esta prévia usa um QR Code de demonstração." },
+                    { image: "convite/jardim/capa.webp", video: "convite/jardim/abertura.webm", portrait: true, title: "Abertura em vídeo", description: "Transição do envelope para o jardim, com flores e pétalas em movimento. A prévia em vídeo é silenciosa." }
+                ]
+            },
+            {
+                label: "Baile em vinho e dourado",
+                gallery: [
+                    { image: "convite/capa.webp", video: "convite/abertura.webm", portrait: true, title: "Abertura animada", description: "Veja a transição da capa para o convite, com flores, borboletas e pétalas em movimento. A prévia em vídeo é silenciosa." },
+                    { image: "convite/entrada.webp", portrait: true, title: "Convite aberto", description: "O monograma e a composição em vinho e dourado dão entrada aos detalhes da festa e à rota via GPS." },
+                    { image: "convite/contagem.webp", title: "Contagem regressiva", description: "O relógio acompanha a chegada da festa em dias, horas, minutos e segundos. A imagem usa uma contagem de exemplo." },
+                    { image: "convite/presentes.webp", portrait: true, title: "Sugestões de presentes", description: "Sugestões organizadas por categoria para os convidados." },
+                    { image: "convite/galeria.webp", portrait: true, title: "Fotos e vídeos por QR Code", description: "O QR Code original levava à pasta colaborativa da festa. A imagem mostra um QR Code de demonstração." }
+                ]
+            }
         ]
     },
     aprendai: {

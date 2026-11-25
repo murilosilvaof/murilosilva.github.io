@@ -32,6 +32,7 @@ const galleryImage = dialog.querySelector("#gallery-image");
 const galleryVideo = dialog.querySelector("#gallery-video");
 const galleryTitle = dialog.querySelector("#gallery-title");
 const galleryDescription = dialog.querySelector("#gallery-description");
+const galleryModels = dialog.querySelector("#gallery-models");
 const galleryControls = dialog.querySelector("#gallery-controls");
 const galleryNext = dialog.querySelector("#gallery-next");
 const galleryPosition = dialog.querySelector("#gallery-position");
@@ -113,6 +114,34 @@ function galleryButton(slide, index) {
     return button;
 }
 
+function setGallery(items) {
+    slides = items;
+    const hasMoreSlides = slides.length > 1;
+    galleryControls.hidden = !hasMoreSlides;
+    galleryItems.hidden = !hasMoreSlides;
+    galleryItems.replaceChildren(...(hasMoreSlides ? slides.map(galleryButton) : []));
+    showSlide(0);
+}
+
+function setGalleryModels(models) {
+    const buttons = models.map((model, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "button button-outline";
+        button.textContent = model.label;
+        button.setAttribute("aria-pressed", String(index === 0));
+        button.addEventListener("click", () => {
+            if (button.getAttribute("aria-pressed") === "true") return;
+            for (const option of buttons) option.setAttribute("aria-pressed", String(option === button));
+            setGallery(model.gallery);
+            dialog.scrollTop = 0;
+        });
+        return button;
+    });
+    galleryModels.replaceChildren(...buttons);
+    galleryModels.hidden = !buttons.length;
+}
+
 function openProject(card, trigger) {
     const project = projectDetails[card.dataset.project];
     const link = card.querySelector(".project-link");
@@ -131,12 +160,9 @@ function openProject(card, trigger) {
     );
     dialogLinks.hidden = !dialogLinks.childElementCount;
 
-    slides = project.gallery;
-    const hasMoreSlides = slides.length > 1;
-    galleryControls.hidden = !hasMoreSlides;
-    galleryItems.hidden = !hasMoreSlides;
-    galleryItems.replaceChildren(...(hasMoreSlides ? slides.map(galleryButton) : []));
-    showSlide(0);
+    const models = project.models ?? [];
+    setGalleryModels(models);
+    setGallery(models[0]?.gallery ?? project.gallery);
     dialog.showModal();
     dialog.scrollTop = 0;
 }

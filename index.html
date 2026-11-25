@@ -216,17 +216,22 @@
                         <div class="project-grid">
                             <article class="project project-card project-card--invite" id="maria-luyza" data-project="convite">
                                 <div class="project-cover project-cover--invite">
-                                    <img src="assets/convite/capa.webp" alt="Capa em vinho e dourado do convite de XV anos de Maria Luyza" width="420" height="880" loading="lazy" decoding="async">
-                                    <img src="assets/convite/entrada.webp" alt="Convite aberto com o monograma, o nome da aniversariante e pétalas sobre o fundo floral" width="420" height="880" loading="lazy" decoding="async">
+                                    <img src="assets/convite/jardim/capa.webp" alt="Capa do modelo Jardim Encantado, com uma alameda iluminada e envelope floral de 15 anos" width="426" height="926" loading="lazy" decoding="async">
+                                    <img src="assets/convite/jardim/entrada.webp" alt="Convite aberto com o nome de Luyza em dourado, pétalas e luzes no jardim" width="426" height="926" loading="lazy" decoding="async">
                                 </div>
                                 <div class="project-copy">
-                                    <p class="eyebrow project-type">Convite digital interativo · 2026</p>
+                                    <p class="eyebrow project-type">Convite digital · 2 modelos</p>
                                     <h5 class="project-title">Maria Luyza · XV anos</h5>
-                                    <p>Convite com abertura animada, pétalas em movimento e trilha personalizada de baile.<span class="project-extra-copy"> Reúne rota via GPS, contagem regressiva, sugestões de presentes, confirmação via WhatsApp e QR Code para as fotos e os vídeos da festa.</span></p>
+                                    <p>Criei duas propostas personalizadas a partir do pedido do cliente. Ele escolhe o modelo que serve de base para o convite final.<span class="project-extra-copy"> As propostas têm abertura animada, trilha de baile personalizada e recursos para os convidados.</span></p>
                                     <ul class="tags" aria-label="Tecnologias"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
                                     <div class="actions project-actions">
-                                        <button class="button button-primary project-detail" type="button" hidden>Ver demonstração</button>
-                                        <noscript><a class="text-link" href="assets/convite/abertura.webm">Ver abertura do convite</a></noscript>
+                                        <button class="button button-primary project-detail" type="button" hidden>Ver os dois modelos</button>
+                                        <noscript>
+                                            <div class="actions">
+                                                <a class="text-link" href="assets/convite/jardim/abertura.webm">Ver Jardim Encantado</a>
+                                                <a class="text-link" href="assets/convite/abertura.webm">Ver Baile em vinho e dourado</a>
+                                            </div>
+                                        </noscript>
                                     </div>
                                 </div>
                             </article>
@@ -348,6 +353,7 @@
             </header>
             <div class="dialog-content">
                 <div class="gallery">
+                    <div class="gallery-models" id="gallery-models" role="group" aria-label="Modelos do convite" hidden></div>
                     <div class="gallery-controls" id="gallery-controls" hidden>
                         <button class="button button-outline" type="button" id="gallery-prev">Anterior</button>
                         <span id="gallery-position"></span>

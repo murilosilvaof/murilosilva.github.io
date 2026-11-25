@@ -212,7 +212,7 @@ h1 { margin: .75rem 0 1.2rem; font-size: clamp(3.5rem, 8.15vw, 8rem); letter-spa
     box-shadow: 0 12px 34px #20081336;
 }
 .project-card--invite { border-color: #d4ad85; }
-.project-card--invite .project-cover--invite { background: radial-gradient(ellipse at 50% 20%, #723841, #271019 80%); border-color: #c89260; }
+.project-card--invite .project-cover--invite { background: radial-gradient(ellipse at 50% 15%, #896044, #2f1720 83%); border-color: #c89260; }
 .project-card--invite .project-type { color: #783c30; }
 .project-card--invite .button-primary { background: #682538; }
 .project-card--invite .button-primary:hover { background: #4b1224; }
@@ -286,6 +286,9 @@ h1 { margin: .75rem 0 1.2rem; font-size: clamp(3.5rem, 8.15vw, 8rem); letter-spa
 .gallery-caption { margin-block: .75rem; }
 .gallery-caption h3, .dialog-description h3 { margin-bottom: .35rem; font-size: 1.125rem; }
 .gallery-caption p, .dialog-description p, .dialog-points { color: var(--muted); }
+.gallery-models { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; margin-bottom: .85rem; }
+.gallery-models .button { min-width: 0; padding-inline: .625rem; background: var(--surface); }
+.gallery-models .button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
 .gallery-controls { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding-bottom: .75rem; }
 .gallery-controls span { color: var(--muted); font-size: .875rem; font-weight: 700; }
 .gallery-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(6.3rem, 1fr)); gap: .5rem; }
