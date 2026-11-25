@@ -86,7 +86,7 @@ export const projectDetails = {
     convite: {
         role: "Desenvolvi duas direções visuais para a mesma festa. Jardim Encantado tem um envelope floral e uma alameda iluminada. Baile em vinho e dourado tem monograma e uma composição clássica de XV anos.",
         points: [
-            "Abertura animada com flores e pétalas, trilha sonora personalizada e layout pensado para celular.",
+            "Abertura animada com flores e pétalas, controle da trilha instrumental e layout pensado para celular.",
             "Localização com acesso ao GPS, contagem regressiva e confirmação de presença pelo WhatsApp.",
             "Sugestões de presentes e QR Code personalizado para reunir fotos e vídeos da festa em uma pasta compartilhada."
         ],
