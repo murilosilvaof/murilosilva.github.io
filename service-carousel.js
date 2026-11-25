@@ -1,41 +1,20 @@
-const ROTATION_DELAY = 5000;
+const ROTATION_DELAY = 3000;
 
-export function initProjectCarousel(cards, dialog) {
-    const carousel = document.querySelector("#project-carousel");
+export function initServiceCarousel(dialog) {
+    const carousel = document.querySelector("#service-carousel");
     const track = carousel.querySelector("#carousel-track");
+    const shortcuts = carousel.querySelector(".carousel-shortcuts");
+    const footer = carousel.querySelector(".carousel-footer");
     const toggle = carousel.querySelector(".carousel-toggle");
     const position = carousel.querySelector(".carousel-position");
-    const highlights = Array.from(carousel.querySelectorAll("[data-highlight]"));
-    const featuredIds = highlights.map((button) => button.dataset.highlight);
-    const orderedCards = [
-        ...featuredIds.map((id) => cards.find((card) => card.dataset.project === id)),
-        ...cards.filter((card) => !featuredIds.includes(card.dataset.project))
-    ];
+    const choices = shortcuts.querySelectorAll("[data-service-target]");
+    const slides = Array.from(track.querySelectorAll(".carousel-slide"));
 
-    const slides = orderedCards.map((card, index) => {
-        const slide = card.cloneNode(true);
-        slide.removeAttribute("id");
-        slide.classList.replace("project-card", "carousel-slide");
+    slides.forEach((slide, index) => {
         slide.setAttribute("role", "group");
         slide.setAttribute("aria-roledescription", "slide");
-        slide.setAttribute("aria-label", `${index + 1} de ${orderedCards.length}`);
-        const title = slide.querySelector(".project-title");
-        const heading = document.createElement("h3");
-        heading.className = title.className;
-        heading.textContent = title.textContent;
-        title.replaceWith(heading);
-
-        if (featuredIds.includes(card.dataset.project)) {
-            const type = slide.querySelector(".project-type");
-            type.prepend("Destaque · ");
-        }
-        const link = slide.querySelector(".project-link");
-        if (link) {
-            link.className = "button button-primary project-link";
-            link.parentElement.prepend(link);
-        }
-        for (const image of slide.querySelectorAll("img")) image.draggable = false;
-        return slide;
+        slide.setAttribute("aria-label", `${index + 1} de ${slides.length}`);
+        slide.querySelector("img").draggable = false;
     });
 
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -52,8 +31,8 @@ export function initProjectCarousel(cards, dialog) {
     function updateActiveSlide(index) {
         activeIndex = index;
         slides.forEach((slide, slideIndex) => { slide.inert = slideIndex !== index; });
-        for (const button of highlights) {
-            if (button.dataset.highlight === slides[index].dataset.project) {
+        for (const button of choices) {
+            if (button.dataset.serviceTarget === slides[index].dataset.service) {
                 button.setAttribute("aria-current", "true");
             } else {
                 button.removeAttribute("aria-current");
@@ -112,18 +91,23 @@ export function initProjectCarousel(cards, dialog) {
 
     function updateRotationControl() {
         toggle.hidden = reducedMotion.matches;
-        toggle.textContent = autoRotate ? "Pausar rotação" : "Retomar rotação";
+        toggle.textContent = autoRotate ? "Pausar" : "Retomar";
+        toggle.setAttribute("aria-label", autoRotate ? "Pausar rotação automática" : "Retomar rotação automática");
         position.setAttribute("aria-live", autoRotate && !reducedMotion.matches ? "off" : "polite");
         refreshRotation();
     }
 
-    track.replaceChildren(...slides);
-    carousel.hidden = false;
+    carousel.classList.add("is-enhanced");
+    track.tabIndex = 0;
+    track.setAttribute("role", "group");
+    track.setAttribute("aria-label", "Serviços. Use as setas do teclado ou deslize para navegar.");
+    shortcuts.hidden = false;
+    footer.hidden = false;
     updateActiveSlide(0);
     updateRotationControl();
 
-    for (const button of highlights) {
-        button.addEventListener("click", () => scrollToSlide(featuredIds.indexOf(button.dataset.highlight)));
+    for (const button of choices) {
+        button.addEventListener("click", () => scrollToSlide(slides.findIndex((slide) => slide.dataset.service === button.dataset.serviceTarget)));
     }
     for (const button of carousel.querySelectorAll("[data-carousel-step]")) {
         button.addEventListener("click", () => scrollToSlide(activeIndex + Number(button.dataset.carouselStep)));
@@ -146,7 +130,7 @@ export function initProjectCarousel(cards, dialog) {
 
     // Touch and trackpads use native scrolling. Mouse users can also drag the cover.
     track.addEventListener("pointerdown", (event) => {
-        if (event.pointerType !== "mouse" || event.button !== 0 || !event.target.closest(".project-cover")) return;
+        if (event.pointerType !== "mouse" || event.button !== 0 || !event.target.closest(".service-slide-media")) return;
         drag = { pointerId: event.pointerId, x: event.clientX, left: track.scrollLeft, index: activeIndex };
         track.setPointerCapture(event.pointerId);
         refreshRotation();

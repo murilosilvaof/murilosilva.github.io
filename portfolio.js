@@ -1,5 +1,5 @@
 import { projectDetails } from "./project-data.js";
-import { initProjectCarousel } from "./project-carousel.js";
+import { initServiceCarousel } from "./service-carousel.js";
 
 const menu = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#site-nav");
@@ -26,7 +26,7 @@ document.querySelector(".site-header").addEventListener("keydown", (event) => {
 
 const cards = Array.from(document.querySelectorAll(".project-catalog .project[data-project]"));
 const dialog = document.querySelector("#project-dialog");
-initProjectCarousel(cards, dialog);
+initServiceCarousel(dialog);
 const galleryFrame = dialog.querySelector(".gallery-frame");
 const galleryImage = dialog.querySelector("#gallery-image");
 const galleryVideo = dialog.querySelector("#gallery-video");
