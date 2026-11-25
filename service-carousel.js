@@ -27,10 +27,20 @@ export function initServiceCarousel(dialog) {
     let timer;
     let scrollFrame;
     let drag;
+    const slideResizeObserver = typeof ResizeObserver === "function" ? new ResizeObserver(fitTrack) : null;
+
+    function fitTrack() {
+        track.style.height = `${Math.ceil(slides[activeIndex].getBoundingClientRect().height)}px`;
+    }
 
     function updateActiveSlide(index) {
         activeIndex = index;
         slides.forEach((slide, slideIndex) => { slide.inert = slideIndex !== index; });
+        if (slideResizeObserver) {
+            slideResizeObserver.disconnect();
+            slideResizeObserver.observe(slides[index]);
+            fitTrack();
+        }
         for (const button of choices) {
             if (button.dataset.serviceTarget === slides[index].dataset.service) {
                 button.setAttribute("aria-current", "true");

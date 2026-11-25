@@ -1,5 +1,5 @@
 import { projectDetails } from "./project-data.js";
-import { initServiceCarousel } from "./service-carousel.js";
+import { initServiceCarousel } from "./service-carousel.js?v=capas-servicos";
 
 const menu = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#site-nav");
