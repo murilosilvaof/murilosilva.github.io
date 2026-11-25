@@ -212,6 +212,7 @@ h1 { margin: .75rem 0 1.2rem; font-size: clamp(3.5rem, 8.15vw, 8rem); letter-spa
     box-shadow: 0 12px 34px #20081336;
 }
 .project-card--invite { border-color: #d4ad85; }
+.project-card .project-cover--invite { aspect-ratio: 4 / 3; }
 .project-card--invite .project-cover--invite { background: radial-gradient(ellipse at 50% 15%, #896044, #2f1720 83%); border-color: #c89260; }
 .project-card--invite .project-type { color: #783c30; }
 .project-card--invite .button-primary { background: #682538; }
