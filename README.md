@@ -14,7 +14,10 @@ Sou Murilo Francisco da Silva, estudante da UFRN com ênfase em Engenharia da Co
 
 | Projeto | Tipo | Principais tecnologias | Link |
 | --- | --- | --- | --- |
+| MDR Advocacia | Site institucional | PHP, JavaScript, Docker, CSS | [Visitar site](https://mdradvocacia.com/) |
 | Dra. Michelle Dantas | Landing page de advocacia | HTML, CSS, JavaScript, WhatsApp | [Visitar site](https://www.michelledantas.adv.br/) |
+| ISM Cursos | Plataforma de ensino e venda de cursos | WordPress, WooCommerce, Elementor, PHP | [Ver plataforma](https://ismcursos.com.br/) |
+| Maria Luyza · XV anos | Convite digital interativo | HTML, CSS, JavaScript | [Ver demonstração no portfólio](https://murilosilvaof.github.io/murilosilva.github.io/?project=convite#maria-luyza) |
 | Orbit | SaaS interno para operações de TI | React, TypeScript, FastAPI, PostgreSQL, Docker, Microsoft Graph, GLPI | [Abrir sistema](https://orbit.dunatecnologia.com/) |
 | Marcato | Sistema de reservas institucional | PHP, OAuth 2.0, Google Calendar API, PHPMailer | [GitHub](https://github.com/murilosilvaof/sistema-reservas-emufrn) |
 | SafeStop | MVP mobile de segurança urbana | React Native, Expo, JavaScript | [Abrir MVP](https://safe-stop-one.vercel.app/) |

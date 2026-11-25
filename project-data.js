@@ -10,7 +10,7 @@ export const projectDetails = {
         ]
     },
     orbit: {
-        role: "Desenvolvi o frontend e o backend, integrei GLPI, Microsoft Entra ID e Microsoft Planner e preparei a implantação com Docker.",
+        role: "Desenvolvi o frontend e o backend para a MDR Advocacia, integrei GLPI, Microsoft Entra ID e Microsoft Planner e preparei a implantação com Docker.",
         tech: ["Docker", "Microsoft Graph", "GLPI"],
         points: ["Login corporativo e permissões por perfil.", "Acompanhamento de chamados, tarefas, avaliações e aprovações."],
         gallery: [
@@ -29,7 +29,7 @@ export const projectDetails = {
         ]
     },
     nic: {
-        role: "Atuei no desenvolvimento web, na integração com o Chatwoot e na implantação e manutenção em servidor.",
+        role: "Desenvolvi o sistema para a MDR Advocacia, integrei o Chatwoot e atuei na implantação e manutenção em servidor.",
         points: ["Processos e prazos centralizados para a equipe jurídica.", "Canais oficiais de WhatsApp integrados ao atendimento."],
         gallery: [
             { image: "nic/login.png", title: "Controle de acesso", description: "Tela de entrada do sistema interno." },
@@ -82,6 +82,20 @@ export const projectDetails = {
             { image: "safestop/safestop.png", title: "Identidade do MVP", description: "Tela complementar do aplicativo." }
         ],
         links: [{ href: "https://pt.linkedin.com/posts/murilosilvaof_safestop-iot-reactnative-activity-7474846257816154113-oCYU", label: "Ver publicação no LinkedIn" }]
+    },
+    convite: {
+        role: "Desenvolvi o convite responsivo e a abertura em estilo de baile, com monograma, animação floral e controle da trilha sonora.",
+        points: [
+            "Localização com acesso ao GPS, contagem regressiva e confirmação de presença pelo WhatsApp.",
+            "Sugestões de presentes e QR Code personalizado para reunir fotos e vídeos da festa em uma pasta compartilhada."
+        ],
+        gallery: [
+            { image: "convite/capa.webp", video: "convite/abertura.webm", portrait: true, title: "Abertura animada", description: "Veja a transição da capa para o convite, com flores, borboletas e pétalas em movimento. A prévia em vídeo é silenciosa." },
+            { image: "convite/entrada.webp", portrait: true, title: "Convite aberto", description: "O monograma e a composição em vinho e dourado dão entrada aos detalhes da festa e à rota via GPS." },
+            { image: "convite/contagem.webp", title: "Contagem regressiva", description: "O relógio acompanha a chegada da festa em dias, horas, minutos e segundos. A imagem usa uma contagem de exemplo." },
+            { image: "convite/presentes.webp", portrait: true, title: "Sugestões de presentes", description: "Sugestões organizadas por categoria para os convidados." },
+            { image: "convite/galeria.webp", portrait: true, title: "Fotos e vídeos por QR Code", description: "O QR Code original levava à pasta colaborativa da festa. A imagem mostra um QR Code de demonstração." }
+        ]
     },
     aprendai: {
         role: "Contribuí para a construção da experiência digital e para a validação da proposta em um programa de inovação.",

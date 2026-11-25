@@ -56,148 +56,197 @@
             <div class="shell">
                 <div class="section-heading">
                     <h2 id="projects-title">Projetos desenvolvidos<span>.</span></h2>
-                    <p>Sites profissionais, produtos digitais e sistemas que integram ferramentas e pessoas.</p>
+                    <p>Sites institucionais, plataformas de ensino, sistemas internos e experiências digitais.</p>
                 </div>
 
-                <div class="filters" role="group" aria-label="Filtrar projetos" hidden>
-                    <button type="button" data-filter="all" aria-pressed="true">Todos</button>
-                    <button type="button" data-filter="frontend" aria-pressed="false">Sites e landing pages</button>
-                    <button type="button" data-filter="sistema" aria-pressed="false">Sistemas</button>
-                    <button type="button" data-filter="produto" aria-pressed="false">Produtos</button>
-                    <button type="button" data-filter="producao" aria-pressed="false">Em produção</button>
-                </div>
-                <p class="sr-only" id="filter-result" role="status"></p>
-
-                <article class="feature project" id="michelle" data-project="michelle" data-cats="frontend producao">
-                    <div class="feature-media">
-                        <img src="assets/capas/michelle-post.webp" alt="Arte de divulgação com o retrato da Dra. Michelle Dantas e a página inicial do site no computador" width="900" height="1125" loading="lazy" decoding="async">
-                        <img src="assets/capas/michelle-story.webp" alt="Arte de divulgação com a seção de áreas de atuação do site no celular" width="780" height="1387" loading="lazy" decoding="async">
+                <div class="project-carousel" id="project-carousel" role="region" aria-roledescription="carrossel" aria-label="Projetos do portfólio" hidden>
+                    <div class="carousel-toolbar">
+                        <div class="carousel-highlights" role="group" aria-label="Ir para um projeto em destaque">
+                            <button type="button" data-highlight="mdr" aria-controls="carousel-track">MDR Advocacia</button>
+                            <button type="button" data-highlight="michelle" aria-label="Dra. Michelle Dantas" aria-controls="carousel-track">Dra. Michelle</button>
+                            <button type="button" data-highlight="ism" aria-controls="carousel-track">ISM Cursos</button>
+                        </div>
+                        <button class="button button-outline carousel-toggle" type="button" aria-controls="carousel-track">Pausar rotação</button>
                     </div>
-                    <div class="feature-copy">
-                        <p class="eyebrow project-type">Landing page em destaque</p>
-                        <h3>Dra. Michelle Dantas</h3>
-                        <p>Landing page de advocacia com identidade visual em vinho e dourado, navegação responsiva e acesso direto ao atendimento pelo WhatsApp.</p>
-                        <ul class="tags" aria-label="Tecnologias"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-                        <div class="actions project-actions">
-                            <a class="button button-primary project-link" href="https://www.michelledantas.adv.br/" target="_blank" rel="noopener">Visitar site</a>
-                            <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                    <div class="carousel-track" id="carousel-track" role="group" aria-label="Projetos. Use as setas do teclado ou deslize para navegar." tabindex="0"></div>
+                    <div class="carousel-footer">
+                        <p>Deslize para explorar todos os projetos</p>
+                        <div class="carousel-controls" role="group" aria-label="Navegação do carrossel">
+                            <button class="button button-outline" type="button" data-carousel-step="-1" aria-controls="carousel-track">Anterior</button>
+                            <span class="carousel-position" aria-live="off"></span>
+                            <button class="button button-outline" type="button" data-carousel-step="1" aria-controls="carousel-track">Próximo</button>
                         </div>
                     </div>
-                </article>
-
-                <div class="project-grid">
-                    <article class="project project-card" data-project="orbit" data-cats="producao produto sistema">
-                        <div class="project-cover"><img src="assets/capas/orbit.webp" alt="Login corporativo do Orbit" loading="lazy" decoding="async"></div>
-                        <div class="project-copy">
-                            <p class="eyebrow project-type">SaaS interno · 2026</p>
-                            <h3>Orbit</h3>
-                            <p>Central de operações de TI com chamados, kanban, aprovações e integração com GLPI e Microsoft Planner.</p>
-                            <ul class="tags" aria-label="Tecnologias"><li>React</li><li>TypeScript</li><li>FastAPI</li><li>PostgreSQL</li></ul>
-                            <div class="actions project-actions">
-                                <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
-                                <a class="text-link project-link" href="https://orbit.dunatecnologia.com/" target="_blank" rel="noopener">Abrir sistema</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project project-card" data-project="mdr" data-cats="producao frontend">
-                        <div class="project-cover"><img src="assets/capas/mdr.webp" alt="Página inicial do site da MDR Advocacia" loading="lazy" decoding="async"></div>
-                        <div class="project-copy">
-                            <p class="eyebrow project-type">Site institucional · 2025–2026</p>
-                            <h3>MDR Advocacia</h3>
-                            <p>Portal institucional para apresentar o escritório, suas áreas de atuação e os canais de atendimento.</p>
-                            <ul class="tags" aria-label="Tecnologias"><li>PHP</li><li>JavaScript</li><li>Docker</li><li>CSS</li></ul>
-                            <div class="actions project-actions">
-                                <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
-                                <a class="text-link project-link" href="https://mdradvocacia.com/" target="_blank" rel="noopener">Visitar site</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project project-card" data-project="nic" data-cats="producao sistema">
-                        <div class="project-cover"><img src="assets/capas/nic.webp" alt="Tela de acesso ao sistema NIC" loading="lazy" decoding="async"></div>
-                        <div class="project-copy">
-                            <p class="eyebrow project-type">Sistema jurídico · 2025–2026</p>
-                            <h3>NIC</h3>
-                            <p>Sistema interno para organizar processos, prazos e comunicações da operação jurídica.</p>
-                            <ul class="tags" aria-label="Tecnologias"><li>React</li><li>Node.js</li><li>Docker</li><li>Chatwoot</li></ul>
-                            <div class="actions project-actions">
-                                <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
-                                <a class="text-link project-link" href="https://nic.mdradvocacia.com/" target="_blank" rel="noopener">Abrir sistema</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project project-card" data-project="ism" data-cats="producao produto">
-                        <div class="project-cover"><img src="assets/capas/ism.webp" alt="Página inicial da plataforma ISM Cursos" loading="lazy" decoding="async"></div>
-                        <div class="project-copy">
-                            <p class="eyebrow project-type">Plataforma educacional · 2025–2026</p>
-                            <h3>ISM Cursos</h3>
-                            <p>Plataforma de ensino com catálogo, área do aluno, compra de cursos e automações.</p>
-                            <ul class="tags" aria-label="Tecnologias"><li>WordPress</li><li>WooCommerce</li><li>Elementor</li><li>PHP</li></ul>
-                            <div class="actions project-actions">
-                                <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
-                                <a class="text-link project-link" href="https://ismcursos.com.br/" target="_blank" rel="noopener">Ver plataforma</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project project-card" data-project="mybarbershop" data-cats="producao produto frontend">
-                        <div class="project-cover"><img src="assets/capas/barber.webp" alt="Página inicial do site Barber &amp; Co." loading="lazy" decoding="async"></div>
-                        <div class="project-copy">
-                            <p class="eyebrow project-type">Site com agendamento · 2026</p>
-                            <h3>Barber &amp; Co.</h3>
-                            <p>Site comercial com catálogo de serviços, escolha de profissional e agendamento com confirmação via WhatsApp.</p>
-                            <ul class="tags" aria-label="Tecnologias"><li>HTML</li><li>Tailwind CSS</li><li>JavaScript</li></ul>
-                            <div class="actions project-actions">
-                                <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
-                                <a class="text-link project-link" href="https://mybarbershop-six.vercel.app/" target="_blank" rel="noopener">Visitar site</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project project-card" data-project="marcato" data-cats="sistema">
-                        <div class="project-cover"><img src="assets/capas/marcato.webp" alt="Agenda e painel de reservas do Marcato" loading="lazy" decoding="async"></div>
-                        <div class="project-copy">
-                            <p class="eyebrow project-type">Sistema acadêmico · 2025</p>
-                            <h3>Marcato</h3>
-                            <p>Sistema de reservas para a Escola de Música da UFRN com Google Calendar e notificações automáticas por e-mail.</p>
-                            <ul class="tags" aria-label="Tecnologias"><li>PHP</li><li>OAuth 2.0</li><li>Google Calendar API</li></ul>
-                            <div class="actions project-actions">
-                                <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
-                                <a class="text-link project-link" href="https://sistema-reservas-emufrn.vercel.app/" target="_blank" rel="noopener">Abrir sistema</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project project-card" data-project="safestop" data-cats="produto sistema">
-                        <div class="project-cover"><img src="assets/capas/safestop.webp" alt="Tela principal do aplicativo SafeStop" loading="lazy" decoding="async"></div>
-                        <div class="project-copy">
-                            <p class="eyebrow project-type">Aplicativo · 2026</p>
-                            <h3>SafeStop</h3>
-                            <p>MVP para registrar alertas de insegurança nas paradas do circular da UFRN e avisar a comunidade.</p>
-                            <ul class="tags" aria-label="Tecnologias"><li>React Native</li><li>Expo</li><li>JavaScript</li></ul>
-                            <div class="actions project-actions">
-                                <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
-                                <a class="text-link project-link" href="https://safe-stop-one.vercel.app/" target="_blank" rel="noopener">Abrir MVP</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project project-card" data-project="aprendai" data-cats="produto">
-                        <div class="project-cover"><img src="assets/capas/aprendai.webp" alt="Página do tutor educacional AprendAI" loading="lazy" decoding="async"></div>
-                        <div class="project-copy">
-                            <p class="eyebrow project-type">Produto educacional · PWA</p>
-                            <h3>AprendAI</h3>
-                            <p>Tutor educacional com IA pensado para funcionar offline e ampliar o acesso em locais com internet limitada.</p>
-                            <ul class="tags" aria-label="Tecnologias"><li>React</li><li>PWA</li><li>IA offline</li></ul>
-                            <div class="actions project-actions">
-                                <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
-                                <a class="text-link project-link" href="https://www.instagram.com/p/DQ1dQEtkQ5t/?img_index=1" target="_blank" rel="noopener">Ver publicação</a>
-                            </div>
-                        </div>
-                    </article>
                 </div>
+
+                <section class="project-catalog" aria-labelledby="catalog-title">
+                    <h3 id="catalog-title">Projetos por tipo</h3>
+                    <section class="project-category" aria-labelledby="sites-title">
+                        <h4 id="sites-title">Sites e landing pages</h4>
+                        <div class="project-grid">
+                            <article class="project project-card" id="mdr" data-project="mdr">
+                                <div class="project-cover"><img src="assets/capas/mdr.webp" alt="Página inicial do site da MDR Advocacia" loading="lazy" decoding="async"></div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">Site institucional · 2025–2026</p>
+                                    <h5 class="project-title">MDR Advocacia</h5>
+                                    <p>Site institucional de um escritório de advocacia de grande porte. Apresenta as áreas de atuação, o perfil do escritório e os canais de atendimento.</p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>PHP</li><li>JavaScript</li><li>Docker</li><li>CSS</li></ul>
+                                    <div class="actions project-actions">
+                                        <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                                        <a class="text-link project-link" href="https://mdradvocacia.com/" target="_blank" rel="noopener">Visitar site</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project project-card" id="michelle" data-project="michelle">
+                                <div class="project-cover project-cover--pair">
+                                    <img src="assets/capas/michelle-post.webp" alt="Arte de divulgação com o retrato da Dra. Michelle Dantas e a página inicial do site no computador" width="900" height="1125" loading="lazy" decoding="async">
+                                    <img src="assets/capas/michelle-story.webp" alt="Arte de divulgação com a seção de áreas de atuação do site no celular" width="780" height="1387" loading="lazy" decoding="async">
+                                </div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">Landing page de advocacia · 2026</p>
+                                    <h5 class="project-title">Dra. Michelle Dantas</h5>
+                                    <p>Landing page de advocacia com identidade visual em vinho e dourado, navegação responsiva e acesso direto ao atendimento pelo WhatsApp.</p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                                    <div class="actions project-actions">
+                                        <a class="button button-primary project-link" href="https://www.michelledantas.adv.br/" target="_blank" rel="noopener">Visitar site</a>
+                                        <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project project-card" id="mybarbershop" data-project="mybarbershop">
+                                <div class="project-cover"><img src="assets/capas/barber.webp" alt="Página inicial do site Barber &amp; Co." loading="lazy" decoding="async"></div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">Site com agendamento · 2026</p>
+                                    <h5 class="project-title">Barber &amp; Co.</h5>
+                                    <p>Site comercial com catálogo de serviços, escolha de profissional e agendamento com confirmação via WhatsApp.</p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>HTML</li><li>Tailwind CSS</li><li>JavaScript</li></ul>
+                                    <div class="actions project-actions">
+                                        <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                                        <a class="text-link project-link" href="https://mybarbershop-six.vercel.app/" target="_blank" rel="noopener">Visitar site</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="project-category" aria-labelledby="educacao-title">
+                        <h4 id="educacao-title">Plataformas de ensino</h4>
+                        <div class="project-grid">
+                            <article class="project project-card" id="ism" data-project="ism">
+                                <div class="project-cover"><img src="assets/capas/ism.webp" alt="Página inicial da plataforma ISM Cursos" loading="lazy" decoding="async"></div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">Ensino e venda de cursos · 2025–2026</p>
+                                    <h5 class="project-title">ISM Cursos</h5>
+                                    <p>Plataforma de ensino e venda de cursos, com catálogo, checkout integrado e área para os alunos estudarem.</p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>WordPress</li><li>WooCommerce</li><li>Elementor</li><li>PHP</li></ul>
+                                    <div class="actions project-actions">
+                                        <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                                        <a class="text-link project-link" href="https://ismcursos.com.br/" target="_blank" rel="noopener">Ver plataforma</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project project-card" id="aprendai" data-project="aprendai">
+                                <div class="project-cover"><img src="assets/capas/aprendai.webp" alt="Página do tutor educacional AprendAI" loading="lazy" decoding="async"></div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">Produto educacional · PWA</p>
+                                    <h5 class="project-title">AprendAI</h5>
+                                    <p>Tutor educacional com IA pensado para funcionar offline e ampliar o acesso em locais com internet limitada.</p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>React</li><li>PWA</li><li>IA offline</li></ul>
+                                    <div class="actions project-actions">
+                                        <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                                        <a class="text-link project-link" href="https://www.instagram.com/p/DQ1dQEtkQ5t/?img_index=1" target="_blank" rel="noopener">Ver publicação</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="project-category" aria-labelledby="sistemas-title">
+                        <h4 id="sistemas-title">Sistemas internos e acadêmicos</h4>
+                        <div class="project-grid">
+                            <article class="project project-card" id="nic" data-project="nic">
+                                <div class="project-cover"><img src="assets/capas/nic.webp" alt="Tela de acesso ao sistema NIC" loading="lazy" decoding="async"></div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">Sistema jurídico · 2025–2026</p>
+                                    <h5 class="project-title">NIC</h5>
+                                    <p>Sistema interno que desenvolvi para a MDR Advocacia para organizar processos, prazos e comunicações da operação jurídica.</p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>React</li><li>Node.js</li><li>Docker</li><li>Chatwoot</li></ul>
+                                    <div class="actions project-actions">
+                                        <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                                        <a class="text-link project-link" href="https://nic.mdradvocacia.com/" target="_blank" rel="noopener">Abrir sistema</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project project-card" id="orbit" data-project="orbit">
+                                <div class="project-cover"><img src="assets/capas/orbit.webp" alt="Login corporativo do Orbit" loading="lazy" decoding="async"></div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">SaaS interno · 2026</p>
+                                    <h5 class="project-title">Orbit</h5>
+                                    <p>Central de operações de TI que desenvolvi para a MDR Advocacia, com chamados, kanban, aprovações e integração com GLPI e Microsoft Planner.</p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>React</li><li>TypeScript</li><li>FastAPI</li><li>PostgreSQL</li></ul>
+                                    <div class="actions project-actions">
+                                        <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                                        <a class="text-link project-link" href="https://orbit.dunatecnologia.com/" target="_blank" rel="noopener">Abrir sistema</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project project-card" id="marcato" data-project="marcato">
+                                <div class="project-cover"><img src="assets/capas/marcato.webp" alt="Agenda e painel de reservas do Marcato" loading="lazy" decoding="async"></div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">Sistema acadêmico · 2025</p>
+                                    <h5 class="project-title">Marcato</h5>
+                                    <p>Sistema de reservas para a Escola de Música da UFRN com Google Calendar e notificações automáticas por e-mail.</p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>PHP</li><li>OAuth 2.0</li><li>Google Calendar API</li></ul>
+                                    <div class="actions project-actions">
+                                        <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                                        <a class="text-link project-link" href="https://sistema-reservas-emufrn.vercel.app/" target="_blank" rel="noopener">Abrir sistema</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="project-category" aria-labelledby="experiencias-title">
+                        <h4 id="experiencias-title">Aplicativos e experiências digitais</h4>
+                        <div class="project-grid">
+                            <article class="project project-card project-card--invite" id="maria-luyza" data-project="convite">
+                                <div class="project-cover project-cover--invite">
+                                    <img src="assets/convite/capa.webp" alt="Capa em vinho e dourado do convite de XV anos de Maria Luyza" width="420" height="880" loading="lazy" decoding="async">
+                                    <img src="assets/convite/entrada.webp" alt="Convite aberto com o monograma, o nome da aniversariante e pétalas sobre o fundo floral" width="420" height="880" loading="lazy" decoding="async">
+                                </div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">Convite digital interativo · 2026</p>
+                                    <h5 class="project-title">Maria Luyza · XV anos</h5>
+                                    <p>Convite com abertura animada, pétalas em movimento e trilha personalizada de baile.<span class="project-extra-copy"> Reúne rota via GPS, contagem regressiva, sugestões de presentes, confirmação via WhatsApp e QR Code para as fotos e os vídeos da festa.</span></p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                                    <div class="actions project-actions">
+                                        <button class="button button-primary project-detail" type="button" hidden>Ver demonstração</button>
+                                        <noscript><a class="text-link" href="assets/convite/abertura.webm">Ver abertura do convite</a></noscript>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project project-card" id="safestop" data-project="safestop">
+                                <div class="project-cover"><img src="assets/capas/safestop.webp" alt="Tela principal do aplicativo SafeStop" loading="lazy" decoding="async"></div>
+                                <div class="project-copy">
+                                    <p class="eyebrow project-type">Aplicativo · 2026</p>
+                                    <h5 class="project-title">SafeStop</h5>
+                                    <p>MVP para registrar alertas de insegurança nas paradas do circular da UFRN e avisar a comunidade.</p>
+                                    <ul class="tags" aria-label="Tecnologias"><li>React Native</li><li>Expo</li><li>JavaScript</li></ul>
+                                    <div class="actions project-actions">
+                                        <button class="button button-outline project-detail" type="button" hidden>Ver detalhes</button>
+                                        <a class="text-link project-link" href="https://safe-stop-one.vercel.app/" target="_blank" rel="noopener">Abrir MVP</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </section>
             </div>
         </section>
 

@@ -1,4 +1,5 @@
 import { projectDetails } from "./project-data.js";
+import { initProjectCarousel } from "./project-carousel.js";
 
 const menu = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#site-nav");
@@ -23,28 +24,9 @@ document.querySelector(".site-header").addEventListener("keydown", (event) => {
     }
 });
 
-const cards = Array.from(document.querySelectorAll(".project[data-project]"));
-const filters = document.querySelector(".filters");
-const filterButtons = Array.from(filters.querySelectorAll("button"));
-const filterResult = document.querySelector("#filter-result");
-
-filters.hidden = false;
-for (const button of filterButtons) {
-    button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
-        for (const option of filterButtons) {
-            option.setAttribute("aria-pressed", String(option === button));
-        }
-        let matching = 0;
-        for (const card of cards) {
-            card.hidden = filter !== "all" && !card.dataset.cats.split(" ").includes(filter);
-            matching += Number(!card.hidden);
-        }
-        filterResult.textContent = matching === 1 ? "1 projeto exibido." : `${matching} projetos exibidos.`;
-    });
-}
-
+const cards = Array.from(document.querySelectorAll(".project-catalog .project[data-project]"));
 const dialog = document.querySelector("#project-dialog");
+initProjectCarousel(cards, dialog);
 const galleryFrame = dialog.querySelector(".gallery-frame");
 const galleryImage = dialog.querySelector("#gallery-image");
 const galleryVideo = dialog.querySelector("#gallery-video");
@@ -136,7 +118,7 @@ function openProject(card, trigger) {
     const link = card.querySelector(".project-link");
     const tech = Array.from(card.querySelectorAll(".tags li"), (item) => item.textContent);
     lastTrigger = trigger;
-    dialogTitle.textContent = card.querySelector("h3").textContent;
+    dialogTitle.textContent = card.querySelector(".project-title").textContent;
     dialogType.textContent = card.querySelector(".project-type").textContent;
     dialogSummary.textContent = card.querySelector("p:not(.project-type)").textContent;
     dialogRole.textContent = project.role;
@@ -144,9 +126,10 @@ function openProject(card, trigger) {
     dialogPoints.replaceChildren(...listItems(project.points ?? []));
     dialogPoints.hidden = !project.points?.length;
     dialogLinks.replaceChildren(
-        projectLink(link.href, link.textContent, "button-primary"),
+        ...(link ? [projectLink(link.href, link.textContent, "button-primary")] : []),
         ...(project.links ?? []).map(({ href, label }) => projectLink(href, label, "button-outline"))
     );
+    dialogLinks.hidden = !dialogLinks.childElementCount;
 
     slides = project.gallery;
     const hasMoreSlides = slides.length > 1;
@@ -159,11 +142,11 @@ function openProject(card, trigger) {
 }
 
 if (typeof dialog.showModal === "function") {
-    for (const card of cards) {
-        const trigger = card.querySelector(".project-detail");
+    for (const trigger of document.querySelectorAll(".project-detail")) {
+        const card = trigger.closest(".project");
         trigger.hidden = false;
         trigger.setAttribute("aria-haspopup", "dialog");
-        trigger.setAttribute("aria-label", `Ver detalhes de ${card.querySelector("h3").textContent}`);
+        trigger.setAttribute("aria-label", `${trigger.textContent} de ${card.querySelector(".project-title").textContent}`);
         trigger.addEventListener("click", () => openProject(card, trigger));
     }
     dialog.querySelector("#gallery-prev").addEventListener("click", () => showSlide(slideIndex - 1));
