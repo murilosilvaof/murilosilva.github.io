@@ -7,10 +7,9 @@ export function initProjectCarousel(cards, dialog) {
     const position = carousel.querySelector(".carousel-position");
     const highlights = Array.from(carousel.querySelectorAll("[data-highlight]"));
     const featuredIds = highlights.map((button) => button.dataset.highlight);
-    const showcaseIds = [...featuredIds, "convite"];
     const orderedCards = [
-        ...showcaseIds.map((id) => cards.find((card) => card.dataset.project === id)),
-        ...cards.filter((card) => !showcaseIds.includes(card.dataset.project))
+        ...featuredIds.map((id) => cards.find((card) => card.dataset.project === id)),
+        ...cards.filter((card) => !featuredIds.includes(card.dataset.project))
     ];
 
     const slides = orderedCards.map((card, index) => {

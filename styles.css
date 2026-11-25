@@ -16,7 +16,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { scroll-behavior: smooth; scroll-padding-top: 6rem; scrollbar-gutter: stable; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; scroll-padding-bottom: 5rem; scrollbar-gutter: stable; }
 body { margin: 0; background: var(--canvas); color: var(--ink); font: 1rem/1.65 var(--body); }
 body:has(.project-dialog[open]) { overflow: hidden; }
 h1, h2, h3, h4, h5, p, figure, ul, ol { margin: 0; }
@@ -120,6 +120,47 @@ h1 { margin: .75rem 0 1.2rem; font-size: clamp(3.5rem, 8.15vw, 8rem); letter-spa
 .section-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .49fr); align-items: end; gap: .875rem 2.25rem; margin-bottom: 2rem; }
 .section-heading h2, .contact-inner h2 { font-size: clamp(2.35rem, 5.15vw, 4.75rem); letter-spacing: -.067em; line-height: 1; }
 .section-heading p { max-width: 35ch; color: var(--muted); }
+
+.services-section { border-top: 1px solid var(--line); background: var(--surface); }
+.service-feature {
+    display: grid;
+    grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+    overflow: hidden;
+    border: 1px solid #57343f;
+    border-radius: var(--radius);
+    background: #2e1924;
+    color: #fff;
+}
+.service-feature-media {
+    display: grid;
+    place-items: center;
+    padding: clamp(.9rem, 3.4vw, 2.65rem);
+    background: radial-gradient(ellipse at 50% 20%, #a3714b, #4d2b31 67%, #351d27);
+}
+.service-feature-media img {
+    width: auto;
+    height: clamp(15rem, 27vw, 23.5rem);
+    border: 1px solid #f8d2a578;
+    border-radius: .8rem;
+    object-fit: contain;
+    box-shadow: 0 .85rem 2rem #1a0818b0;
+}
+.service-feature-copy { display: grid; align-content: center; justify-items: start; gap: .85rem; padding: clamp(1.25rem, 3.8vw, 3.15rem); }
+.service-feature-copy .eyebrow { color: #f2cf9c; }
+.service-feature h3 { max-width: 17ch; font-size: clamp(2rem, 4.1vw, 3.5rem); letter-spacing: -.06em; }
+.service-feature-copy p:not(.eyebrow) { max-width: 52ch; color: #f2e7eb; }
+.service-features { display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; list-style: none; }
+.service-features li { padding: .25rem .55rem; border: 1px solid #805966; border-radius: .4rem; color: #fbecdc; font-size: .875rem; }
+.service-feature .actions { margin-top: .25rem; }
+.service-feature .button-light { background: #ffdda5; color: #351a26; }
+.service-feature .button-light:hover { background: #f7c992; }
+.service-feature :focus-visible { outline-color: #f9d7ac; }
+.service-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.25rem; }
+.service-card { display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; padding: clamp(1.1rem, 2.8vw, 1.65rem); border: 1px solid var(--line); border-radius: var(--radius); background: var(--canvas); }
+.service-card h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); letter-spacing: -.04em; }
+.service-card p { flex: 1; color: var(--muted); }
+.service-card .button { margin-top: .35rem; }
+
 .projects-section { background: #f0edf5; border-block: 1px solid var(--line); }
 .project-carousel { margin-bottom: clamp(2.75rem, 6vw, 4.75rem); }
 .carousel-toolbar, .carousel-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .65rem 1rem; }
@@ -261,8 +302,36 @@ h1 { margin: .75rem 0 1.2rem; font-size: clamp(3.5rem, 8.15vw, 8rem); letter-spa
 .contact-links ul { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .35rem 1.25rem; padding: 0; list-style: none; }
 .contact-links ul a { display: inline-flex; align-items: center; min-height: 2.75rem; text-underline-offset: .25em; }
 .contact-section :focus-visible { outline-color: #dfcaff; }
-.site-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem 1rem; padding-block: 1.5rem; color: var(--muted); font-size: .875rem; }
+.site-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem 1rem; padding-block: 1.5rem 4.75rem; color: var(--muted); font-size: .875rem; }
 .site-footer a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.whatsapp-float {
+    position: fixed;
+    z-index: 4;
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    width: 3.25rem;
+    min-height: 3.25rem;
+    padding: 0;
+    border: 1px solid #065937;
+    border-radius: 2rem;
+    background: #0c6845;
+    color: #fff;
+    font-size: .875rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 .45rem 1.25rem #06342540;
+}
+.whatsapp-float:hover { background: #075337; }
+.whatsapp-float span { display: none; }
+
+@media (min-width: 100rem) {
+    .whatsapp-float { width: auto; padding: .55rem .9rem; }
+    .whatsapp-float span { display: inline; }
+}
 
 .project-dialog {
     width: min(69rem, 100% - 2rem);
@@ -315,8 +384,9 @@ h1 { margin: .75rem 0 1.2rem; font-size: clamp(3.5rem, 8.15vw, 8rem); letter-spa
     .hero h1 { font-size: clamp(3.65rem, 13.2vw, 6.5rem); }
     .portrait { width: min(100%, 25.5rem); }
     .portrait img { aspect-ratio: 1.17 / 1; object-position: 50% 35%; }
-    .section-heading, .carousel-slide, .experience-grid, .contact-inner, .dialog-content { grid-template-columns: minmax(0, 1fr); }
+    .section-heading, .service-feature, .carousel-slide, .experience-grid, .contact-inner, .dialog-content { grid-template-columns: minmax(0, 1fr); }
     .section-heading { margin-bottom: 1.4rem; }
+    .service-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .carousel-slide { grid-template-rows: auto 1fr; }
     .carousel-highlights button { padding-inline: .55rem; }
     .carousel-slide .project-cover { height: clamp(12rem, 50vw, 20rem); min-height: 0; }
@@ -328,7 +398,7 @@ h1 { margin: .75rem 0 1.2rem; font-size: clamp(3.5rem, 8.15vw, 8rem); letter-spa
 }
 
 @media (max-width: 35rem) {
-    .project-grid, .skills-grid, .milestones { grid-template-columns: minmax(0, 1fr); }
+    .service-options, .project-grid, .skills-grid, .milestones { grid-template-columns: minmax(0, 1fr); }
     .timeline li { grid-template-columns: minmax(0, 1fr); gap: .35rem; }
     .milestones { row-gap: 1.5rem; }
     .project-dialog { width: calc(100% - 1rem); max-height: calc(100dvh - 1rem); }

@@ -84,7 +84,7 @@ export const projectDetails = {
         links: [{ href: "https://pt.linkedin.com/posts/murilosilvaof_safestop-iot-reactnative-activity-7474846257816154113-oCYU", label: "Ver publicação no LinkedIn" }]
     },
     convite: {
-        role: "Desenvolvi duas direções visuais para a mesma festa. Jardim Encantado tem um envelope floral e uma alameda iluminada. Baile em vinho e dourado tem monograma e uma composição clássica de XV anos.",
+        role: "Os exemplos da galeria foram criados para uma festa de 15 anos. Jardim Encantado tem um envelope floral e uma alameda iluminada. Baile em vinho e dourado tem monograma e uma composição clássica.",
         points: [
             "Abertura animada com flores e pétalas, controle da trilha instrumental e layout pensado para celular.",
             "Localização com acesso ao GPS, contagem regressiva e confirmação de presença pelo WhatsApp.",

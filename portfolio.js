@@ -175,6 +175,16 @@ if (typeof dialog.showModal === "function") {
         trigger.setAttribute("aria-label", `${trigger.textContent} de ${card.querySelector(".project-title").textContent}`);
         trigger.addEventListener("click", () => openProject(card, trigger));
     }
+    for (const link of document.querySelectorAll("[data-open-project]")) {
+        const card = cards.find((item) => item.dataset.project === link.dataset.openProject);
+        if (!card) continue;
+        link.setAttribute("aria-haspopup", "dialog");
+        link.addEventListener("click", (event) => {
+            if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+            event.preventDefault();
+            openProject(card, link);
+        });
+    }
     dialog.querySelector("#gallery-prev").addEventListener("click", () => showSlide(slideIndex - 1));
     galleryNext.addEventListener("click", () => showSlide(slideIndex + 1));
     dialog.querySelector("#dialog-close").addEventListener("click", () => dialog.close());

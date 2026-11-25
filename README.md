@@ -17,7 +17,7 @@ Sou Murilo Francisco da Silva, estudante da UFRN com ênfase em Engenharia da Co
 | MDR Advocacia | Site institucional | PHP, JavaScript, Docker, CSS | [Visitar site](https://mdradvocacia.com/) |
 | Dra. Michelle Dantas | Landing page de advocacia | HTML, CSS, JavaScript, WhatsApp | [Visitar site](https://www.michelledantas.adv.br/) |
 | ISM Cursos | Plataforma de ensino e venda de cursos | WordPress, WooCommerce, Elementor, PHP | [Ver plataforma](https://ismcursos.com.br/) |
-| Maria Luyza · XV anos | Convite digital com duas propostas personalizadas | HTML, CSS, JavaScript | [Comparar modelos no portfólio](https://murilosilvaof.github.io/murilosilva.github.io/?project=convite#maria-luyza) |
+| Convites digitais personalizados | Convites para aniversários e celebrações | HTML, CSS, JavaScript | [Comparar modelos no portfólio](https://murilosilvaof.github.io/murilosilva.github.io/?project=convite#maria-luyza) |
 | Orbit | SaaS interno para operações de TI | React, TypeScript, FastAPI, PostgreSQL, Docker, Microsoft Graph, GLPI | [Abrir sistema](https://orbit.dunatecnologia.com/) |
 | Marcato | Sistema de reservas institucional | PHP, OAuth 2.0, Google Calendar API, PHPMailer | [GitHub](https://github.com/murilosilvaof/sistema-reservas-emufrn) |
 | SafeStop | MVP mobile de segurança urbana | React Native, Expo, JavaScript | [Abrir MVP](https://safe-stop-one.vercel.app/) |
@@ -38,7 +38,7 @@ Sou Murilo Francisco da Silva, estudante da UFRN com ênfase em Engenharia da Co
 - Email: [murilosilvafrancisco49@gmail.com](mailto:murilosilvafrancisco49@gmail.com)
 - LinkedIn: [linkedin.com/in/murilosilvaof](https://www.linkedin.com/in/murilosilvaof/)
 - GitHub: [github.com/murilosilvaof](https://github.com/murilosilvaof)
-- Instagram: [@murilosilvaof](https://instagram.com/murilosilvaof)
+- Instagram: [@murilosilva.dev](https://www.instagram.com/murilosilva.dev/)
 
 ---
 
