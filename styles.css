@@ -220,6 +220,12 @@ h1 { margin: .75rem 0 1.2rem; font-size: clamp(3.5rem, 8.15vw, 8rem); letter-spa
 .project-cover--pair, .project-cover--invite { display: flex; justify-content: center; align-items: center; gap: .7rem; padding: .8rem; }
 .project-cover--pair { background: linear-gradient(145deg, #eee7fa, #ded1f6); }
 .project-cover--pair img, .project-cover--invite img { width: auto; height: 100%; min-width: 0; object-fit: contain; object-position: center; border-radius: .45rem; }
+.service-slide-media.project-cover--pair {
+    display: grid;
+    grid-template-columns: minmax(0, 1.42fr) minmax(0, 1fr);
+    padding: clamp(.875rem, 2.4vw, 1.7rem);
+}
+.service-slide-media.project-cover--pair img { width: 100%; height: auto; max-height: none; }
 .project-card--invite { border-color: #d4ad85; }
 .project-card .project-cover--invite { aspect-ratio: 4 / 3; }
 .project-card--invite .project-cover--invite { background: radial-gradient(ellipse at 50% 15%, #896044, #2f1720 83%); border-color: #c89260; }
@@ -358,6 +364,7 @@ h1 { margin: .75rem 0 1.2rem; font-size: clamp(3.5rem, 8.15vw, 8rem); letter-spa
     .carousel-shortcuts button { padding-inline: .55rem; }
     .service-slide-media { min-height: 0; aspect-ratio: 16 / 10; }
     .service-slide-media img { max-height: 100%; }
+    .service-slide-media.project-cover--pair { aspect-ratio: 4 / 3; }
     .service-slide-copy { align-content: start; }
     .skills-grid, .milestones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .dialog-layout { min-width: 0; }
